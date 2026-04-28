@@ -24,6 +24,18 @@ All scripts are ready-to-use PowerShell automation tools that correspond to the 
 
 ---
 
+## Admin Monthly Report
+
+Generate a comprehensive HTML report covering all key M365 health metrics in a single run.
+
+| Script | Description |
+|--------|-------------|
+| [Get-M365MonthlyReport.ps1]({{ site.baseurl }}/scripts/monthly-report/Get-M365MonthlyReport.ps1){:download} | **Main script** — generates full HTML report (licenses, MFA, users, guests, CA, mailboxes, admin roles, sign-in failures) |
+
+[View full documentation and usage guide &rarr;]({{ site.baseurl }}/docs/admin-monthly-report)
+
+---
+
 ## Setup Intune
 
 The core Intune deployment scripts. Start with `Setup-Intune.ps1` to import all baseline policies in one step.

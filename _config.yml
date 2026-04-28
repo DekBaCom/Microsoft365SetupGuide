@@ -3,7 +3,7 @@ description: A comprehensive guide for setting up Microsoft 365 tenant, Azure AD
 baseurl: "/Microsoft365SetupGuide"
 url: "https://DekBaCom.github.io"
 
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs@v0.10.0
 
 # Enable search
 search_enabled: true
@@ -40,8 +40,8 @@ back_to_top_text: "Back to top"
 last_edit_time_format: "%b %e %Y at %I:%M %p"
 
 plugins:
+  - jekyll-remote-theme
   - jekyll-seo-tag
-  - jekyll-github-metadata
 
 # Callouts
 callouts_level: quiet

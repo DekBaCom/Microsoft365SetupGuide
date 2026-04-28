@@ -206,4 +206,35 @@ Register-ScheduledTask -TaskName "M365 Monthly Report" `
 ```
 
 {: .note }
-For unattended scheduled runs, use a **Service Principal** with a **Client Secret or Certificate** instead of interactive sign-in. See [Microsoft Graph authentication documentation](https://learn.microsoft.com/en-us/graph/auth-overview).
+For unattended scheduled runs, use a **Service Principal** with a **Client Secret or Certificate** instead of interactive sign-in.
+
+### Unattended Authentication with Service Principal
+
+**Step 1 — Register an App in Azure AD**
+
+1. Go to **Azure AD** > **App registrations** > **New registration**
+2. Name it (e.g., `M365-MonthlyReport-SP`)
+3. Under **API permissions**, add **Application** (not Delegated) permissions:
+   - `Reports.Read.All`, `User.Read.All`, `Directory.Read.All`
+   - `AuditLog.Read.All`, `Organization.Read.All`, `RoleManagement.Read.Directory`, `Policy.Read.All`
+4. Click **Grant admin consent**
+5. Under **Certificates & secrets**, create a **Client secret** and copy the value
+
+**Step 2 — Connect without interactive sign-in**
+
+```powershell
+# Using Client Secret (store securely — never hardcode in script)
+$TenantId     = "your-tenant-id"
+$ClientId     = "your-app-client-id"
+$ClientSecret = "your-client-secret" | ConvertTo-SecureString -AsPlainText -Force
+$Credential   = New-Object System.Management.Automation.PSCredential($ClientId, $ClientSecret)
+
+Connect-MgGraph -TenantId $TenantId -ClientSecretCredential $Credential -NoWelcome
+
+# Using Certificate (more secure — recommended for production)
+Connect-MgGraph -TenantId $TenantId -ClientId $ClientId -CertificateThumbprint "CERT_THUMBPRINT"
+```
+
+**Reference:**
+- [App-only authentication — Microsoft Graph PowerShell](https://learn.microsoft.com/en-us/powershell/microsoftgraph/app-only?tabs=powershell){:target="_blank"}
+- [Register an application in Microsoft Entra ID](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app){:target="_blank"}

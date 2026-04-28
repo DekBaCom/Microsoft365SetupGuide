@@ -2,7 +2,7 @@
 title: Downloads
 layout: default
 nav_order: 6
-permalink: docs/downloads
+permalink: /docs/downloads
 ---
 
 # Downloads — PowerShell Scripts

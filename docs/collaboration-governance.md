@@ -3,7 +3,7 @@ title: Collaboration Governance
 layout: default
 nav_order: 5
 has_children: true
-permalink: docs/collaboration-governance
+permalink: /docs/collaboration-governance
 ---
 
 # Collaboration Governance

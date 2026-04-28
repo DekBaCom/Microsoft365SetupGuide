@@ -2,7 +2,7 @@
 title: Admin Monthly Report
 layout: default
 nav_order: 7
-permalink: docs/admin-monthly-report
+permalink: /docs/admin-monthly-report
 ---
 
 # Admin Monthly Report

@@ -3,7 +3,7 @@ title: Microsoft Endpoint Manager
 layout: default
 nav_order: 4
 has_children: true
-permalink: docs/microsoft-endpoint-manager
+permalink: /docs/microsoft-endpoint-manager
 ---
 
 # Microsoft Endpoint Manager (Intune)
@@ -209,7 +209,7 @@ Assign compliance policies and configure Conditional Access for enrolled iOS and
 1. **Assign compliance policies** created above to the appropriate device groups
 2. **Create Conditional Access policies** that require compliant devices:
    - Use the **Require device to be marked as compliant** grant control
-   - See [Azure AD Configuration — Conditional Access](../azure-ad-configuration/#conditional-access-baseline)
+   - See [Azure AD Configuration — Conditional Access]({{ site.baseurl }}/docs/azure-ad-configuration#conditional-access-baseline)
 3. **Test** with a pilot group before rolling out broadly
 
 {: .warning }

@@ -3,7 +3,7 @@ title: Tenant Configuration
 layout: default
 nav_order: 2
 has_children: true
-permalink: docs/tenant-configuration
+permalink: /docs/tenant-configuration
 ---
 
 # Tenant Configuration

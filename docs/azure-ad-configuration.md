@@ -3,7 +3,7 @@ title: Azure AD Configuration
 layout: default
 nav_order: 3
 has_children: true
-permalink: docs/azure-ad-configuration
+permalink: /docs/azure-ad-configuration
 ---
 
 # Azure AD Configuration

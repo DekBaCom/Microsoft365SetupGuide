@@ -33,9 +33,12 @@ Manage and protect devices across your organization using Microsoft Intune — p
 
 Download and run the provided PowerShell script to import all baseline Intune policies into your tenant.
 
+{: .highlight }
+[Download Setup-Intune.ps1]({{ site.baseurl }}/scripts/setup-intune/Setup-Intune.ps1){:download} — See the full [Downloads page]({{ site.baseurl }}/docs/downloads) for all available scripts.
+
 ### Steps
 
-1. **Download** the `Setup-Intune.ps1` script from your deployment package
+1. **Download** `Setup-Intune.ps1` using the link above
 2. Open **PowerShell as Administrator** and run:
 
    ```powershell

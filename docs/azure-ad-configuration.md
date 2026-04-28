@@ -178,6 +178,9 @@ Before configuring Conditional Access policies, you **must** disable Security De
 
 ---
 
+{: .highlight }
+Automate Conditional Access deployment with PowerShell — [Install-BaselineCAPolicies.ps1]({{ site.baseurl }}/scripts/azure-ad/Install-BaselineCAPolicies.ps1){:download} &nbsp;|&nbsp; [Install-DataProtectionCAPolicies.ps1]({{ site.baseurl }}/scripts/azure-ad/Install-DataProtectionCAPolicies.ps1){:download} &nbsp;|&nbsp; [Install-GuestCAPolicies.ps1]({{ site.baseurl }}/scripts/azure-ad/Install-GuestCAPolicies.ps1){:download}
+
 ### Policy 1 — BLOCK: Legacy Authentication
 
 Block legacy authentication protocols (Basic Auth, Exchange ActiveSync) that cannot enforce MFA.

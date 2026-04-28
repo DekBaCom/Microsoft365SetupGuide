@@ -46,6 +46,9 @@ Control how users share and collaborate while protecting sensitive data through 
 
 Prevent exfiltration or accidental oversharing of sensitive information.
 
+{: .highlight }
+Automate with PowerShell — [Install-SensitivityLabels.ps1]({{ site.baseurl }}/scripts/compliance/Install-SensitivityLabels.ps1){:download} &nbsp;|&nbsp; [Install-DataRetentionPolicies.ps1]({{ site.baseurl }}/scripts/compliance/Install-DataRetentionPolicies.ps1){:download} &nbsp;|&nbsp; [Install-TeamsRetentionPolicies.ps1]({{ site.baseurl }}/scripts/compliance/Install-TeamsRetentionPolicies.ps1){:download} &nbsp;|&nbsp; [Set-GroupExpirationPolicy.ps1]({{ site.baseurl }}/scripts/azure-ad/Set-GroupExpirationPolicy.ps1){:download}
+
 ### Step 1 — Deploy the Recommended DLP Policy
 
 1. Go to **Microsoft 365 Admin Center** > **Setup** and search for **DLP**

@@ -46,6 +46,11 @@ Control how users collaborate and protect sensitive data:
 - SharePoint & OneDrive sharing settings
 - Teams & Groups governance
 
+### [Downloads — PowerShell Scripts](docs/downloads/)
+59 ready-to-use automation scripts covering all areas of this guide:
+- Setup Intune, Azure AD Conditional Access, Compliance, Exchange Online
+- Windows 10 security profiles, and Incident Response tools
+
 ---
 
 ## Prerequisites

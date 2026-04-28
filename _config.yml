@@ -27,7 +27,7 @@ aux_links_new_tab: true
 nav_sort: order
 
 # Footer
-footer_content: "Microsoft 365 Setup Guide &copy; 2024. Powered by <a href=\"https://pages.github.com/\">GitHub Pages</a> &amp; <a href=\"https://just-the-docs.com/\">Just the Docs</a>."
+footer_content: "Developed by <a href=\"https://www.linkedin.com/in/abdulloh-etaeluengoh\" target=\"_blank\">Mr. Abdulloh Etaeluengoh</a> &mdash; Microsoft 365 Solution Architect &nbsp;|&nbsp; Microsoft 365 Setup Guide &copy; 2024. Powered by <a href=\"https://pages.github.com/\">GitHub Pages</a> &amp; <a href=\"https://just-the-docs.com/\">Just the Docs</a>."
 
 # Color scheme
 color_scheme: light

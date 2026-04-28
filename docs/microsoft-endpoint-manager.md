@@ -43,7 +43,11 @@ Download and run the provided PowerShell script to import all baseline Intune po
    .\Setup-Intune.ps1
    ```
 
+   ![Setup-Intune.ps1 running in PowerShell]({{ site.baseurl }}/assets/images/mem_setup_script.png)
+
 3. On first sign-in via PowerShell to Intune, you will be prompted to **Consent on behalf of your organization** — click Accept
+
+   ![Intune PowerShell - Consent on behalf of organization]({{ site.baseurl }}/assets/images/mem_setup_consent.png)
 
 {: .important }
 The consent step is required to grant the PowerShell module permission to manage Intune resources. This only needs to be done once per tenant.
@@ -119,19 +123,14 @@ Define what makes a device "compliant" and configure actions for non-compliant d
    - Require Secure Boot: **Require**
    - Require code integrity: **Require**
 
-   **Device Properties:**
-   - Minimum OS version: Set to your minimum supported version
-
    **System Security:**
-   - Require a password to unlock mobile devices: **Require**
+   - Require a password: **Require**
    - Simple passwords: **Block**
    - Password type: **Alphanumeric**
    - Minimum password length: **8**
    - Firewall: **Require**
    - Antivirus: **Require**
-   - Antispyware: **Require**
    - Microsoft Defender Antimalware: **Require**
-   - Microsoft Defender Antimalware minimum version: Set as needed
 
 #### iOS/iPadOS Compliance Policy
 
@@ -140,7 +139,6 @@ Define what makes a device "compliant" and configure actions for non-compliant d
    - Minimum OS version: Set to a recent supported version
    - Jailbroken devices: **Block**
    - Require a password: **Require**
-   - Simple passwords: **Block**
    - Minimum password length: **6**
 
 #### Android Compliance Policy
@@ -155,20 +153,18 @@ Define what makes a device "compliant" and configure actions for non-compliant d
 ### Actions for Noncompliance
 
 For each compliance policy, configure actions:
-1. In the policy, click **Actions for noncompliance**
-2. Recommended actions:
 
-   | Action | Schedule |
-   |--------|----------|
-   | Mark device noncompliant | Immediately (0 days) |
-   | Send email to end user | 1 day |
-   | Retire the noncompliant device | 30 days |
+| Action | Schedule |
+|--------|----------|
+| Mark device noncompliant | Immediately (0 days) |
+| Send email to end user | 1 day |
+| Retire the noncompliant device | 30 days |
 
 ---
 
 ## App Protection (MAM)
 
-Protect corporate data on mobile devices using App Protection Policies — this approach works even on personal (BYOD) devices without requiring full device enrollment.
+Protect corporate data on mobile devices using App Protection Policies — works on personal (BYOD) devices without requiring full device enrollment.
 
 ### Creating App Protection Policies
 
@@ -178,18 +174,16 @@ Protect corporate data on mobile devices using App Protection Policies — this 
 2. Configure:
 
    **Data protection:**
-   - Backup org data to iTunes and iCloud backups: **Block**
+   - Backup org data to iTunes and iCloud: **Block**
    - Send org data to other apps: **Policy managed apps**
    - Receive data from other apps: **Policy managed apps**
-   - Restrict cut, copy, paste: **Policy managed apps with paste in**
    - Save copies of org data: **Block**
 
    **Access requirements:**
    - PIN for access: **Require**
-   - PIN type: **Numeric**
    - PIN length: **6**
 
-   **Conditional launch (recommended):**
+   **Conditional launch:**
    - Max PIN attempts: **5** (action: Reset PIN)
    - Offline grace period: **720 minutes** (action: Block access)
    - Jailbroken/rooted devices: (action: Block access)
@@ -211,8 +205,8 @@ Assign compliance policies and configure Conditional Access for enrolled iOS and
 
 1. **Assign compliance policies** created above to the appropriate device groups
 2. **Create Conditional Access policies** that require compliant devices:
-   - This requires the **Compliance policy** Conditional Access grant control
-   - See [Azure AD Configuration — Conditional Access](../azure-ad-configuration/#conditional-access-baseline) for policy creation steps
+   - Use the **Require device to be marked as compliant** grant control
+   - See [Azure AD Configuration — Conditional Access](../azure-ad-configuration/#conditional-access-baseline)
 3. **Test** with a pilot group before rolling out broadly
 
 {: .warning }
@@ -228,7 +222,7 @@ For organizations deploying cloud-native Windows 10/11 devices (no on-premises d
 
 1. **Import apps** into Intune:
    - Navigate to **Apps** > **Windows** > **Add**
-   - Add Microsoft 365 Apps, and any required line-of-business apps
+   - Add Microsoft 365 Apps and required line-of-business apps
 
 2. **Assign configuration profiles** imported via Setup-Intune.ps1:
    - Navigate to **Devices** > **Configuration profiles**
@@ -253,7 +247,7 @@ This configuration is only required if your organization has traditional domain-
 
 - Active Directory Domain Services (AD DS) on-premises
 - Azure AD Connect configured and syncing
-- Network line of sight to domain controllers during OOBE (or use Hybrid Autopilot)
+- Network line of sight to domain controllers during OOBE
 
 ### Steps
 
@@ -267,7 +261,7 @@ This configuration is only required if your organization has traditional domain-
    - Confirm `AzureAdJoined: YES` and `DomainJoined: YES`
 
 3. **Enroll devices into Intune** using Group Policy:
-   - Navigate to Computer Configuration > Policies > Administrative Templates > Windows Components > MDM
+   - Computer Configuration > Policies > Administrative Templates > Windows Components > MDM
    - Enable **Enable automatic MDM enrollment using default Azure AD credentials**
 
 4. **Assign configuration profiles and compliance policies** to the hybrid device group

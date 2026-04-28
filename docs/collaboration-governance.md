@@ -28,19 +28,17 @@ Control how users share and collaborate while protecting sensitive data through 
 
 ## Governance Risk Matrix
 
-Use the table below to determine which settings are appropriate for your organization's risk tolerance:
-
-| Checklist Item | Lower Risk Concern | Recommended for Higher Risk |
-|----------------|-------------------|----------------------------|
-| **DLP policy** | Default (None) | Enabled for sensitive data types (GLBA, HIPAA, etc.); start with Incident Reports and monitor before implementing block controls |
-| **Retention policies** | Default (None) | General policy (1–2 years) + compliance-specific labels (6–7 years) |
-| **Sensitivity labels** | Default (None) | Enable default labels: Public, General, Confidential, Highly Confidential |
-| **Teams: Groups creation** | Allow all users | Restrict to specific individuals; add Expiration policy |
-| **Teams: Guest access** | Enabled | Disable only if external collaboration is never needed |
-| **Teams: External chat** | Allow (default) | Restrict by domain for specific partner orgs |
-| **Teams: 3rd party storage** | Allow (default) | Disable all third-party storage providers |
+| Checklist Item | Lower Risk | Recommended for Higher Risk |
+|----------------|-----------|----------------------------|
+| **DLP policy** | Default (None) | Enabled for GLBA, HIPAA sensitive data types |
+| **Retention policies** | Default (None) | General (1–2 years) + compliance labels (6–7 years) |
+| **Sensitivity labels** | Default (None) | Public, General, Confidential, Highly Confidential |
+| **Teams: Groups creation** | Allow all | Restrict to specific individuals + Expiration policy |
+| **Teams: Guest access** | Enabled | Disable only if external collaboration never needed |
+| **Teams: External chat** | Allow | Restrict by domain for specific partner orgs |
+| **Teams: 3rd party storage** | Allow | Disable all third-party storage providers |
 | **SharePoint/OneDrive sharing** | Allow Anyone links | Require login (New & Existing guests) |
-| **Guest sharing links** | Allow (default) | Disable guests from generating sharing links |
+| **Guest sharing links** | Allow | Disable guests from generating sharing links |
 
 ---
 
@@ -50,31 +48,34 @@ Prevent exfiltration or accidental oversharing of sensitive information.
 
 ### Step 1 — Deploy the Recommended DLP Policy
 
-1. Go to **Microsoft 365 Admin Center** > **Setup**
-2. Search for **DLP** and locate **Set up data loss prevention (DLP)**
-3. Click **Get Started** and review the policy options
-4. Recommendation: **Deselect** "Show a policy tip" initially (can be customized later)
-5. Click **Create policy** to deploy the baseline recommended policy
+1. Go to **Microsoft 365 Admin Center** > **Setup** and search for **DLP**
+
+   ![M365 Admin Center - Search for DLP]({{ site.baseurl }}/assets/images/collab_dlp_step1.png)
+
+2. Click **Get Started** and review the policy options
+   - Recommendation: **Deselect** "Show a policy tip" initially
+
+   ![DLP - Get Started and configure]({{ site.baseurl }}/assets/images/collab_dlp_step2.png)
+
+3. Click **Create policy** to deploy the baseline recommended policy
 
 ### Step 2 — Customize DLP Policies
 
-1. Navigate to **compliance.microsoft.com** > **Data loss prevention** > **Policies**
+1. Navigate to **compliance.microsoft.com** > **Data loss prevention** > **Policy**
+
+   ![DLP - Navigate to Policy in compliance center]({{ site.baseurl }}/assets/images/collab_dlp_customize.png)
+
 2. Customize the recommended policy or click **Create a policy** for custom outcomes
+
+   ![DLP - Create custom policy]({{ site.baseurl }}/assets/images/collab_dlp_custom-policy.png)
 
 **Recommended customizations:**
 - Configure **policy tips** and **email notifications** in plain language for end users
 - Set up **incident reports** to go to a compliance administrator or monitored shared mailbox
 - For high-risk environments: configure **auto-encryption for email** containing sensitive data
 
-**Common sensitive information types to protect:**
-- Credit card numbers
-- Social Security numbers
-- HIPAA-related health data (if applicable)
-- GLBA financial information (if applicable)
-- Passport numbers and government IDs
-
 {: .note }
-Start with **Audit/Incident Report** mode to understand your sharing patterns before implementing block or encryption controls. This prevents disruption to legitimate workflows.
+Start with **Audit/Incident Report** mode to understand your sharing patterns before implementing block or encryption controls.
 
 ---
 
@@ -82,36 +83,43 @@ Start with **Audit/Incident Report** mode to understand your sharing patterns be
 
 Preserve data for compliance and legal hold purposes, and optionally auto-delete data that is no longer needed.
 
-### Creating Retention Policies
+### Steps
 
-1. Navigate to **compliance.microsoft.com**
-2. Click **Show all** in the left navigation
-3. Under **Solutions**, go to **Information governance** > **Retention**
-4. Click **New retention policy**
+1. Navigate to **compliance.microsoft.com** > **Information governance** > **Retention**
 
-### Recommended Approach
+   ![Retention - Navigate to Information Governance]({{ site.baseurl }}/assets/images/collab_retention_nav.png)
 
-Create **individual policies per service** for granular control:
+2. Click **New retention policy** — create individual policies per service
+
+   ![Retention - Individual blanket policies per service]({{ site.baseurl }}/assets/images/collab_retention_step1.png)
+
+3. Choose retention duration and optional auto-deletion
+
+   ![Retention - Duration and deletion options]({{ site.baseurl }}/assets/images/collab_retention_options.png)
+
+4. Select the location (Exchange, SharePoint, OneDrive, Teams, etc.)
+
+   ![Retention - Select location]({{ site.baseurl }}/assets/images/collab_retention_location.png)
+
+5. Review settings and **Create the policy**
+
+   ![Retention - Review and create]({{ site.baseurl }}/assets/images/collab_retention_review.png)
+
+### Recommended Retention Periods
 
 | Service | Recommended Retention |
 |---------|----------------------|
-| Exchange Online (email) | 2–7 years (based on compliance needs) |
+| Exchange Online | 2–7 years |
 | SharePoint Online | 2–7 years |
 | OneDrive accounts | 2–7 years |
-| Microsoft 365 Groups | 2–7 years |
 | Teams channel messages | 2–7 years |
 | Teams private chats | 2–7 years |
 
-**Configuration options:**
-- **Retention duration**: Choose a fixed period
-- **Auto-deletion**: Optionally delete content after the retention period (with or without disposition review)
-- **Mark as a record**: For compliance-critical content that must not be modified
-
 {: .warning }
-Retained data still counts against your storage quotas. Plan your retention durations accordingly.
+Retained data still counts against your storage quotas.
 
 {: .note }
-New retention policies can take up to **24 hours** to take effect after creation.
+New retention policies can take up to **24 hours** to take effect.
 
 ---
 
@@ -119,42 +127,63 @@ New retention policies can take up to **24 hours** to take effect after creation
 
 Define data classification labels with special protections such as encryption, watermarking, and access restrictions.
 
-### Step 1 — Generate Default Labels
+### Step 1 — Navigate to Sensitivity Labels
 
 1. Navigate to **security.microsoft.com** > **Classification** > **Sensitivity labels**
-2. If prompted, click **Go to Azure Information Protection** to migrate labels
-3. In Azure Information Protection, verify that **Unified labeling is activated**
-4. Click **Labels** > **Generate default labels**
 
-**Default label set:**
+   ![Sensitivity Labels - Navigate to security center]({{ site.baseurl }}/assets/images/collab_sensitivity_nav.png)
 
-| Label | Description |
-|-------|-------------|
-| Personal | Non-business content |
-| Public | Content approved for public release |
-| General | General internal business content |
-| Confidential | Business-sensitive content |
-| Highly Confidential | Most sensitive content (encryption enforced) |
+2. Click **Go to Azure Information Protection** to migrate labels (if available)
 
-{: .note }
-Many organizations **exclude the "Personal" label** as they do not want to imply that personal (non-business) data is protected by the organization.
+   ![Sensitivity Labels - Azure Information Protection]({{ site.baseurl }}/assets/images/collab_sensitivity_aip.png)
 
-### Step 2 — Enable Unified Labeling in Office Web Apps
+3. Verify that **Unified labeling is activated**
 
-1. Return to the **Microsoft 365 security center**
-2. If the option **Turn on now** is available, click it to enable classified content in Office web apps
+   ![Sensitivity Labels - Unified labeling activated]({{ site.baseurl }}/assets/images/collab_sensitivity_unified.png)
 
-### Step 3 — Publish Sensitivity Labels
+### Step 2 — Generate Default Labels
+
+1. Click **Labels** > **Generate default labels**
+
+   ![Sensitivity Labels - Generate default labels]({{ site.baseurl }}/assets/images/collab_sensitivity_generate.png)
+
+### Step 3 — Enable in Office Web Apps
+
+1. Return to the Microsoft 365 security center
+2. Click **Turn on now** if the option is available
+
+   ![Sensitivity Labels - Turn on for Office web apps]({{ site.baseurl }}/assets/images/collab_sensitivity_turn-on.png)
+
+### Step 4 — Publish Sensitivity Labels
 
 1. Click **Publish labels**
+
+   ![Sensitivity Labels - Publish labels]({{ site.baseurl }}/assets/images/collab_sensitivity_publish.png)
+
 2. Select all default labels you wish to publish
+
+   ![Sensitivity Labels - Select labels to publish]({{ site.baseurl }}/assets/images/collab_sensitivity_select-labels.png)
+
+   {: .note }
+   Many organizations **exclude the "Personal" label** as they do not want to imply that personal (non-business) data is protected by the organization.
+
 3. Target **All users** (recommended) or specific groups
+
+   ![Sensitivity Labels - Target users]({{ site.baseurl }}/assets/images/collab_sensitivity_target.png)
+
 4. Configure **policy settings**:
-   - **Default label**: Often set to "General" or "Internal"
-   - **Require justification to remove or downgrade a label**: **Yes** (recommended)
-   - **Require users to apply a label to emails and documents**: Configure based on org policy
+   - Default label: Often **General** or **Internal**
+   - Require justification to remove or downgrade: **Yes** (recommended)
+
+   ![Sensitivity Labels - Policy settings]({{ site.baseurl }}/assets/images/collab_sensitivity_policy-settings.png)
+
 5. Name the policy (e.g., "Default classification policy")
-6. Review settings and **Submit**
+
+   ![Sensitivity Labels - Name the policy]({{ site.baseurl }}/assets/images/collab_sensitivity_name-policy.png)
+
+6. Review and **Submit**
+
+   ![Sensitivity Labels - Review and submit]({{ site.baseurl }}/assets/images/collab_sensitivity_submit.png)
 
 {: .note }
 Sensitivity labels appear in Office applications within **24 hours** of publishing.
@@ -168,30 +197,33 @@ Configure sharing settings to balance collaboration needs with data security.
 ### Step 1 — Configure External Collaboration Settings in Azure AD
 
 1. Navigate to **Azure AD admin center** > **External identities** > **External collaboration settings**
-2. Recommended settings:
-   - **Enable Email One-Time Passcode** → **Yes** (allows guests without Microsoft accounts to authenticate)
-   - Review other guest invitation and access settings
+2. Recommended: Enable **Email One-Time Passcode** → **Yes**
+
+   ![SharePoint - External collaboration settings in Azure AD]({{ site.baseurl }}/assets/images/collab_sharepoint_external-collab.png)
 
 ### Step 2 — Configure Sharing Settings
 
-1. Navigate to the **SharePoint admin center** (admin.microsoft.com > Show all > SharePoint)
-2. Click **Policies** > **Sharing**
-3. Configure the **SharePoint** and **OneDrive** sharing sliders:
+1. Navigate to the **SharePoint admin center**
+
+   ![SharePoint Admin Center]({{ site.baseurl }}/assets/images/collab_sharepoint_admin-center.png)
+
+2. Click **Policies** > **Sharing** and configure the sharing sliders
+
+   ![SharePoint - Sharing settings]({{ site.baseurl }}/assets/images/collab_sharepoint_sharing.png)
 
    | Sharing Level | Use Case |
    |---------------|----------|
-   | Anyone (no sign-in required) | Most permissive — anonymous links allowed |
-   | New and existing guests | Requires guest sign-in — **recommended for most orgs** |
-   | Existing guests only | Only pre-invited guests can access |
-   | Only people in your organization | No external sharing at all |
+   | Anyone (no sign-in) | Most permissive — anonymous links |
+   | New and existing guests | Requires sign-in — **recommended for most orgs** |
+   | Existing guests only | Only pre-invited guests |
+   | Only people in org | No external sharing |
 
-4. **Additional recommended settings** (scroll down):
-   - **Default link type**: Change from "Anyone" to **Specific people** (Secure links)
+3. Scroll down for additional settings:
+   - **Default link type**: Change from "Anyone" to **Specific people**
    - **Anyone link expiration**: Set an expiration (e.g., 30 days) if Anyone links are enabled
    - **Allow guests to share items they don't own**: **Disable** (recommended)
 
-{: .note }
-SharePoint and OneDrive must be configured at the same or more restrictive level — you cannot set OneDrive to be less restrictive than SharePoint.
+   ![SharePoint - Link type and expiration settings]({{ site.baseurl }}/assets/images/collab_sharepoint_link-settings.png)
 
 ---
 
@@ -201,21 +233,24 @@ Govern Microsoft Teams and Microsoft 365 Groups settings.
 
 ### External Access (Federated Chat)
 
-1. Navigate to **Teams admin center** (admin.teams.microsoft.com)
-2. Expand **Org-wide settings** > **External access**
-3. Keep **Allow users to communicate with other Teams users** → **On**
-   *(Unless you need to limit to internal users only, or restrict to specific domains)*
+1. Navigate to **Teams admin center** > **Org-wide settings** > **External access**
+2. Keep **Allow users to communicate with other Teams users** → **On**
+
+   ![Teams - External access settings]({{ site.baseurl }}/assets/images/collab_teams_external-access.png)
 
 ### Guest Access
 
 1. Navigate to **Teams admin center** > **Org-wide settings** > **Guest access**
-2. Set **Allow guest access in Teams** → **On** (recommended for most organizations)
+2. Set **Allow guest access in Teams** → **On**
+
+   ![Teams - Guest access settings]({{ site.baseurl }}/assets/images/collab_teams_guest-access.png)
 
 ### Third-Party File Storage
 
-1. Navigate to **Teams admin center** > **Org-wide settings** > **Teams settings**
-2. Scroll to **Files**
-3. Set all third-party storage providers (Citrix Files, DropBox, Box, Google Drive, ShareFile) to **Off**
+1. Navigate to **Teams admin center** > **Org-wide settings** > **Teams settings** > **Files**
+2. Set all third-party storage providers to **Off**
+
+   ![Teams - Third-party file storage settings]({{ site.baseurl }}/assets/images/collab_teams_file-sharing.png)
 
 {: .highlight }
 Disabling third-party storage encourages users to store files in OneDrive and SharePoint, where they are governed by your Microsoft 365 policies.
@@ -224,15 +259,18 @@ Disabling third-party storage encourages users to store files in OneDrive and Sh
 
 1. Navigate to **Teams admin center** > **Meetings** > **Meeting policies**
 2. Modify the **Global (Org-wide default)** policy:
-   - **Allow guests to give or request control**: **On** (common request for external collaboration)
-   - Review anonymous join settings based on your organization's privacy requirements
+   - **Allow guests to give or request control**: **On**
+
+   ![Teams - Global meetings policy]({{ site.baseurl }}/assets/images/collab_teams_meetings-policy.png)
 
 ### Meeting Settings
 
 1. Navigate to **Teams admin center** > **Meetings** > **Meeting settings**
 2. Review **Anonymous users can join a meeting**:
    - **Disabled** = more secure (all external participants must sign in)
-   - **Enabled** = more convenient (anyone with a link can join without signing in)
+   - **Enabled** = more convenient (anyone with a link can join)
+
+   ![Teams - Meeting settings]({{ site.baseurl }}/assets/images/collab_teams_meeting-settings.png)
 
 ### Groups Expiration Policy
 
@@ -240,25 +278,23 @@ Automatically expire and delete stale, inactive Groups to keep your tenant clean
 
 1. Navigate to **Azure AD admin center** > **Groups** > **Expiration**
 2. Configure:
-   - **Group lifetime**: **180 days** (recommended)
+   - **Group lifetime**: **180 days**
    - **Email contact for groups with no owners**: Enter a monitored email address
-   - **Enable expiration for these Microsoft 365 groups**: **All**
+   - **Enable expiration for**: **All**
 3. Click **Save**
 
-{: .note }
-Group owners will receive email notifications before their group expires. If there is no owner, notifications go to the email address you configured above.
+   ![Azure AD - Groups expiration policy]({{ site.baseurl }}/assets/images/collab_groups_expiration.png)
 
 ### Restrict Who Can Create Groups/Teams (Optional)
 
 {: .warning }
-This is an advanced option that can significantly impact user experience. Only implement this in strict environments.
+This is an advanced option that significantly impacts user experience. Only implement in strict environments.
 
-If required, you can limit Teams/Groups creation to a specific security group using PowerShell:
+![Groups - Restrict who can create groups]({{ site.baseurl }}/assets/images/collab_groups_creators.png)
+
+If required, limit Teams/Groups creation using PowerShell:
 
 ```powershell
-# Install the Azure AD module if needed
-Install-Module AzureAD
-
 # Connect to Azure AD
 Connect-AzureAD
 

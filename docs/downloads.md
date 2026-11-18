@@ -1,7 +1,7 @@
 ---
 title: Downloads
 layout: default
-nav_order: 7
+nav_order: 10
 permalink: /docs/downloads
 description: Download 59+ ready-to-use PowerShell automation scripts for Microsoft Intune, Microsoft Entra ID, Exchange Online, Compliance, Incident Response, and Windows 10/11 deployment.
 ---
@@ -154,6 +154,17 @@ These scripts are intended for use by security administrators during active inve
 | [Export-SignInByIPAddress.ps1]({{ site.baseurl }}/scripts/incident-response/Export-SignInByIPAddress.ps1){:download} | Export sign-in logs from a specific IP address |
 | [Export-PrivilegedUserActions.ps1]({{ site.baseurl }}/scripts/incident-response/Export-PrivilegedUserActions.ps1){:download} | Export admin/privileged user actions from audit log |
 | [Export-PrivilegedUserSignIn.ps1]({{ site.baseurl }}/scripts/incident-response/Export-PrivilegedUserSignIn.ps1){:download} | Export sign-in logs for privileged accounts |
+
+---
+
+## Tenant-to-Tenant Migration
+
+Scripts to support a Microsoft 365 tenant-to-tenant (T2T) migration. See the full workflow at [Tenant-to-Tenant Migration]({{ site.baseurl }}/docs/tenant-migration).
+
+| Script | Description |
+|--------|-------------|
+| [Export-TenantInventory.ps1]({{ site.baseurl }}/scripts/migration/Export-TenantInventory.ps1){:download} | Phase 1 — export users, groups, SKUs, CA policies, mailbox sizes, and DLs from the source tenant |
+| [New-TargetTenantUsers.ps1]({{ site.baseurl }}/scripts/migration/New-TargetTenantUsers.ps1){:download} | Phase 2 — bulk-create matching user accounts in the target tenant (disabled by default) |
 
 ---
 

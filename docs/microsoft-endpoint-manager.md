@@ -1,7 +1,7 @@
 ---
 title: Microsoft Intune
 layout: default
-nav_order: 5
+nav_order: 6
 has_children: true
 permalink: /docs/microsoft-endpoint-manager
 description: Microsoft Intune device management — Windows Autopilot, compliance policies, App Protection (MAM), iOS / Android / macOS enrollment, and Microsoft Entra join & hybrid join.

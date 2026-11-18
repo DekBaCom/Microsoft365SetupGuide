@@ -1,7 +1,7 @@
 ---
 title: Collaboration Governance
 layout: default
-nav_order: 6
+nav_order: 7
 has_children: true
 permalink: /docs/collaboration-governance
 description: Microsoft 365 collaboration governance — Data Loss Prevention (DLP), retention policies, sensitivity labels, SharePoint & OneDrive sharing, Teams & Groups governance.

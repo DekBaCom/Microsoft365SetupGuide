@@ -1,0 +1,117 @@
+// =========================================================================
+// Microsoft 365 Setup Guide — custom overrides on just-the-docs
+// Loaded automatically by just-the-docs after its own styles.
+// Focus: better mobile + large-desktop responsive behaviour.
+// =========================================================================
+
+// --- Tables: horizontal-scroll on mobile ---------------------------------
+// just-the-docs tables can overflow on small screens. Wrap them so they
+// scroll horizontally instead of pushing the layout.
+.main-content table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-collapse: collapse;
+}
+
+.main-content table th,
+.main-content table td {
+    white-space: normal;        // allow wrapping
+    word-break: break-word;
+    vertical-align: top;
+}
+
+// --- Code blocks: comfortable on small screens ---------------------------
+.main-content pre,
+.main-content pre > code {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 50rem) {
+    .main-content pre,
+    .main-content pre > code {
+        font-size: 0.8rem;
+    }
+}
+
+// --- Images: never overflow + preserve aspect ratio ----------------------
+.main-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+// --- Touch-friendly tap targets on mobile --------------------------------
+@media (max-width: 50rem) {
+    .site-nav a,
+    .nav-list .nav-list-item .nav-list-link,
+    .main-content a.btn {
+        min-height: 2.75rem;    // ~44px — Apple HIG + Material guideline
+        display: flex;
+        align-items: center;
+    }
+
+    // Slightly larger body text for readability on phones
+    .main-content {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    // Tighten vertical padding so content fits above the fold
+    .main-content h1 { margin-top: 0.75rem; }
+    .main-content h2 { margin-top: 1.5rem; }
+    .main-content h3 { margin-top: 1.25rem; }
+}
+
+// --- Large-desktop support (ultra-wide) ----------------------------------
+@media (min-width: 100rem) {
+    // Cap content width so long lines of text remain readable on 4K / 5K
+    .main-content {
+        max-width: 72rem;
+    }
+}
+
+// --- Callouts: tighter on narrow viewports -------------------------------
+@media (max-width: 50rem) {
+    .highlight,
+    .note,
+    .warning,
+    .important {
+        padding: 0.65rem 0.85rem;
+    }
+}
+
+// --- Copy-code button: easier to hit on touch ----------------------------
+.code-copy-button {
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+}
+
+// --- Print: hide nav + search, keep content -------------------------------
+@media print {
+    .side-bar,
+    .search,
+    .aux-nav,
+    .breadcrumb-nav,
+    .back-to-top,
+    .code-copy-button {
+        display: none !important;
+    }
+
+    .main-content {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        font-size: 11pt;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.85em;
+        color: #666;
+    }
+}

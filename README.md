@@ -6,12 +6,14 @@
 [![Jekyll](https://img.shields.io/badge/Jekyll-4.3-red?logo=jekyll)](https://jekyllrb.com/)
 [![Theme](https://img.shields.io/badge/Theme-Just%20the%20Docs-blue)](https://just-the-docs.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
-[![PowerShell](https://img.shields.io/badge/PowerShell-Scripts%2059+-blue?logo=powershell)](scripts/)
+[![PowerShell](https://img.shields.io/badge/PowerShell-Scripts%2061+-blue?logo=powershell)](scripts/)
+[![PDPA](https://img.shields.io/badge/PDPA--2562-Ready-success)](https://DekBaCom.github.io/Microsoft365SetupGuide/docs/pdpa)
+[![Security Policy](https://img.shields.io/badge/Security-Responsible%20Disclosure-informational)](SECURITY.md)
 
 **คู่มือการติดตั้งและกำหนดค่า Microsoft 365 แบบครบวงจร**
 สำหรับ IT Admin และ Microsoft 365 Solution Architect
 
-🌐 **[เข้าชมเว็บไซต์](https://DekBaCom.github.io/Microsoft365SetupGuide)** | 📥 **[ดาวน์โหลด Scripts](https://DekBaCom.github.io/Microsoft365SetupGuide/docs/downloads)**
+🌐 **[เข้าชมเว็บไซต์](https://DekBaCom.github.io/Microsoft365SetupGuide)** &nbsp;|&nbsp; 📥 **[ดาวน์โหลด Scripts](https://DekBaCom.github.io/Microsoft365SetupGuide/docs/downloads)** &nbsp;|&nbsp; 📋 **[Prerequisites](https://DekBaCom.github.io/Microsoft365SetupGuide/docs/prerequisites)** &nbsp;|&nbsp; 🧭 **[Use Cases](https://DekBaCom.github.io/Microsoft365SetupGuide/docs/use-cases)**
 
 </div>
 
@@ -21,20 +23,37 @@
 
 | ความสามารถ | รายละเอียด |
 |------------|-----------|
-| 📖 **เอกสารครบถ้วน** | ขั้นตอนการตั้งค่าทุกส่วนของ Microsoft 365 พร้อมภาพประกอบ |
+| 📖 **เอกสารครบถ้วน** | ขั้นตอนการตั้งค่าทุกส่วนของ Microsoft 365 พร้อมภาพประกอบ 11 หมวดหลัก |
 | 🖼️ **ภาพ Screenshot** | รูปภาพจริงจากระบบกว่า 59 รูป ประกอบทุก Step |
-| ⚡ **PowerShell Scripts** | Script พร้อมใช้งาน 59+ ไฟล์ ครอบคลุมทุก Workload |
+| ⚡ **PowerShell Scripts** | Script พร้อมใช้งาน **61+ ไฟล์** ครอบคลุมทุก Workload + Tenant Migration |
+| 🧭 **Use Case Mapping** | จับคู่ License Tier (Business / E3 / E5 / F / A) กับ Business Profile |
+| 🛡️ **PDPA (Thailand)** | แนวทางตั้งค่า M365 ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 |
+| 🔐 **PIM — Zero Permanent Admin** | Just-in-Time admin role activation ด้วย Entra ID P2 |
+| 🔄 **Tenant-to-Tenant Migration** | Playbook + Script สำหรับการย้าย Tenant (M&A, Rebrand) |
 | 📊 **Monthly Report** | สร้างรายงาน HTML อัตโนมัติด้วย Script เดียว |
 | 🔍 **ค้นหาได้** | Built-in search ค้นหาเนื้อหาได้ทุก Section |
-| 📱 **Responsive** | รองรับทุกอุปกรณ์ ทั้ง Desktop และ Mobile |
+| 📱 **Responsive** | รองรับทุกอุปกรณ์ Desktop / Tablet / Mobile + พิมพ์ (Print-friendly) |
 
 ---
 
 ## 📚 เนื้อหาในคู่มือ
 
-### 1️⃣ Tenant Configuration
-> การตั้งค่าพื้นฐานของ Microsoft 365 Tenant
+### 📋 [Prerequisites](https://DekBaCom.github.io/Microsoft365SetupGuide/docs/prerequisites)
+> สิ่งที่ต้องเตรียมก่อนเริ่มตั้งค่า
+- Administrative access (Global Admin, Break-glass)
+- Licensing Matrix (Business Premium / E3 / E5)
+- PowerShell Modules (Microsoft Graph SDK, ExchangeOnlineManagement, PnP.PowerShell)
+- Microsoft Graph Scopes cheat-sheet
+- Tenant Readiness verification snippet
 
+### 🧭 [Use Cases & License Mapping](https://DekBaCom.github.io/Microsoft365SetupGuide/docs/use-cases)
+> เลือก License ให้เหมาะกับขนาดและ Use Case ธุรกิจ
+- Business Profiles: SMB / Mid-market / Enterprise / Frontline / Education / Gov
+- Use-case Groups: Identity, Device, Email, Data Protection, Compliance, Monitoring
+- Deployment path แนะนำตาม License ที่เลือก
+
+### 1️⃣ [Tenant Configuration](https://DekBaCom.github.io/Microsoft365SetupGuide/docs/tenant-configuration)
+> การตั้งค่าพื้นฐานของ Microsoft 365 Tenant
 - 🌐 ผูก Custom Domain (Vanity Domain)
 - 🏢 Organization Settings และ Password Policy
 - 🚨 Emergency Access Accounts (Break-glass)
@@ -42,9 +61,8 @@
 - 📩 Report Message Add-in
 - 🔔 Alert Policies
 
-### 2️⃣ Azure AD Configuration
-> ระบบ Identity และ Access Management
-
+### 2️⃣ [Microsoft Entra ID](https://DekBaCom.github.io/Microsoft365SetupGuide/docs/azure-ad-configuration)
+> ระบบ Identity และ Access Management *(เดิมชื่อ Azure Active Directory)*
 - 🔐 Combined MFA + SSPR Registration
 - 🔑 Self-Service Password Reset (SSPR)
 - 👤 User Settings & External Collaboration
@@ -55,27 +73,57 @@
   - GRANT: Require MFA
   - BLOCK: Unsupported Device Platforms
 
-### 3️⃣ Microsoft Endpoint Manager (Intune)
-> การจัดการและปกป้องอุปกรณ์
+### 3️⃣ [Privileged Identity Management (PIM)](https://DekBaCom.github.io/Microsoft365SetupGuide/docs/privileged-identity-management) 🆕
+> Just-in-Time admin access — Zero permanent Global Admin *(ต้องการ Entra ID P2)*
+- Convert Permanent → Eligible assignments
+- Role settings — MFA + Justification + Approval
+- Access Reviews แบบ Quarterly
+- Alerts สำหรับ critical PIM events
+- Bulk-onboarding ด้วย Microsoft Graph PowerShell
 
+### 4️⃣ [Microsoft Intune](https://DekBaCom.github.io/Microsoft365SetupGuide/docs/microsoft-endpoint-manager)
+> การจัดการและปกป้องอุปกรณ์ *(เดิมชื่อ Microsoft Endpoint Manager)*
 - ✈️ Windows Autopilot Enrollment
 - 📋 Device Compliance Policies (Windows, iOS, Android)
 - 📲 App Protection Policies (MAM) สำหรับ BYOD
-- 🖥️ Windows 10/11 Azure AD Join
-- 🏢 Windows 10 Hybrid Azure AD Join
+- 🖥️ Windows 10/11 Microsoft Entra Join
+- 🏢 Windows 10 Microsoft Entra Hybrid Join
 
-### 4️⃣ Collaboration Governance
+### 5️⃣ [Collaboration Governance](https://DekBaCom.github.io/Microsoft365SetupGuide/docs/collaboration-governance)
 > ควบคุมการทำงานร่วมกันและปกป้องข้อมูล
-
 - 🔒 Data Loss Prevention (DLP)
 - 📦 Retention Policies
 - 🏷️ Sensitivity Labels (Data Classification)
 - 🗂️ SharePoint & OneDrive Sharing Settings
 - 👥 Microsoft Teams & Groups Governance
 
-### 5️⃣ Admin Monthly Report
-> รายงานสุขภาพระบบรายเดือนอัตโนมัติ
+### 6️⃣ [PDPA (Thailand) Compliance](https://DekBaCom.github.io/Microsoft365SetupGuide/docs/pdpa) 🆕
+> ตั้งค่า M365 รองรับ พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562
+- Compliance Manager — Thailand PDPA assessment template
+- Sensitive Info Types — Thai National ID, Thai Passport
+- DLP + Sensitivity Label สำหรับ Personal Data
+- Retention Policy (Data Minimization)
+- Data Subject Rights (DSR) Workflow
+- 72-hour Breach Notification Runbook
+- Unified Audit Log + Records of Processing (ROPA)
 
+### 7️⃣ [Tenant-to-Tenant Migration](https://DekBaCom.github.io/Microsoft365SetupGuide/docs/tenant-migration) 🆕
+> ย้าย Tenant แบบ End-to-End (M&A, Rebrand, Spin-off)
+- Phase 1–9 playbook (Discovery → Cutover → Decommission)
+- Cross-Tenant Mailbox Migration (CTMM) — Native Microsoft
+- OneDrive / SharePoint / Teams migration strategy
+- Identity, Conditional Access, Intune device re-enrollment
+- Cutover Weekend checklist + Post-migration verification
+
+### 8️⃣ [Storage Quotas & Cost Solutions](https://DekBaCom.github.io/Microsoft365SetupGuide/docs/storage-quotas) 🆕
+> เมื่อ Storage เต็ม — Solution + ราคาเปรียบเทียบ
+- อีเมลเต็ม → Enable Archive (ฟรี), Auto-Expanding Archive (ฟรี, สูงสุด 1.5 TB)
+- Archive เต็ม → เช็ค Auto-Expand + เลือก EOA add-on ($3/user/mo)
+- SharePoint Pool เต็ม → M365 Archive ($0.05/GB/mo), Extra File Storage ($0.20/GB/mo), Azure Blob
+- Decision Tree + ตัวอย่างคำนวณราคาสำหรับ Thai SMB
+
+### 9️⃣ [Admin Monthly Report](https://DekBaCom.github.io/Microsoft365SetupGuide/docs/admin-monthly-report)
+> รายงานสุขภาพระบบรายเดือนอัตโนมัติ
 - 📊 License Usage & Availability
 - 👥 User Status (Active / Inactive / Blocked)
 - 🔐 MFA Enrollment Coverage
@@ -89,7 +137,7 @@
 
 ## ⚡ PowerShell Scripts
 
-ดาวน์โหลด Script พร้อมใช้งานกว่า **59 ไฟล์** จัดหมวดหมู่ตาม Workload:
+ดาวน์โหลด Script พร้อมใช้งานกว่า **61 ไฟล์** จัดหมวดหมู่ตาม Workload:
 
 ```
 scripts/
@@ -99,10 +147,23 @@ scripts/
 ├── 📁 exchange-online/       # 11 scripts — DKIM, EOP, Forwarding, OME
 ├── 📁 incident-response/     # 10 scripts — Audit logs, Compromise remediation
 ├── 📁 windows-10/            #  4 scripts — Security Profiles, OneDrive
+├── 📁 migration/             #  2 scripts — Tenant inventory + Target user creation  🆕
 └── 📁 monthly-report/        #  1 script  — Full HTML Monthly Report
 ```
 
 > 👉 [ดู Downloads Page พร้อม Link ทุก Script](https://DekBaCom.github.io/Microsoft365SetupGuide/docs/downloads)
+
+### Required PowerShell Modules
+
+```powershell
+# Required — baseline automation
+Install-Module Microsoft.Graph             -Scope CurrentUser -MinimumVersion 2.0.0
+Install-Module ExchangeOnlineManagement    -Scope CurrentUser -MinimumVersion 3.0.0
+Install-Module MicrosoftTeams              -Scope CurrentUser -MinimumVersion 5.0.0
+Install-Module PnP.PowerShell              -Scope CurrentUser -MinimumVersion 2.0.0
+```
+
+> ⚠️ **หมายเหตุสำคัญ:** `AzureAD`, `AzureADPreview`, และ `MSOnline` modules จะหมดอายุ (retire) **ปี 2026** — Script ใหม่ทั้งหมดใช้ **Microsoft Graph PowerShell SDK** เป็นหลัก
 
 ---
 
@@ -135,7 +196,23 @@ Connect-ExchangeOnline
 .\scripts\monthly-report\Get-M365MonthlyReport.ps1 -OutputPath "C:\Reports\April-2025.html"
 ```
 
-> 💡 **หมายเหตุ:** `AzureAD` และ `MSOnline` modules จะหมดอายุ (retire) ปี 2026 — Guide นี้แนะนำให้ใช้ **Microsoft Graph PowerShell SDK** เป็นหลัก
+---
+
+## 🔄 Tenant-to-Tenant Migration (Quick Start)
+
+ตัวอย่างการใช้ Script ย้าย Tenant:
+
+```powershell
+# SOURCE tenant — export inventory
+.\scripts\migration\Export-TenantInventory.ps1 -OutputPath C:\T2T\source
+
+# TARGET tenant — bulk create disabled users
+.\scripts\migration\New-TargetTenantUsers.ps1 `
+    -UsersCsv C:\T2T\source\users.csv `
+    -TargetDomain targetco.onmicrosoft.com
+```
+
+> 📖 ดูขั้นตอนทั้งหมด 9 Phase ที่ [Tenant-to-Tenant Migration](https://DekBaCom.github.io/Microsoft365SetupGuide/docs/tenant-migration)
 
 ---
 
@@ -145,17 +222,23 @@ Connect-ExchangeOnline
 
 ```
 หน้าหลัก (Home)
-├── Tenant Configuration
-├── Azure AD Configuration
-├── Microsoft Endpoint Manager
-├── Collaboration Governance
-├── Admin Monthly Report
-└── Downloads — PowerShell Scripts
+├── 📋 Prerequisites
+├── 🧭 Use Cases & License Mapping
+├── 1️⃣ Tenant Configuration
+├── 2️⃣ Microsoft Entra ID
+├── 3️⃣ Privileged Identity Management (PIM)
+├── 4️⃣ Microsoft Intune
+├── 5️⃣ Collaboration Governance
+├── 6️⃣ PDPA (Thailand) Compliance
+├── 7️⃣ Tenant-to-Tenant Migration
+├── 📥 Downloads — PowerShell Scripts
+└── 📊 Admin Monthly Report
 ```
 
 - 🔍 ใช้ **Search Bar** ด้านบนค้นหาเนื้อหาที่ต้องการ
 - 📌 ใช้ **Table of Contents** ด้านขวาเพื่อ jump ไปยัง Section
 - 📥 คลิก **Download** ในแต่ละ Section เพื่อดาวน์โหลด Script
+- 📋 คลิก **Copy** ที่ Code Block เพื่อ copy PowerShell command
 
 ---
 
@@ -187,24 +270,36 @@ bundle exec jekyll serve
 
 ```
 Microsoft365SetupGuide/
-├── 📄 _config.yml              # Jekyll configuration
+├── 📄 _config.yml              # Jekyll configuration (SEO, search, copy-code)
 ├── 📄 Gemfile                  # Ruby dependencies
 ├── 📄 index.md                 # Home page
+├── 📄 README.md                # This file
+├── 📄 LICENSE                  # MIT license
+├── 📄 SECURITY.md              # Responsible disclosure policy
+├── 📄 CHANGELOG.md             # Project changelog
 ├── 📁 docs/                    # Documentation pages
+│   ├── prerequisites.md                      # 🆕 Licensing + Graph scopes
+│   ├── use-cases-and-licensing.md            # 🆕 Business profile → License map
 │   ├── tenant-configuration.md
 │   ├── azure-ad-configuration.md
+│   ├── privileged-identity-management.md     # 🆕 PIM step-by-step
 │   ├── microsoft-endpoint-manager.md
 │   ├── collaboration-governance.md
-│   ├── admin-monthly-report.md
-│   └── downloads.md
+│   ├── pdpa.md                               # 🆕 Thailand PDPA setup
+│   ├── tenant-migration.md                   # 🆕 T2T migration playbook
+│   ├── downloads.md
+│   └── admin-monthly-report.md
+├── 📁 _sass/custom/            # 🆕 Responsive + print CSS overrides
+│   └── custom.scss
 ├── 📁 assets/images/           # Screenshots (59 images)
-├── 📁 scripts/                 # PowerShell scripts (59 files)
+├── 📁 scripts/                 # PowerShell scripts (61 files)
 │   ├── setup-intune/
 │   ├── azure-ad/
 │   ├── compliance/
 │   ├── exchange-online/
 │   ├── incident-response/
 │   ├── windows-10/
+│   ├── migration/              # 🆕 T2T migration scripts
 │   └── monthly-report/
 └── 📁 .github/workflows/       # GitHub Actions auto-deploy
     └── pages.yml
@@ -222,6 +317,26 @@ on:
   push:
     branches: ["main"]   # Auto-deploy ทุกครั้งที่ push
 ```
+
+---
+
+## 🛡️ Security
+
+โปรเจกต์นี้มี **Responsible Disclosure Policy** — หากพบช่องโหว่ใน PowerShell script หรือการแนะนำการตั้งค่าที่ไม่ปลอดภัย โปรดรายงานผ่านช่องทางส่วนตัว:
+
+- 🔒 [GitHub Private Vulnerability Reporting](https://github.com/DekBaCom/Microsoft365SetupGuide/security) *(แนะนำ)*
+- 📧 Email: `Abdulloh.eg@gmail.com` (Subject: `[SECURITY] Microsoft365SetupGuide — ...`)
+
+ดูรายละเอียดเต็มใน [SECURITY.md](SECURITY.md)
+
+---
+
+## 📝 Changelog
+
+ติดตามการเปลี่ยนแปลงทั้งหมดได้ที่ [CHANGELOG.md](CHANGELOG.md)
+
+- **Unreleased** — เพิ่ม Prerequisites, Use Cases, PIM, PDPA, Tenant Migration + Responsive polish + Copy-to-clipboard button + MIT License + Security Policy
+- **2026-11-18** — Rebranding (Azure AD → Microsoft Entra ID), Prerequisites page, SEO
 
 ---
 

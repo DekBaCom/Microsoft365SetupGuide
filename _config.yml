@@ -28,6 +28,9 @@ defaults:
     values:
       image: /assets/images/favicon.png
 
+# Copy-to-clipboard button on all code blocks (just-the-docs built-in)
+enable_copy_code_button: true
+
 # Enable search
 search_enabled: true
 search:

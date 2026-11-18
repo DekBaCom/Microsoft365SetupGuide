@@ -62,7 +62,7 @@ aux_links_new_tab: true
 nav_sort: order
 
 # Footer
-footer_content: "Contributed by <a href=\"https://www.linkedin.com/in/abdulloh-etaeluengoh/\" target=\"_blank\">Mr. Abdulloh Etaeluengoh</a> &mdash; Microsoft 365 Solution Architect &nbsp;|&nbsp; <a href=\"mailto:Abdulloh.eg@gmail.com\">&#x1F4E7; Abdulloh.eg@gmail.com</a> &nbsp;|&nbsp; <a href=\"https://www.linkedin.com/in/abdulloh-etaeluengoh/\" target=\"_blank\">&#x1F4BC; LinkedIn</a> &nbsp;|&nbsp; <a href=\"https://github.com/DekBaCom\" target=\"_blank\">&#x1F4BE; GitHub: DekBaCom</a> &nbsp;|&nbsp; Microsoft 365 Setup Guide &copy; 2024. This site uses <a href=\"https://just-the-docs.com/\">Just the Docs</a>, a documentation theme for <a href=\"https://jekyllrb.com/\">Jekyll</a>, hosted on <a href=\"https://pages.github.com/\">GitHub Pages</a>."
+footer_content: "Contributed by <a href=\"https://www.linkedin.com/in/abdulloh-etaeluengoh/\" target=\"_blank\">Mr. Abdulloh Etaeluengoh</a> &mdash; Microsoft 365 Solution Architect &nbsp;|&nbsp; <a href=\"mailto:Abdulloh.eg@gmail.com\">&#x1F4E7; Abdulloh.eg@gmail.com</a> &nbsp;|&nbsp; <a href=\"https://www.linkedin.com/in/abdulloh-etaeluengoh/\" target=\"_blank\">&#x1F4BC; LinkedIn</a> &nbsp;|&nbsp; <a href=\"https://github.com/DekBaCom\" target=\"_blank\">&#x1F4BE; GitHub: DekBaCom</a>"
 
 # Color scheme
 color_scheme: light

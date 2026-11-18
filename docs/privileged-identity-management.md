@@ -369,4 +369,4 @@ After rollout, confirm:
 
 {: .note }
 **Screenshots coming soon.** The 27 image placeholders use the `pim_NN_name.png` convention under `/assets/images/`. To add a real screenshot: save the PNG with the matching filename and replace the surrounding `<!-- Screenshot placeholder — ... -->` comment with a standard Markdown image, e.g.
-`![Caption]({{ site.baseurl }}/assets/images/pim_01_signin.png)`. Contributions welcome — see [SECURITY.md](https://github.com/DekBaCom/Microsoft365SetupGuide/blob/main/SECURITY.md).
+`![Caption]({{ site.baseurl }}/assets/images/pim_01_signin.png)`. Pull requests welcome.

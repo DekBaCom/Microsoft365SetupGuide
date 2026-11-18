@@ -10,7 +10,7 @@ and this project loosely follows [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Added
-- `LICENSE` file (MIT) and `SECURITY.md` responsible-disclosure policy
+- `LICENSE` file (MIT)
 - `CHANGELOG.md` (this file)
 - New **Privileged Identity Management (PIM)** step-by-step page at `/docs/privileged-identity-management`
 - New **PDPA (Thailand) Compliance Setup** page at `/docs/pdpa` — maps PDPA 2562 obligations to Microsoft Purview, Information Protection, DLP, retention, DSR, and 72-hour breach workflow

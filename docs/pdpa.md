@@ -431,4 +431,4 @@ After rollout, confirm:
 ---
 
 {: .note }
-**Screenshots coming soon.** Image placeholders follow the same `pdpa_NN_name.png` convention as other pages in this guide. Contributions welcome — see [SECURITY.md](https://github.com/DekBaCom/Microsoft365SetupGuide/blob/main/SECURITY.md).
+**Screenshots coming soon.** Image placeholders follow the same `pdpa_NN_name.png` convention as other pages in this guide. Pull requests welcome.

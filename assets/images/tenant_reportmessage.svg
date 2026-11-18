@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Outlook ribbon with Report Message button">
+  <rect width="800" height="450" fill="#faf9f8"/>
+  <rect width="800" height="48" fill="#0078d4"/>
+  <text x="20" y="31" fill="white" font-family="Segoe UI, Arial" font-size="14" font-weight="600">Outlook</text>
+  <text x="780" y="31" fill="white" font-family="Segoe UI, Arial" font-size="12" text-anchor="end" opacity="0.85">user@contoso.com</text>
+  <rect x="0" y="48" width="800" height="52" fill="#f3f2f1"/>
+  <text x="20" y="72" fill="#323130" font-family="Segoe UI, Arial" font-size="11">Home</text>
+  <text x="70" y="72" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">View</text>
+  <text x="120" y="72" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Help</text>
+  <rect x="20" y="78" width="80" height="2" fill="#0078d4"/>
+  <g transform="translate(20,88)">
+    <rect width="54" height="42" fill="white" stroke="#edebe9" rx="2"/>
+    <text x="27" y="22" fill="#0078d4" font-family="Segoe UI, Arial" font-size="18" text-anchor="middle">&#9993;</text>
+    <text x="27" y="36" fill="#323130" font-family="Segoe UI, Arial" font-size="8" text-anchor="middle">New Mail</text>
+  </g>
+  <g transform="translate(78,88)">
+    <rect width="54" height="42" fill="white" stroke="#edebe9" rx="2"/>
+    <text x="27" y="22" fill="#605e5c" font-family="Segoe UI, Arial" font-size="18" text-anchor="middle">&#8617;</text>
+    <text x="27" y="36" fill="#323130" font-family="Segoe UI, Arial" font-size="8" text-anchor="middle">Reply</text>
+  </g>
+  <g transform="translate(136,88)">
+    <rect width="54" height="42" fill="white" stroke="#edebe9" rx="2"/>
+    <text x="27" y="22" fill="#605e5c" font-family="Segoe UI, Arial" font-size="18" text-anchor="middle">&#128465;</text>
+    <text x="27" y="36" fill="#323130" font-family="Segoe UI, Arial" font-size="8" text-anchor="middle">Delete</text>
+  </g>
+  <g transform="translate(194,88)">
+    <rect width="78" height="42" fill="#fff4ce" stroke="#d13438" stroke-width="2" rx="2"/>
+    <text x="39" y="22" fill="#d13438" font-family="Segoe UI, Arial" font-size="16" text-anchor="middle">&#9888;</text>
+    <text x="39" y="36" fill="#d13438" font-family="Segoe UI, Arial" font-size="8" text-anchor="middle" font-weight="600">Report Message</text>
+  </g>
+  <circle cx="233" cy="109" r="46" fill="none" stroke="#d13438" stroke-width="2.5"/>
+  <rect x="0" y="140" width="220" height="310" fill="#fafafa"/>
+  <text x="18" y="168" fill="#323130" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Inbox</text>
+  <text x="18" y="196" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Sent Items</text>
+  <text x="18" y="220" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Drafts</text>
+  <text x="18" y="244" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Junk Email</text>
+  <rect x="230" y="140" width="560" height="310" fill="white" stroke="#edebe9"/>
+  <text x="250" y="170" fill="#323130" font-family="Segoe UI, Arial" font-size="14" font-weight="600">Suspicious account notification</text>
+  <text x="250" y="190" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">from: noreply@suspicious-domain.example</text>
+  <text x="250" y="210" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">to: user@contoso.com &middot; Wed 11:42 AM</text>
+  <line x1="250" y1="222" x2="770" y2="222" stroke="#edebe9"/>
+  <text x="250" y="248" fill="#323130" font-family="Segoe UI, Arial" font-size="12">Dear user,</text>
+  <text x="250" y="270" fill="#323130" font-family="Segoe UI, Arial" font-size="12">Your account has been locked. Click here to verify your identity</text>
+  <text x="250" y="288" fill="#0078d4" font-family="Segoe UI, Arial" font-size="12" text-decoration="underline">https://suspicious-link.example/verify</text>
+  <text x="250" y="320" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12" font-style="italic">A possible phishing message - end-user clicks "Report Message" &#8594; Phishing.</text>
+</svg>

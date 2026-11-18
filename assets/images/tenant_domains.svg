@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Microsoft 365 admin center - Settings > Domains">
+  <rect width="800" height="450" fill="#faf9f8"/>
+  <rect width="800" height="48" fill="#0078d4"/>
+  <text x="20" y="31" fill="white" font-family="Segoe UI, Arial" font-size="14" font-weight="600">Microsoft 365 admin center</text>
+  <text x="780" y="31" fill="white" font-family="Segoe UI, Arial" font-size="12" text-anchor="end" opacity="0.85">Admin</text>
+  <rect x="0" y="48" width="180" height="402" fill="#edebe9"/>
+  <text x="18" y="80" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Home</text>
+  <text x="18" y="104" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Users</text>
+  <text x="18" y="128" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Teams &amp; groups</text>
+  <text x="18" y="152" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Billing</text>
+  <text x="18" y="178" fill="#323130" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Settings</text>
+  <rect x="0" y="188" width="180" height="26" fill="#deecf9"/>
+  <rect x="0" y="188" width="3" height="26" fill="#0078d4"/>
+  <text x="32" y="205" fill="#0078d4" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Domains</text>
+  <text x="32" y="230" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Org settings</text>
+  <text x="32" y="254" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Integrated apps</text>
+  <text x="210" y="86" fill="#323130" font-family="Segoe UI, Arial" font-size="24" font-weight="300">Domains</text>
+  <text x="210" y="108" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Manage the domains that your organization uses with Microsoft 365</text>
+  <rect x="210" y="128" width="120" height="30" fill="#0078d4" rx="2"/>
+  <text x="270" y="148" fill="white" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">+ Add domain</text>
+  <circle cx="270" cy="143" r="28" fill="none" stroke="#d13438" stroke-width="2.5"/>
+  <rect x="210" y="178" width="560" height="200" fill="white" stroke="#edebe9"/>
+  <rect x="210" y="178" width="560" height="30" fill="#f3f2f1"/>
+  <text x="225" y="198" fill="#323130" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Domain name</text>
+  <text x="440" y="198" fill="#323130" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Status</text>
+  <text x="570" y="198" fill="#323130" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Default</text>
+  <text x="225" y="232" fill="#323130" font-family="Segoe UI, Arial" font-size="12">contoso.onmicrosoft.com</text>
+  <text x="440" y="232" fill="#107c10" font-family="Segoe UI, Arial" font-size="12">Healthy</text>
+  <text x="570" y="232" fill="#323130" font-family="Segoe UI, Arial" font-size="12">Yes</text>
+  <line x1="220" y1="248" x2="760" y2="248" stroke="#edebe9"/>
+  <text x="225" y="270" fill="#323130" font-family="Segoe UI, Arial" font-size="12">contoso.com</text>
+  <text x="440" y="270" fill="#107c10" font-family="Segoe UI, Arial" font-size="12">Healthy</text>
+  <text x="570" y="270" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">No</text>
+  <line x1="220" y1="286" x2="760" y2="286" stroke="#edebe9"/>
+  <text x="225" y="308" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">example.com</text>
+  <text x="440" y="308" fill="#d83b01" font-family="Segoe UI, Arial" font-size="12">DNS pending</text>
+</svg>

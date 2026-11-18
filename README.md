@@ -8,7 +8,6 @@
 [![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 [![PowerShell](https://img.shields.io/badge/PowerShell-Scripts%2061+-blue?logo=powershell)](scripts/)
 [![PDPA](https://img.shields.io/badge/PDPA--2562-Ready-success)](https://DekBaCom.github.io/Microsoft365SetupGuide/docs/pdpa)
-[![Security Policy](https://img.shields.io/badge/Security-Responsible%20Disclosure-informational)](SECURITY.md)
 
 **คู่มือการติดตั้งและกำหนดค่า Microsoft 365 แบบครบวงจร**
 สำหรับ IT Admin และ Microsoft 365 Solution Architect
@@ -275,7 +274,6 @@ Microsoft365SetupGuide/
 ├── 📄 index.md                 # Home page
 ├── 📄 README.md                # This file
 ├── 📄 LICENSE                  # MIT license
-├── 📄 SECURITY.md              # Responsible disclosure policy
 ├── 📄 CHANGELOG.md             # Project changelog
 ├── 📁 docs/                    # Documentation pages
 │   ├── prerequisites.md                      # 🆕 Licensing + Graph scopes
@@ -317,17 +315,6 @@ on:
   push:
     branches: ["main"]   # Auto-deploy ทุกครั้งที่ push
 ```
-
----
-
-## 🛡️ Security
-
-โปรเจกต์นี้มี **Responsible Disclosure Policy** — หากพบช่องโหว่ใน PowerShell script หรือการแนะนำการตั้งค่าที่ไม่ปลอดภัย โปรดรายงานผ่านช่องทางส่วนตัว:
-
-- 🔒 [GitHub Private Vulnerability Reporting](https://github.com/DekBaCom/Microsoft365SetupGuide/security) *(แนะนำ)*
-- 📧 Email: `Abdulloh.eg@gmail.com` (Subject: `[SECURITY] Microsoft365SetupGuide — ...`)
-
-ดูรายละเอียดเต็มใน [SECURITY.md](SECURITY.md)
 
 ---
 

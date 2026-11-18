@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Microsoft 365 admin center - Settings > Org settings">
+  <rect width="800" height="450" fill="#faf9f8"/>
+  <rect width="800" height="48" fill="#0078d4"/>
+  <text x="20" y="31" fill="white" font-family="Segoe UI, Arial" font-size="14" font-weight="600">Microsoft 365 admin center</text>
+  <text x="780" y="31" fill="white" font-family="Segoe UI, Arial" font-size="12" text-anchor="end" opacity="0.85">Admin</text>
+  <rect x="0" y="48" width="180" height="402" fill="#edebe9"/>
+  <text x="18" y="80" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Home</text>
+  <text x="18" y="104" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Users</text>
+  <text x="18" y="128" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Billing</text>
+  <text x="18" y="154" fill="#323130" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Settings</text>
+  <text x="32" y="178" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Domains</text>
+  <rect x="0" y="188" width="180" height="26" fill="#deecf9"/>
+  <rect x="0" y="188" width="3" height="26" fill="#0078d4"/>
+  <text x="32" y="205" fill="#0078d4" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Org settings</text>
+  <text x="32" y="230" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Integrated apps</text>
+  <text x="210" y="86" fill="#323130" font-family="Segoe UI, Arial" font-size="24" font-weight="300">Org settings</text>
+  <rect x="210" y="120" width="140" height="3" fill="#0078d4"/>
+  <text x="210" y="112" fill="#0078d4" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Services</text>
+  <text x="300" y="112" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Security &amp; privacy</text>
+  <text x="440" y="112" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Organization profile</text>
+  <rect x="210" y="140" width="560" height="60" fill="white" stroke="#edebe9"/>
+  <text x="225" y="162" fill="#323130" font-family="Segoe UI, Arial" font-size="13" font-weight="600">Password expiration policy</text>
+  <text x="225" y="182" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Set when passwords expire for your organization</text>
+  <circle cx="750" cy="170" r="10" fill="none" stroke="#605e5c" stroke-width="1.5"/>
+  <text x="750" y="175" fill="#605e5c" font-family="Segoe UI, Arial" font-size="14" text-anchor="middle">&gt;</text>
+  <rect x="210" y="210" width="560" height="60" fill="white" stroke="#edebe9"/>
+  <text x="225" y="232" fill="#323130" font-family="Segoe UI, Arial" font-size="13" font-weight="600">Release preferences</text>
+  <text x="225" y="252" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Standard release (default) / Targeted release</text>
+  <rect x="210" y="280" width="560" height="60" fill="white" stroke="#edebe9"/>
+  <text x="225" y="302" fill="#323130" font-family="Segoe UI, Arial" font-size="13" font-weight="600">Organization information</text>
+  <text x="225" y="322" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Name, technical contact, support details</text>
+  <circle cx="225" cy="170" r="22" fill="none" stroke="#d13438" stroke-width="2.5"/>
+</svg>

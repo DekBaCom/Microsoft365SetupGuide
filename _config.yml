@@ -12,7 +12,6 @@ remote_theme: just-the-docs/just-the-docs@v0.10.0
 # Files published in the repo but NOT as site pages / nav entries
 exclude:
   - CHANGELOG.md
-  - SECURITY.md
   - README.md
   - LICENSE
   - Gemfile

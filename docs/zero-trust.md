@@ -327,4 +327,4 @@ Microsoft Purview > **Compliance Manager** > **Assessments** > **+ Add assessmen
 ---
 
 {: .note }
-**Screenshots coming soon.** The 10 image placeholders use the `zt_NN_name.png` convention. Contributions welcome — see [SECURITY.md](https://github.com/DekBaCom/Microsoft365SetupGuide/blob/main/SECURITY.md).
+**Screenshots coming soon.** The 10 image placeholders use the `zt_NN_name.png` convention. Pull requests welcome.

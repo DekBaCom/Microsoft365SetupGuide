@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Microsoft Purview - Alert policies">
+  <rect width="800" height="450" fill="#faf9f8"/>
+  <rect width="800" height="48" fill="#3a3a7a"/>
+  <text x="20" y="31" fill="white" font-family="Segoe UI, Arial" font-size="14" font-weight="600">Microsoft Purview</text>
+  <text x="780" y="31" fill="white" font-family="Segoe UI, Arial" font-size="12" text-anchor="end" opacity="0.85">compliance.microsoft.com</text>
+  <rect x="0" y="48" width="200" height="402" fill="#edebe9"/>
+  <text x="18" y="80" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Home</text>
+  <text x="18" y="104" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Compliance Manager</text>
+  <text x="18" y="128" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Data classification</text>
+  <text x="18" y="152" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Data loss prevention</text>
+  <rect x="0" y="164" width="200" height="26" fill="#deecf9"/>
+  <rect x="0" y="164" width="3" height="26" fill="#3a3a7a"/>
+  <text x="18" y="181" fill="#3a3a7a" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Policies</text>
+  <text x="32" y="204" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Alert policy</text>
+  <text x="32" y="226" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Information barriers</text>
+  <text x="230" y="86" fill="#323130" font-family="Segoe UI, Arial" font-size="24" font-weight="300">Alert policies</text>
+  <text x="230" y="108" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Create &amp; manage alerts for security, compliance, and data-loss events</text>
+  <rect x="230" y="128" width="130" height="30" fill="#3a3a7a" rx="2"/>
+  <text x="295" y="148" fill="white" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">+ New alert policy</text>
+  <rect x="230" y="180" width="540" height="240" fill="white" stroke="#edebe9"/>
+  <rect x="230" y="180" width="540" height="30" fill="#f3f2f1"/>
+  <text x="245" y="200" fill="#323130" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Name</text>
+  <text x="520" y="200" fill="#323130" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Severity</text>
+  <text x="640" y="200" fill="#323130" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Status</text>
+  <text x="245" y="228" fill="#323130" font-family="Segoe UI, Arial" font-size="12">Elevation of Exchange admin privilege</text>
+  <text x="520" y="228" fill="#a4262c" font-family="Segoe UI, Arial" font-size="12" font-weight="600">High</text>
+  <text x="640" y="228" fill="#107c10" font-family="Segoe UI, Arial" font-size="12">On</text>
+  <line x1="240" y1="240" x2="760" y2="240" stroke="#edebe9"/>
+  <text x="245" y="260" fill="#323130" font-family="Segoe UI, Arial" font-size="12">Unusual volume of file deletion</text>
+  <text x="520" y="260" fill="#d83b01" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Medium</text>
+  <text x="640" y="260" fill="#107c10" font-family="Segoe UI, Arial" font-size="12">On</text>
+  <line x1="240" y1="272" x2="760" y2="272" stroke="#edebe9"/>
+  <text x="245" y="292" fill="#323130" font-family="Segoe UI, Arial" font-size="12">Malware campaign detected</text>
+  <text x="520" y="292" fill="#a4262c" font-family="Segoe UI, Arial" font-size="12" font-weight="600">High</text>
+  <text x="640" y="292" fill="#107c10" font-family="Segoe UI, Arial" font-size="12">On</text>
+  <line x1="240" y1="304" x2="760" y2="304" stroke="#edebe9"/>
+  <rect x="235" y="313" width="530" height="40" fill="#fff4ce"/>
+  <text x="245" y="334" fill="#323130" font-family="Segoe UI, Arial" font-size="12" font-weight="600">&#9888; Break-glass account sign-in (custom)</text>
+  <text x="520" y="334" fill="#a4262c" font-family="Segoe UI, Arial" font-size="12" font-weight="600">High</text>
+  <text x="640" y="334" fill="#107c10" font-family="Segoe UI, Arial" font-size="12">On</text>
+  <text x="245" y="350" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10" font-style="italic">Notify all Global Admins immediately</text>
+  <line x1="240" y1="357" x2="760" y2="357" stroke="#edebe9"/>
+  <text x="245" y="378" fill="#323130" font-family="Segoe UI, Arial" font-size="12">eDiscovery search started or exported</text>
+  <text x="520" y="378" fill="#d83b01" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Medium</text>
+  <text x="640" y="378" fill="#107c10" font-family="Segoe UI, Arial" font-size="12">On</text>
+  <line x1="240" y1="390" x2="760" y2="390" stroke="#edebe9"/>
+  <text x="245" y="410" fill="#323130" font-family="Segoe UI, Arial" font-size="12">Unusual external user file activity</text>
+  <text x="520" y="410" fill="#d83b01" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Medium</text>
+  <text x="640" y="410" fill="#107c10" font-family="Segoe UI, Arial" font-size="12">On</text>
+  <rect x="233" y="310" width="534" height="46" fill="none" stroke="#d13438" stroke-width="2.5"/>
+</svg>

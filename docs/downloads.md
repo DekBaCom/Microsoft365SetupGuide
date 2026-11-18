@@ -35,6 +35,19 @@ Install-Module PnP.PowerShell              -Scope CurrentUser -MinimumVersion 2.
 
 ---
 
+## Project Plan Template
+
+End-to-end M365 setup project plan — ~75 tasks across 10 phases, covering every solution in this guide.
+
+| File | Description |
+|------|-------------|
+| [M365-Setup-Project-Plan.csv]({{ site.baseurl }}/assets/templates/M365-Setup-Project-Plan.csv){:download} | **CSV** — opens in Excel, Microsoft Project, Smartsheet, Jira, Asana, etc. |
+| [M365-Setup-Project-Plan.md]({{ site.baseurl }}/assets/templates/M365-Setup-Project-Plan.md){:download} | **Markdown** — same content, reads in any editor |
+
+[View phase summary and dependency notes &rarr;]({{ site.baseurl }}/docs/project-plan)
+
+---
+
 ## Zero Trust — Security Assessment
 
 Assess your Microsoft 365 tenant against a Zero Trust rubric. The script produces a single-file HTML report with per-pillar scores and remediation hints — ready to share with security leadership.

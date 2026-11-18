@@ -1,0 +1,76 @@
+Phase,Task ID,Task,Description,Workstream,Duration (days),Depends On,Lead Role,Deliverable,Guide Section,Status
+0 - Prepare,0.1,Executive sponsor alignment,Secure C-level sponsor + business case sign-off,Project,5,-,PMO,Signed project charter,Prerequisites,Not Started
+0 - Prepare,0.2,License procurement / verification,Confirm Business Premium / E3 / E5 seat counts and add-ons,Licensing,5,0.1,IT Procurement,Licensing matrix validated,Use Cases & License Mapping,Not Started
+0 - Prepare,0.3,Project team assembly,Identify PMO + Identity + Device + Data + Compliance leads,Project,3,0.1,PMO,RACI chart,Prerequisites,Not Started
+0 - Prepare,0.4,Risk assessment,Document top 10 risks + rollback plans,Security,5,0.3,Security Lead,Risk register,Prerequisites,Not Started
+0 - Prepare,0.5,Communication plan,End-user comms: T-14 / T-7 / T-1 / T-0 cadence,Change Mgmt,3,0.3,Change Mgmt,Comms calendar,Prerequisites,Not Started
+0 - Prepare,0.6,Baseline Zero Trust assessment,Run Get-M365SecurityPosture.ps1 before any change,Security,1,0.3,Security Lead,Baseline HTML report,Zero Trust on M365,Not Started
+0 - Prepare,0.7,Stakeholder workshop,Review baseline score + roadmap with leadership,Project,1,0.6,PMO,Approved rollout plan,Zero Trust on M365,Not Started
+0 - Prepare,0.8,Kick-off meeting,Formal project kick-off with full team,Project,1,0.7,PMO,Kick-off deck,-,Not Started
+1 - Tenant Foundation,1.1,Custom domain verification,Add custom domain and verify via DNS TXT,Tenant,3,0.8,Identity Lead,Domain verified in portal,Tenant Configuration - Vanity Domains,Not Started
+1 - Tenant Foundation,1.2,DNS records (MX / CNAME / TXT),Update DNS records at registrar,Tenant,2,1.1,Network Lead,DNS propagation confirmed,Tenant Configuration - Vanity Domains,Not Started
+1 - Tenant Foundation,1.3,Organization settings,Update org profile + support contacts,Tenant,1,1.1,IT Admin,Org profile completed,Tenant Configuration - Organization Settings,Not Started
+1 - Tenant Foundation,1.4,Password policy,Set password expiration to Never (MFA-protected),Tenant,1,1.3,Security Lead,Password policy configured,Tenant Configuration - Organization Settings,Not Started
+1 - Tenant Foundation,1.5,Break-glass group creation,Create 'Excluded from CA' security group,Security,1,1.1,Security Lead,Group ID documented,Tenant Configuration - Emergency Access,Not Started
+1 - Tenant Foundation,1.6,Break-glass accounts (x 2),Create 2 cloud-only Global Admin break-glass accounts,Security,2,1.5,Security Lead,Credentials sealed in safe,Tenant Configuration - Emergency Access,Not Started
+1 - Tenant Foundation,1.7,Alert policies - default + break-glass,Tune default alerts + custom break-glass sign-in alert,Security,2,1.6,Security Lead,Alerts firing to SOC,Tenant Configuration - Alert Policies,Not Started
+1 - Tenant Foundation,1.8,Report Message add-in,Deploy via Integrated apps,Email,1,1.3,Email Admin,Add-in visible in Outlook,Tenant Configuration - Report Message,Not Started
+2 - Email Security (EOP + MDO),2.1,Anti-phishing policy,Enable mailbox intelligence + impersonation protection,Email,2,1.2,Email Admin,Policy enforced,Tenant Configuration - EOP & MDO,Not Started
+2 - Email Security (EOP + MDO),2.2,Anti-spam policy,Bulk threshold 5-6 + Safety Tips on,Email,1,2.1,Email Admin,Policy enforced,Tenant Configuration - EOP & MDO,Not Started
+2 - Email Security (EOP + MDO),2.3,Anti-malware policy,Common attachment filter + ZAP on,Email,1,2.1,Email Admin,Policy enforced,Tenant Configuration - EOP & MDO,Not Started
+2 - Email Security (EOP + MDO),2.4,Safe Attachments / Safe Links,Dynamic Delivery + Office Apps (Defender for Office 365),Email,2,2.3,Security Lead,Policies enforced,Tenant Configuration - EOP & MDO,Not Started
+2 - Email Security (EOP + MDO),2.5,SPF / DKIM / DMARC,DNS records + DKIM signing enabled per domain,Email,3,2.4,Email Admin,DMARC reject policy live,Tenant Configuration - EOP & MDO,Not Started
+2 - Email Security (EOP + MDO),2.6,Configuration Analyzer baseline,Compare to Standard / Strict baselines and close gaps,Security,2,2.5,Security Lead,Configuration Analyzer >= 90%,Tenant Configuration - EOP & MDO,Not Started
+3 - Identity (Microsoft Entra ID),3.1,Combined MFA + SSPR registration,Enable combined reg experience for all users,Identity,1,1.6,Identity Lead,Registration live,Microsoft Entra ID - Combined Registration,Not Started
+3 - Identity (Microsoft Entra ID),3.2,Self-service password reset,2 methods + no forced registration at sign-in,Identity,2,3.1,Identity Lead,SSPR tested per user,Microsoft Entra ID - SSPR,Not Started
+3 - Identity (Microsoft Entra ID),3.3,User settings,Block user app registration + restrict Entra admin portal,Identity,1,3.1,Identity Lead,Settings applied,Microsoft Entra ID - User Settings,Not Started
+3 - Identity (Microsoft Entra ID),3.4,Admin consent workflow,Block user consent + enable admin consent requests,Identity,2,3.3,Identity Lead,Workflow live with approvers,Microsoft Entra ID - Admin Consent,Not Started
+3 - Identity (Microsoft Entra ID),3.5,Device settings (MFA on join),Require MFA to join / register devices,Identity,1,3.1,Identity Lead,Setting applied,Microsoft Entra ID - Device Settings,Not Started
+3 - Identity (Microsoft Entra ID),3.6,Disable Security Defaults,Required before Conditional Access can be used,Identity,1,3.5,Identity Lead,Security Defaults = OFF,Microsoft Entra ID - CA Baseline,Not Started
+3 - Identity (Microsoft Entra ID),3.7,Named Locations,Define corporate IP ranges + allowed countries,Identity,2,3.6,Network Lead,Locations configured,Microsoft Entra ID - CA Baseline,Not Started
+3 - Identity (Microsoft Entra ID),3.8,CA policy 1 - BLOCK legacy auth,Deploy in Report-only > Pilot > Enforce,Identity,3,3.6,Identity Lead,Policy enforced,Microsoft Entra ID - CA Baseline,Not Started
+3 - Identity (Microsoft Entra ID),3.9,CA policy 2 - REQUIRE MFA,Deploy in Report-only > Pilot > Enforce,Identity,5,3.8,Identity Lead,Policy enforced,Microsoft Entra ID - CA Baseline,Not Started
+3 - Identity (Microsoft Entra ID),3.10,CA policy 3 - BLOCK unsupported platforms,Deploy in Report-only > Pilot > Enforce,Identity,3,3.9,Identity Lead,Policy enforced,Microsoft Entra ID - CA Baseline,Not Started
+3 - Identity (Microsoft Entra ID),3.11,Identity Protection policies (E5 only),Risk-based CA policies in Report-only > Enforce,Identity,5,3.9,Security Lead,Risk policies live,Zero Trust on M365,Not Started
+4 - PIM (E5 only),4.1,PIM discovery,Inventory all permanent role assignments,Security,2,3.11,Security Lead,Assignment report,Privileged Identity Management,Not Started
+4 - PIM (E5 only),4.2,PIM role settings - Global Admin,4h max / MFA / approval / justification / notifications,Security,2,4.1,Security Lead,Policy saved,Privileged Identity Management,Not Started
+4 - PIM (E5 only),4.3,PIM role settings - other high-impact roles,Repeat for Priv Role Admin / Security Admin / Exchange / SharePoint / Intune / etc.,Security,3,4.2,Security Lead,Policies saved,Privileged Identity Management,Not Started
+4 - PIM (E5 only),4.4,Convert permanent to eligible - pilot,Convert 2-3 non-critical admins first,Security,2,4.3,Security Lead,Pilot users eligible,Privileged Identity Management,Not Started
+4 - PIM (E5 only),4.5,PIM activation test,Pilot admin activates + full workflow verified,Security,1,4.4,Security Lead,Test activation logged,Privileged Identity Management,Not Started
+4 - PIM (E5 only),4.6,Convert all remaining admins,Keep 2 break-glass as permanent; all others Eligible,Security,3,4.5,Security Lead,0 non-breakglass permanent GAs,Privileged Identity Management,Not Started
+4 - PIM (E5 only),4.7,Access reviews - quarterly,Configure quarterly review per role,Security,2,4.6,Security Lead,Reviews scheduled,Privileged Identity Management,Not Started
+4 - PIM (E5 only),4.8,PIM alerts,Tune 'too many permanent owners = 2' + MFA-missing alerts,Security,1,4.6,Security Lead,Alerts active,Privileged Identity Management,Not Started
+5 - Device (Microsoft Intune),5.1,Intune setup,Run Setup-Intune.ps1 (import baseline policies),Device,1,3.10,Device Lead,Baseline policies imported,Microsoft Intune - Initial Setup,Not Started
+5 - Device (Microsoft Intune),5.2,Enrollment restrictions,Per-platform + BYOD block if required,Device,2,5.1,Device Lead,Restrictions applied,Microsoft Intune - Enrollment,Not Started
+5 - Device (Microsoft Intune),5.3,Windows Autopilot,Register device HW IDs + deployment profile,Device,5,5.2,Device Lead,Autopilot provisioning works,Microsoft Intune - Enrollment,Not Started
+5 - Device (Microsoft Intune),5.4,iOS enrollment,Apple MDM Push cert + ADE (if corporate),Device,3,5.2,Device Lead,Test iOS device enrolled,Microsoft Intune - Enrollment,Not Started
+5 - Device (Microsoft Intune),5.5,Android enrollment,Managed Google Play + Android Enterprise,Device,3,5.2,Device Lead,Test Android device enrolled,Microsoft Intune - Enrollment,Not Started
+5 - Device (Microsoft Intune),5.6,Compliance policy - Windows,BitLocker / Secure Boot / password / Defender required,Device,2,5.3,Device Lead,Policy enforced,Microsoft Intune - Compliance,Not Started
+5 - Device (Microsoft Intune),5.7,Compliance policy - iOS,Jailbreak block / min OS / passcode,Device,1,5.4,Device Lead,Policy enforced,Microsoft Intune - Compliance,Not Started
+5 - Device (Microsoft Intune),5.8,Compliance policy - Android,Rooted block / min OS / Google Play Protect,Device,1,5.5,Device Lead,Policy enforced,Microsoft Intune - Compliance,Not Started
+5 - Device (Microsoft Intune),5.9,App Protection Policies (MAM) iOS,PIN / encryption / policy-managed apps / conditional launch,Device,2,5.7,Device Lead,Policy deployed,Microsoft Intune - App Protection,Not Started
+5 - Device (Microsoft Intune),5.10,App Protection Policies (MAM) Android,Equivalent settings for Android,Device,2,5.8,Device Lead,Policy deployed,Microsoft Intune - App Protection,Not Started
+5 - Device (Microsoft Intune),5.11,Device clean-up rules,Auto-remove stale devices (90 days),Device,1,5.6,Device Lead,Rule enabled,Microsoft Intune - Clean-up,Not Started
+5 - Device (Microsoft Intune),5.12,CA policy - Require compliant device,Report-only 2 weeks > Enforce,Identity,14,5.11,Identity Lead,Policy enforced,Microsoft Intune - MDM,Not Started
+6 - Data & Collaboration,6.1,Sensitivity labels - publish baseline,Public / General / Confidential / Highly Confidential,Compliance,3,3.10,Compliance Lead,Labels visible in Office,Collaboration Governance - Sensitivity Labels,Not Started
+6 - Data & Collaboration,6.2,DLP policy - baseline,Exchange + SPO + OneDrive; Audit mode first,Compliance,5,6.1,Compliance Lead,Policy active in Audit,Collaboration Governance - DLP,Not Started
+6 - Data & Collaboration,6.3,Retention policies - per workload,2-7 years per Exchange / SPO / OneDrive / Teams,Compliance,3,6.1,Compliance Lead,Policies applied,Collaboration Governance - Retention,Not Started
+6 - Data & Collaboration,6.4,SharePoint sharing settings,Default to 'Specific people' / expiry on Anyone links,Compliance,2,6.1,Compliance Lead,Sharing tightened,Collaboration Governance - SharePoint,Not Started
+6 - Data & Collaboration,6.5,OneDrive sharing settings,Inherit from SPO baseline,Compliance,1,6.4,Compliance Lead,Sharing tightened,Collaboration Governance - SharePoint,Not Started
+6 - Data & Collaboration,6.6,Teams external access,Allowed / domain-restricted based on policy,Collab,1,6.4,Collab Lead,External access configured,Collaboration Governance - Teams,Not Started
+6 - Data & Collaboration,6.7,Teams guest access,Enabled with review,Collab,1,6.6,Collab Lead,Guest access on,Collaboration Governance - Teams,Not Started
+6 - Data & Collaboration,6.8,Groups expiration policy,180-day expiration + owner notifications,Collab,1,6.7,Collab Lead,Expiration enabled,Collaboration Governance - Groups,Not Started
+7 - PDPA (Thailand) - optional,7.1,Compliance Manager - Thailand PDPA assessment,Create assessment from built-in template,Compliance,2,6.3,DPO,Assessment created + scored,PDPA Thailand Compliance Setup,Not Started
+7 - PDPA (Thailand) - optional,7.2,Thai sensitive info types activated,Verify Thai National ID + Passport SITs,Compliance,1,7.1,DPO,SITs active,PDPA Thailand Compliance Setup,Not Started
+7 - PDPA (Thailand) - optional,7.3,PDPA sensitivity label,'PDPA - Personal Data' label published,Compliance,3,7.2,DPO,Label applied,PDPA Thailand Compliance Setup,Not Started
+7 - PDPA (Thailand) - optional,7.4,PDPA DLP policy,Block external send of Thai NatID / Passport,Compliance,3,7.3,DPO,Policy enforced,PDPA Thailand Compliance Setup,Not Started
+7 - PDPA (Thailand) - optional,7.5,PDPA retention policy,Defined period (e.g. 3 years) with auto-delete,Compliance,2,7.3,DPO,Policy applied,PDPA Thailand Compliance Setup,Not Started
+7 - PDPA (Thailand) - optional,7.6,72-hour breach notification runbook,Document + rehearse with DPO / legal / PR,Compliance,3,7.4,DPO,Runbook signed off,PDPA Thailand Compliance Setup,Not Started
+8 - Zero Trust Validation,8.1,Post-rollout assessment,Re-run Get-M365SecurityPosture.ps1,Security,1,6.8,Security Lead,Final HTML report,Zero Trust on M365,Not Started
+8 - Zero Trust Validation,8.2,Gap remediation,Fix any P1/P2 gaps from final assessment,Security,10,8.1,Security Lead,Gaps closed,Zero Trust on M365,Not Started
+8 - Zero Trust Validation,8.3,Monthly recurring assessment,Scheduled task + distribution list,Security,2,8.2,Security Lead,Monthly cadence live,Zero Trust on M365,Not Started
+9 - Operations (ongoing),9.1,Admin Monthly Report,Schedule Get-M365MonthlyReport.ps1 on day 1 of month,Ops,2,8.3,IT Admin,Scheduled task active,Admin Monthly Report,Not Started
+9 - Operations (ongoing),9.2,Storage quota monitoring,Alert at 85 % mailbox / 80 % SPO pool,Ops,2,9.1,IT Admin,Alerts active,Storage Quotas & Cost Solutions,Not Started
+9 - Operations (ongoing),9.3,Incident response plan,Test incident-response scripts end-to-end,Security,3,9.1,Security Lead,IR runbook signed off,Downloads - Incident Response,Not Started
+9 - Operations (ongoing),9.4,Quarterly access reviews,Confirm PIM + Entitlement Mgmt reviews firing,Security,1,4.7,Security Lead,Reviews completed,Privileged Identity Management,Not Started
+9 - Operations (ongoing),9.5,Project retrospective,Lessons learned + hand-off to BAU,Project,2,9.3,PMO,Retro doc,-,Not Started

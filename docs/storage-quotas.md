@@ -1,7 +1,7 @@
 ---
 title: Storage Quotas & Cost Solutions
 layout: default
-nav_order: 9.5
+nav_order: 11
 has_children: false
 permalink: /docs/storage-quotas
 description: Solutions and pricing when Microsoft 365 storage runs out — mailbox full, archive exceeded, SharePoint over quota. Covers Exchange Online Archiving, Auto-expanding Archive, Microsoft 365 Archive, Extra File Storage, and third-party options.

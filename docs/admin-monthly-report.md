@@ -1,7 +1,7 @@
 ---
 title: Admin Monthly Report
 layout: default
-nav_order: 11
+nav_order: 13
 permalink: /docs/admin-monthly-report
 description: Generate a single-file HTML Microsoft 365 health report — licenses, MFA coverage, inactive users, guests, Conditional Access, mailboxes, admin roles, sign-in failures.
 ---

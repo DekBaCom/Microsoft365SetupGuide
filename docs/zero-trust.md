@@ -1,7 +1,7 @@
 ---
 title: Zero Trust on Microsoft 365
 layout: default
-nav_order: 2.7
+nav_order: 8
 has_children: false
 permalink: /docs/zero-trust
 description: End-to-end Zero Trust deployment on Microsoft 365 — identity, devices, apps, data, infrastructure, network. Step-by-step setup aligned to Microsoft's Zero Trust architecture with a PowerShell assessment script.

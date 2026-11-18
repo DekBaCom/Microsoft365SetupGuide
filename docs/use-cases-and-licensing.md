@@ -1,7 +1,7 @@
 ---
 title: Use Cases & License Mapping
 layout: default
-nav_order: 2.5
+nav_order: 12
 has_children: false
 permalink: /docs/use-cases
 description: Group Microsoft 365 solutions by business use case and map them to the right license tier — Business Basic / Standard / Premium, E3, E5, F1/F3 (frontline), A1/A3/A5 (education), Nonprofit, and Government.

@@ -1,7 +1,7 @@
 ---
 title: Downloads
 layout: default
-nav_order: 10
+nav_order: 14
 permalink: /docs/downloads
 description: Download 59+ ready-to-use PowerShell automation scripts for Microsoft Intune, Microsoft Entra ID, Exchange Online, Compliance, Incident Response, and Windows 10/11 deployment.
 ---

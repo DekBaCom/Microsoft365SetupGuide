@@ -1,7 +1,7 @@
 ---
 title: PDPA (Thailand) Compliance Setup
 layout: default
-nav_order: 8
+nav_order: 9
 has_children: false
 permalink: /docs/pdpa
 description: Configure Microsoft 365 to support Thailand's Personal Data Protection Act (PDPA) — Compliance Manager assessment, data classification, retention, DLP for Thai personal data, Data Subject Rights workflow, and 72-hour breach notification.

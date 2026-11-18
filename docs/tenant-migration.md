@@ -1,7 +1,7 @@
 ---
 title: Tenant-to-Tenant Migration
 layout: default
-nav_order: 9
+nav_order: 10
 has_children: false
 permalink: /docs/tenant-migration
 description: Microsoft 365 tenant-to-tenant (T2T) migration — plan, cutover, and execute cross-tenant mailbox migration, OneDrive, SharePoint, Teams, identity, Intune. Native Microsoft tooling + PowerShell scripts.

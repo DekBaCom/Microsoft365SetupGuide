@@ -489,7 +489,7 @@ Wait at least **30 days** (ideally 90) before decommissioning:
 - [Cross-tenant OneDrive migration](https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-onedrive-migration){:target="_blank"} · [Cross-tenant SharePoint migration](https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-sharepoint-migration){:target="_blank"}
 - [Plan for multitenant organizations in Microsoft 365 (MTO)](https://learn.microsoft.com/en-us/microsoft-365/enterprise/plan-multi-tenant-org-overview){:target="_blank"} · [What is a multitenant organization in Microsoft Entra ID?](https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/multi-tenant-organization-overview){:target="_blank"}
 - [Microsoft Entra cross-tenant sync](https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview){:target="_blank"}
-- [PnP.PowerShell — SharePoint migration](https://pnp.github.io/powershell/cmdlets/Add-PnPMigrationCopyJob.html){:target="_blank"}
+- [PnP PowerShell — cmdlet reference (home)](https://pnp.github.io/powershell/){:target="_blank"}
 - [BitTitan MigrationWiz](https://www.bittitan.com){:target="_blank"} · [ShareGate](https://sharegate.com){:target="_blank"} · [Quest On Demand Migration](https://www.quest.com/products/on-demand-migration/){:target="_blank"} · [AvePoint](https://www.avepoint.com){:target="_blank"}
 
 ---

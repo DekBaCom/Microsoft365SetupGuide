@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" role="img" aria-label="Screenshot placeholder">
+  <defs>
+    <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#f3f4f6"/>
+      <stop offset="1" stop-color="#e5e7eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="300" fill="url(#g)" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="8 6"/>
+  <g font-family="Segoe UI, Arial, sans-serif" text-anchor="middle" fill="#64748b">
+    <text x="400" y="128" font-size="46">&#128247;</text>
+    <text x="400" y="178" font-size="22" font-weight="600" fill="#334155">Screenshot coming soon</text>
+    <text x="400" y="210" font-size="15">See the caption below for the step this image will illustrate</text>
+    <text x="400" y="248" font-size="12" fill="#94a3b8">Contributions welcome &#8212; see SECURITY.md</text>
+  </g>
+</svg>

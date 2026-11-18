@@ -1,8 +1,9 @@
 ---
 title: Admin Monthly Report
 layout: default
-nav_order: 7
+nav_order: 8
 permalink: /docs/admin-monthly-report
+description: Generate a single-file HTML Microsoft 365 health report — licenses, MFA coverage, inactive users, guests, Conditional Access, mailboxes, admin roles, sign-in failures.
 ---
 
 # Admin Monthly Report
@@ -210,9 +211,9 @@ For unattended scheduled runs, use a **Service Principal** with a **Client Secre
 
 ### Unattended Authentication with Service Principal
 
-**Step 1 — Register an App in Azure AD**
+**Step 1 — Register an App in Microsoft Entra ID**
 
-1. Go to **Azure AD** > **App registrations** > **New registration**
+1. Go to **Microsoft Entra admin center** > **App registrations** > **New registration**
 2. Name it (e.g., `M365-MonthlyReport-SP`)
 3. Under **API permissions**, add **Application** (not Delegated) permissions:
    - `Reports.Read.All`, `User.Read.All`, `Directory.Read.All`

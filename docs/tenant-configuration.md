@@ -1,9 +1,10 @@
 ---
 title: Tenant Configuration
 layout: default
-nav_order: 2
+nav_order: 3
 has_children: true
 permalink: /docs/tenant-configuration
+description: Foundational Microsoft 365 tenant setup — custom domains, organization settings, break-glass accounts, EOP + Defender for Office 365 baseline, and alert policies.
 ---
 
 # Tenant Configuration
@@ -21,7 +22,7 @@ Configure your Microsoft 365 tenant's foundational settings including custom dom
 | [Vanity Domains](#vanity-domains) | Associate custom domains to Microsoft 365 |
 | [Organization Settings](#organization-settings) | Customize password policy, org info, and support details |
 | [Emergency Access Accounts](#emergency-access-accounts) | Create break-glass accounts and security group |
-| [EOP & ATP Baseline](#eop--atp-baseline) | Apply email security baseline policies |
+| [EOP & Defender for Office 365 Baseline](#eop--defender-for-office-365-baseline) | Apply email security baseline policies |
 | [Report Message Add-in](#report-message-add-in) | Enable users to report spam/phishing |
 | [Alert Policies](#alert-policies) | Configure security & compliance alerts |
 
@@ -80,16 +81,16 @@ Without emergency access accounts, a misconfigured Conditional Access policy can
    - Permanent Global Administrator role assignment
 3. **Store credentials securely** — use a physical safe or offline password vault
 4. **Add accounts to the `Excluded from CA` security group**
-5. **Monitor sign-in activity** for these accounts via Azure AD sign-in logs
+5. **Monitor sign-in activity** for these accounts via Microsoft Entra sign-in logs
 
 {: .important }
 These accounts should NEVER be used for day-to-day administration. Set up alerts (see Alert Policies) to notify you immediately if they are used.
 
 ---
 
-## EOP & ATP Baseline
+## EOP & Defender for Office 365 Baseline
 
-Apply baseline security policies for Exchange Online Protection (EOP) and Microsoft Defender for Office 365 (formerly Office 365 ATP).
+Apply baseline security policies for **Exchange Online Protection (EOP)** and **Microsoft Defender for Office 365** (formerly known as "Office 365 ATP").
 
 ### Steps
 

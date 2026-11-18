@@ -1,9 +1,32 @@
 title: Microsoft 365 Setup Guide
-description: A comprehensive guide for setting up Microsoft 365 tenant, Azure AD, Intune, and Collaboration Governance
+description: >-
+  End-to-end deployment guide for Microsoft 365 — tenant configuration,
+  Microsoft Entra ID, Microsoft Intune, Collaboration Governance,
+  and 59+ ready-to-use PowerShell automation scripts.
 baseurl: "/Microsoft365SetupGuide"
 url: "https://DekBaCom.github.io"
+lang: en-US
 
 remote_theme: just-the-docs/just-the-docs@v0.10.0
+
+# SEO / jekyll-seo-tag metadata
+author:
+  name: Abdulloh Etaeluengoh
+  email: Abdulloh.eg@gmail.com
+
+logo: /assets/images/favicon.png
+social:
+  name: Abdulloh Etaeluengoh
+  links:
+    - https://www.linkedin.com/in/abdulloh-etaeluengoh
+    - https://github.com/DekBaCom
+
+# Per-page SEO defaults (jekyll-seo-tag reads these)
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/favicon.png
 
 # Enable search
 search_enabled: true

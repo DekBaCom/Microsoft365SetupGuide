@@ -1,9 +1,10 @@
 ---
 title: Collaboration Governance
 layout: default
-nav_order: 5
+nav_order: 6
 has_children: true
 permalink: /docs/collaboration-governance
+description: Microsoft 365 collaboration governance — Data Loss Prevention (DLP), retention policies, sensitivity labels, SharePoint & OneDrive sharing, Teams & Groups governance.
 ---
 
 # Collaboration Governance
@@ -197,9 +198,9 @@ Sensitivity labels appear in Office applications within **24 hours** of publishi
 
 Configure sharing settings to balance collaboration needs with data security.
 
-### Step 1 — Configure External Collaboration Settings in Azure AD
+### Step 1 — Configure External Collaboration Settings in Microsoft Entra ID
 
-1. Navigate to **Azure AD admin center** > **External identities** > **External collaboration settings**
+1. Navigate to **Microsoft Entra admin center** > **External identities** > **External collaboration settings**
 2. Recommended: Enable **Email One-Time Passcode** → **Yes**
 
    ![SharePoint - External collaboration settings in Azure AD]({{ site.baseurl }}/assets/images/collab_sharepoint_external-collab.png)
@@ -208,7 +209,7 @@ Configure sharing settings to balance collaboration needs with data security.
 
 1. Navigate to the **SharePoint admin center**
 
-   ![SharePoint Admin Center]({{ site.baseurl }}/assets/images/collab_sharepoint_admin-center.png)
+   ![SharePoint - Admin Center landing page showing Policies menu]({{ site.baseurl }}/assets/images/collab_sharepoint_admin-center.png)
 
 2. Click **Policies** > **Sharing** and configure the sharing sliders
 
@@ -279,7 +280,7 @@ Disabling third-party storage encourages users to store files in OneDrive and Sh
 
 Automatically expire and delete stale, inactive Groups to keep your tenant clean.
 
-1. Navigate to **Azure AD admin center** > **Groups** > **Expiration**
+1. Navigate to **Microsoft Entra admin center** > **Groups** > **Expiration**
 2. Configure:
    - **Group lifetime**: **180 days**
    - **Email contact for groups with no owners**: Enter a monitored email address
@@ -295,23 +296,32 @@ This is an advanced option that significantly impacts user experience. Only impl
 
 ![Groups - Restrict who can create groups]({{ site.baseurl }}/assets/images/collab_groups_creators.png)
 
-If required, limit Teams/Groups creation using PowerShell:
+If required, limit Teams/Groups creation using the **Microsoft Graph PowerShell SDK**:
 
 ```powershell
-# Connect to Azure AD
-Connect-AzureAD
+# Connect to Microsoft Graph
+Connect-MgGraph -Scopes "Directory.ReadWrite.All","Group.ReadWrite.All"
 
-# Fetch the unified group template
-$Template = Get-AzureADDirectorySettingTemplate | Where-Object {$_.DisplayName -eq "Group.Unified"}
-$Settings = $Template.CreateDirectorySetting()
+# Fetch the Group.Unified setting template
+$template = Get-MgDirectorySettingTemplate |
+    Where-Object { $_.DisplayName -eq "Group.Unified" }
 
-# Set the group creators group
-$Settings["EnableGroupCreation"] = "false"
-$Settings["GroupCreationAllowedGroupId"] = "<Security Group Object ID>"
+# Build a new DirectorySetting from the template
+$values = @()
+foreach ($v in $template.Values) {
+    $entry = @{ Name = $v.Name; Value = $v.DefaultValue }
+    switch ($v.Name) {
+        "EnableGroupCreation"         { $entry.Value = "false" }
+        "GroupCreationAllowedGroupId" { $entry.Value = "<Security Group Object ID>" }
+    }
+    $values += $entry
+}
 
-# Apply settings
-New-AzureADDirectorySetting -DirectorySetting $Settings
+New-MgDirectorySetting -TemplateId $template.Id -Values $values
 ```
+
+{: .note }
+The legacy `Connect-AzureAD` / `New-AzureADDirectorySetting` cmdlets are from the retiring **AzureAD** module. Use Microsoft Graph as shown above — see [Prerequisites]({{ site.baseurl }}/docs/prerequisites) for module requirements.
 
 {: .note }
 Microsoft does not recommend restricting Group creation for most organizations. Open creation with expiration policies is the preferred approach.

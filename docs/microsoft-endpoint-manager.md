@@ -1,16 +1,20 @@
 ---
-title: Microsoft Endpoint Manager
+title: Microsoft Intune
 layout: default
-nav_order: 4
+nav_order: 5
 has_children: true
 permalink: /docs/microsoft-endpoint-manager
+description: Microsoft Intune device management — Windows Autopilot, compliance policies, App Protection (MAM), iOS / Android / macOS enrollment, and Microsoft Entra join & hybrid join.
 ---
 
-# Microsoft Endpoint Manager (Intune)
+# Microsoft Intune
 {: .no_toc }
 
-Manage and protect devices across your organization using Microsoft Intune — part of Microsoft Endpoint Manager. This section covers device enrollment, compliance policies, app protection, and platform-specific configurations.
+Manage and protect devices across your organization using **Microsoft Intune**. This section covers device enrollment, compliance policies, app protection (MAM), and platform-specific configurations.
 {: .fs-6 .fw-300 }
+
+{: .note }
+Microsoft retired the **Microsoft Endpoint Manager** umbrella brand in 2022. The unified product is now called **Microsoft Intune**. The admin portal remains at **intune.microsoft.com**.
 
 ---
 
@@ -24,8 +28,8 @@ Manage and protect devices across your organization using Microsoft Intune — p
 | [Compliance Policies](#compliance-policies) | Define compliant device requirements |
 | [App Protection (MAM)](#app-protection-mam) | Protect data on mobile without full MDM |
 | [Mobile Devices (MDM)](#mobile-devices-mdm) | iOS and Android MDM + Conditional Access |
-| [Windows 10 — Azure AD Join](#windows-10--azure-ad-join) | Cloud-native Windows device management |
-| [Windows 10 — Hybrid Join](#windows-10--hybrid-join) | Domain-joined + Azure AD co-existence |
+| [Windows 10 — Microsoft Entra Join](#windows-10--microsoft-entra-join) | Cloud-native Windows device management |
+| [Windows 10 — Hybrid Join](#windows-10--hybrid-join) | Domain-joined + Microsoft Entra co-existence |
 
 ---
 
@@ -75,7 +79,7 @@ Configure how devices can enroll into Intune management.
 2. Import device hardware IDs via CSV file (obtained from device vendor or using `Get-WindowsAutoPilotInfo` script)
 3. Create an **Autopilot deployment profile**:
    - Deployment mode: **User-driven**
-   - Join to Azure AD as: **Azure AD joined**
+   - Join to Microsoft Entra ID as: **Microsoft Entra joined**
    - User account type: **Standard User** (recommended)
 4. Assign the profile to a device group
 
@@ -105,7 +109,7 @@ Automatically remove stale/inactive devices from Intune to keep your device inve
 3. Click **Save**
 
 {: .note }
-This rule removes devices from Intune management only. It does not delete the device from Azure AD automatically. Consider enabling the Azure AD device cleanup setting separately.
+This rule removes devices from Intune management only. It does not delete the device from Microsoft Entra ID automatically. Consider enabling the Microsoft Entra device cleanup setting separately.
 
 ---
 
@@ -209,7 +213,7 @@ Assign compliance policies and configure Conditional Access for enrolled iOS and
 1. **Assign compliance policies** created above to the appropriate device groups
 2. **Create Conditional Access policies** that require compliant devices:
    - Use the **Require device to be marked as compliant** grant control
-   - See [Azure AD Configuration — Conditional Access]({{ site.baseurl }}/docs/azure-ad-configuration#conditional-access-baseline)
+   - See [Microsoft Entra ID — Conditional Access]({{ site.baseurl }}/docs/azure-ad-configuration#conditional-access-baseline)
 3. **Test** with a pilot group before rolling out broadly
 
 {: .warning }
@@ -217,9 +221,9 @@ Ensure all targeted devices are enrolled and marked compliant BEFORE enabling an
 
 ---
 
-## Windows 10 — Azure AD Join
+## Windows 10 — Microsoft Entra Join
 
-For organizations deploying cloud-native Windows 10/11 devices (no on-premises domain join required).
+For organizations deploying cloud-native Windows 10/11 devices (no on-premises domain join required). *Formerly known as "Azure AD Join".*
 
 ### Steps
 
@@ -231,7 +235,7 @@ For organizations deploying cloud-native Windows 10/11 devices (no on-premises d
    - Navigate to **Devices** > **Configuration profiles**
    - Assign each profile to the appropriate device groups
 
-3. **Assign compliance policy** to the Azure AD Join device group
+3. **Assign compliance policy** to the Microsoft Entra Join device group
 
 4. **Verify Autopilot profile** is assigned (see Device Enrollment Settings above)
 
@@ -249,14 +253,14 @@ This configuration is only required if your organization has traditional domain-
 ### Prerequisites
 
 - Active Directory Domain Services (AD DS) on-premises
-- Azure AD Connect configured and syncing
+- Microsoft Entra Connect (formerly Azure AD Connect) configured and syncing
 - Network line of sight to domain controllers during OOBE
 
 ### Steps
 
-1. **Configure Hybrid Azure AD Join** in Azure AD Connect:
-   - Run Azure AD Connect configuration wizard
-   - Select **Configure device options** > **Configure Hybrid Azure AD join**
+1. **Configure Microsoft Entra hybrid join** in Microsoft Entra Connect:
+   - Run the Microsoft Entra Connect configuration wizard
+   - Select **Configure device options** > **Configure Microsoft Entra hybrid join**
    - Select your operating system (Windows 10 current or downlevel)
 
 2. **Verify** devices are registered:
@@ -265,7 +269,7 @@ This configuration is only required if your organization has traditional domain-
 
 3. **Enroll devices into Intune** using Group Policy:
    - Computer Configuration > Policies > Administrative Templates > Windows Components > MDM
-   - Enable **Enable automatic MDM enrollment using default Azure AD credentials**
+   - Enable **Enable automatic MDM enrollment using default Microsoft Entra credentials**
 
 4. **Assign configuration profiles and compliance policies** to the hybrid device group
 

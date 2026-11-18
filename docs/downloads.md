@@ -1,8 +1,9 @@
 ---
 title: Downloads
 layout: default
-nav_order: 6
+nav_order: 7
 permalink: /docs/downloads
+description: Download 59+ ready-to-use PowerShell automation scripts for Microsoft Intune, Microsoft Entra ID, Exchange Online, Compliance, Incident Response, and Windows 10/11 deployment.
 ---
 
 # Downloads — PowerShell Scripts
@@ -12,7 +13,17 @@ All scripts are ready-to-use PowerShell automation tools that correspond to the 
 {: .fs-6 .fw-300 }
 
 {: .highlight }
-**Prerequisites:** PowerShell 5.1 or later. Most scripts require the **Microsoft Graph PowerShell SDK** or legacy **AzureAD / ExchangeOnlineManagement** modules. Run `Set-ExecutionPolicy RemoteSigned` before running any script.
+**Prerequisites:** PowerShell 5.1 or later (**PowerShell 7+ recommended**). Install the modules below once, then run `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser` before executing any script. See the [Prerequisites page]({{ site.baseurl }}/docs/prerequisites) for full licensing and Graph scope requirements.
+
+```powershell
+Install-Module Microsoft.Graph             -Scope CurrentUser -MinimumVersion 2.0.0
+Install-Module ExchangeOnlineManagement    -Scope CurrentUser -MinimumVersion 3.0.0
+Install-Module MicrosoftTeams              -Scope CurrentUser -MinimumVersion 5.0.0
+Install-Module PnP.PowerShell              -Scope CurrentUser -MinimumVersion 2.0.0
+```
+
+{: .warning }
+**Legacy module retirement — 2026.** Microsoft has announced retirement of the **AzureAD**, **AzureADPreview**, and **MSOnline** PowerShell modules. New automation should use the **Microsoft Graph PowerShell SDK**. Scripts in this guide that still reference legacy modules are being migrated; a handful remain for backward compatibility and are flagged in each script header.
 
 ---
 
@@ -70,9 +81,9 @@ Use these to back up existing Intune configurations before making changes.
 
 ---
 
-## Azure AD
+## Microsoft Entra ID
 
-Scripts for Conditional Access, MFA, and Group management automation.
+Scripts for Conditional Access, MFA, and Group management automation. *(Formerly "Azure AD" — script filenames in the `azure-ad/` directory are preserved for backward compatibility.)*
 
 | Script | Description |
 |--------|-------------|
@@ -134,8 +145,8 @@ These scripts are intended for use by security administrators during active inve
 | Script | Description |
 |--------|-------------|
 | [Remediate-CompromisedUser.ps1]({{ site.baseurl }}/scripts/incident-response/Remediate-CompromisedUser.ps1){:download} | Remediate a compromised user account (revoke sessions, reset password) |
-| [Install-AzureADProtectionAlerts.ps1]({{ site.baseurl }}/scripts/incident-response/Install-AzureADProtectionAlerts.ps1){:download} | Install Azure AD Identity Protection alert rules |
-| [Start-AzureADIRCollection.ps1]({{ site.baseurl }}/scripts/incident-response/Start-AzureADIRCollection.ps1){:download} | Collect Azure AD IR forensic data |
+| [Install-AzureADProtectionAlerts.ps1]({{ site.baseurl }}/scripts/incident-response/Install-AzureADProtectionAlerts.ps1){:download} | Install Microsoft Entra ID Protection alert rules |
+| [Start-AzureADIRCollection.ps1]({{ site.baseurl }}/scripts/incident-response/Start-AzureADIRCollection.ps1){:download} | Collect Microsoft Entra ID incident-response forensic data |
 | [Start-UnifiedAuditLogIRCollection.ps1]({{ site.baseurl }}/scripts/incident-response/Start-UnifiedAuditLogIRCollection.ps1){:download} | Collect Unified Audit Log data for IR |
 | [Export-ActivityByUser.ps1]({{ site.baseurl }}/scripts/incident-response/Export-ActivityByUser.ps1){:download} | Export all activity for a specific user |
 | [Export-ActivityByIPAddress.ps1]({{ site.baseurl }}/scripts/incident-response/Export-ActivityByIPAddress.ps1){:download} | Export all activity from a specific IP address |

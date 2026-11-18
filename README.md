@@ -111,16 +111,31 @@ scripts/
 รัน Script เดียวได้รายงาน HTML ครบทุกด้านในไฟล์เดียว:
 
 ```powershell
-# ติดตั้ง Module ที่ต้องการ
-Install-Module Microsoft.Graph -Scope CurrentUser
-Install-Module ExchangeOnlineManagement -Scope CurrentUser
+# 1. ติดตั้ง Module ที่ต้องการ (รันครั้งเดียว)
+Install-Module Microsoft.Graph             -Scope CurrentUser -MinimumVersion 2.0.0
+Install-Module ExchangeOnlineManagement    -Scope CurrentUser -MinimumVersion 3.0.0
 
-# รันรายงาน
+# 2. เชื่อมต่อ Microsoft Graph พร้อม Scope ที่ Script ต้องใช้
+Connect-MgGraph -Scopes `
+    "Reports.Read.All", `
+    "User.Read.All", `
+    "Directory.Read.All", `
+    "AuditLog.Read.All", `
+    "Organization.Read.All", `
+    "RoleManagement.Read.Directory", `
+    "Policy.Read.All"
+
+# 3. เชื่อมต่อ Exchange Online (สำหรับส่วน Mailbox)
+Connect-ExchangeOnline
+
+# 4. รันรายงาน
 .\scripts\monthly-report\Get-M365MonthlyReport.ps1
 
-# กำหนด Output Path
+# 5. กำหนด Output Path (ตัวเลือก)
 .\scripts\monthly-report\Get-M365MonthlyReport.ps1 -OutputPath "C:\Reports\April-2025.html"
 ```
+
+> 💡 **หมายเหตุ:** `AzureAD` และ `MSOnline` modules จะหมดอายุ (retire) ปี 2026 — Guide นี้แนะนำให้ใช้ **Microsoft Graph PowerShell SDK** เป็นหลัก
 
 ---
 

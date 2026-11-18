@@ -1,16 +1,20 @@
 ---
-title: Azure AD Configuration
+title: Microsoft Entra ID
 layout: default
-nav_order: 3
+nav_order: 4
 has_children: true
 permalink: /docs/azure-ad-configuration
+description: Microsoft Entra ID (formerly Azure AD) configuration — combined MFA + SSPR registration, user settings, admin consent, device join, and baseline Conditional Access policies.
 ---
 
-# Azure AD Configuration
+# Microsoft Entra ID Configuration
 {: .no_toc }
 
 Secure your identity and access management layer by enabling combined registration, self-service password reset, configuring user settings, and deploying Conditional Access baseline policies.
 {: .fs-6 .fw-300 }
+
+{: .note }
+**Microsoft Entra ID** is the current name for the service formerly known as **Azure Active Directory (Azure AD)** — renamed by Microsoft in 2023. The admin portal is now at **entra.microsoft.com**. Screenshots in this guide may still show the older "Azure Active Directory" branding; navigation paths remain equivalent.
 
 ---
 
@@ -33,7 +37,7 @@ Enable the combined security information registration experience so users can re
 
 ### Steps
 
-1. Go to **Azure AD admin center** > **Users** > **User settings**
+1. Go to **Microsoft Entra admin center** > **Users** > **User settings**
 2. Click **Manage user feature preview settings**
 
 ![Azure AD User Settings - Manage user feature preview settings]({{ site.baseurl }}/assets/images/azure-ad_combined-reg_step1.png)
@@ -54,11 +58,11 @@ This unified registration experience reduces friction for end users and is the r
 Allow users to reset their own passwords using their registered second factor of authentication.
 
 {: .important }
-SSPR as configured here applies to **cloud-only accounts**. For synced (hybrid) accounts, you must also configure **password writeback** in Azure AD Connect.
+SSPR as configured here applies to **cloud-only accounts**. For synced (hybrid) accounts, you must also configure **password writeback** in Microsoft Entra Connect (formerly Azure AD Connect).
 
 ### Steps
 
-1. Go to **Azure AD admin center** > **Users** > **Password reset**
+1. Go to **Microsoft Entra admin center** > **Users** > **Password reset**
 2. Configure the following:
 
    **Properties tab** — Set **Self service password reset enabled** to **All**
@@ -83,21 +87,21 @@ SSPR as configured here applies to **cloud-only accounts**. For synced (hybrid) 
 
 ## User Settings
 
-Configure default user and guest collaboration settings in Azure AD.
+Configure default user and guest collaboration settings in Microsoft Entra ID.
 
 ### Default User Settings
 
-1. Go to **Azure AD admin center** > **Users** > **User settings**
+1. Go to **Microsoft Entra admin center** > **Users** > **User settings**
 2. Make the following recommended selections:
    - **Users can register applications** → **No**
-   - **Restrict access to Azure AD administration portal** → **Yes**
+   - **Restrict access to the Microsoft Entra admin portal** → **Yes**
 
 ![Azure AD User Settings]({{ site.baseurl }}/assets/images/azure-ad_user-settings.png)
 
 ### External Collaboration Settings (Guest Users)
 
 1. Scroll down and click **Manage external collaboration settings**  
-   *(Also accessible via Azure AD > External identities > External collaboration settings)*
+   *(Also accessible via Microsoft Entra ID > External identities > External collaboration settings)*
 2. Recommended settings:
    - **Enable Email One-Time Passcode** → **Yes**
    - **Guests can invite** → **No** (recommended for most organizations)
@@ -112,7 +116,7 @@ Prevent users from independently consenting to third-party application permissio
 
 ### Steps
 
-1. Navigate to **Azure AD** > **Enterprise Applications** > **User settings**
+1. Navigate to **Microsoft Entra admin center** > **Enterprise Applications** > **User settings**
 2. Set **Users can consent to apps accessing company data on their behalf** → **No**
 3. Set **Users can request admin consent to apps they are unable to consent to** → **Yes**
 
@@ -136,18 +140,18 @@ If you need to delegate consent approval to non-admin users:
 
 ## Device Settings
 
-Configure how devices can join Azure AD and enable Enterprise State Roaming.
+Configure how devices can join Microsoft Entra ID and enable Enterprise State Roaming.
 
 ### Default Device Settings
 
-1. Go to **Azure AD admin center** > **Users** > **Device settings**
+1. Go to **Microsoft Entra admin center** > **Users** > **Device settings**
 2. Set **Require Multi-factor Auth to join devices** → **Yes**
 
 ![Device Settings - Require MFA to join]({{ site.baseurl }}/assets/images/azure-ad_device-settings.png)
 
 ### Enterprise State Roaming
 
-1. Navigate to **Azure AD** > **Devices** > **Enterprise state roaming**
+1. Navigate to **Microsoft Entra admin center** > **Devices** > **Enterprise state roaming**
 2. Under **Users may sync settings and app data across devices**, select **All**
 
 ![Enterprise State Roaming - Enable for All]({{ site.baseurl }}/assets/images/azure-ad_enterprise-state-roaming.png)
@@ -163,7 +167,7 @@ Before configuring Conditional Access policies, you **must** disable Security De
 
 ### Step 1 — Disable Security Defaults
 
-1. Go to **Azure AD** > **Properties**
+1. Go to **Microsoft Entra admin center** > **Properties**
 2. Click **Manage Security Defaults** at the bottom
 3. Set **Enable Security Defaults** to **No** and click **Save**
 
@@ -171,7 +175,7 @@ Before configuring Conditional Access policies, you **must** disable Security De
 
 ### Step 2 — Configure Named Locations (Optional but Recommended)
 
-1. Navigate to **Azure AD** > **Security** > **Conditional Access** > **Named locations**
+1. Navigate to **Microsoft Entra admin center** > **Protection** > **Conditional Access** > **Named locations**
 2. Create locations for Corporate Offices (IP-based) and allowed countries (country-based)
 
 ![Conditional Access - Named Locations]({{ site.baseurl }}/assets/images/azure-ad_named-locations.png)
@@ -185,7 +189,7 @@ Automate Conditional Access deployment with PowerShell — [Install-BaselineCAPo
 
 Block legacy authentication protocols (Basic Auth, Exchange ActiveSync) that cannot enforce MFA.
 
-1. Navigate to **Azure AD** > **Security** > **Conditional Access** > **New policy**
+1. Navigate to **Microsoft Entra admin center** > **Protection** > **Conditional Access** > **New policy**
 2. Configure Assignments — name the policy and include All users, exclude `Excluded from CA` group
 
    ![Block Legacy Auth - Assignments]({{ site.baseurl }}/assets/images/azure-ad_ca-block-legacy_assignments.png)
@@ -208,7 +212,7 @@ Block legacy authentication protocols (Basic Auth, Exchange ActiveSync) that can
 
 Require MFA for all users on all cloud apps.
 
-1. Navigate to **Azure AD** > **Security** > **Conditional Access** > **New policy**
+1. Navigate to **Microsoft Entra admin center** > **Protection** > **Conditional Access** > **New policy**
 2. Configure Assignments — include All users, exclude guests and `Excluded from CA` group
 
    ![Require MFA - Assignments]({{ site.baseurl }}/assets/images/azure-ad_ca-require-mfa_assignments.png)
@@ -234,7 +238,7 @@ Test this policy in **Report-only** mode first before enabling it to avoid locki
 
 Block access from unsupported operating systems (e.g., Linux) to prevent circumvention of device-based policies.
 
-1. Navigate to **Azure AD** > **Security** > **Conditional Access** > **New policy**
+1. Navigate to **Microsoft Entra admin center** > **Protection** > **Conditional Access** > **New policy**
 2. Configure Assignments and Cloud apps as above, then under Conditions:
    - Device platforms > Include: **Any device** / Exclude: **Android, iOS, macOS, Windows**
 
@@ -258,5 +262,5 @@ Only enable these additional policies after completing the prerequisites listed 
 | Policy | Prerequisite |
 |--------|-------------|
 | Require compliant device | Complete Endpoint Manager setup + enroll all devices |
-| Require Hybrid Azure AD joined device | Complete Hybrid Azure AD Join setup + verify all devices registered |
+| Require Microsoft Entra hybrid joined device | Complete Microsoft Entra hybrid join setup + verify all devices registered |
 | Require approved client app (MAM) | Complete App Protection Policies setup + deploy them |

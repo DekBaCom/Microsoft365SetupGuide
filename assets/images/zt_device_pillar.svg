@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Zero Trust - Device pillar: Intune enrollment and compliance">
+  <rect width="800" height="450" fill="#faf9f8"/>
+  <rect width="800" height="48" fill="#7fba00"/>
+  <text x="20" y="31" fill="white" font-family="Segoe UI, Arial" font-size="14" font-weight="600">Microsoft Intune admin center</text>
+  <text x="780" y="31" fill="white" font-family="Segoe UI, Arial" font-size="12" text-anchor="end" opacity="0.85">Devices &gt; Enrollment</text>
+  <!-- Left nav -->
+  <rect x="0" y="48" width="200" height="402" fill="#edebe9"/>
+  <text x="18" y="80" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Devices</text>
+  <rect x="0" y="88" width="200" height="22" fill="#deecf9"/>
+  <rect x="0" y="88" width="3" height="22" fill="#7fba00"/>
+  <text x="32" y="103" fill="#7fba00" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Enrollment</text>
+  <text x="32" y="124" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Device configuration</text>
+  <text x="32" y="148" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Compliance policies</text>
+  <text x="32" y="172" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Device onboarding</text>
+  <!-- Main content -->
+  <text x="220" y="82" fill="#323130" font-family="Segoe UI, Arial" font-size="20" font-weight="300">Enrollment restrictions matrix</text>
+  <text x="220" y="104" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Zero Trust device baseline — managed, compliant, healthy only</text>
+  <!-- Table header -->
+  <rect x="220" y="120" width="560" height="28" fill="#f3f2f1"/>
+  <text x="235" y="139" fill="#323130" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Platform</text>
+  <text x="380" y="139" fill="#323130" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Enrollment method</text>
+  <text x="600" y="139" fill="#323130" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Compliance enforcement</text>
+  <!-- Windows -->
+  <rect x="220" y="148" width="560" height="40" fill="white"/>
+  <text x="235" y="174" fill="#323130" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Windows 10 / 11</text>
+  <text x="380" y="174" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Autopilot, Entra ID hybrid join, or manual HAADJ</text>
+  <text x="600" y="174" fill="#107c10" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Mandatory</text>
+  <line x1="220" y1="188" x2="780" y2="188" stroke="#edebe9"/>
+  <!-- macOS -->
+  <rect x="220" y="188" width="560" height="40" fill="#fff4ce"/>
+  <text x="235" y="214" fill="#323130" font-family="Segoe UI, Arial" font-size="12" font-weight="600">macOS</text>
+  <text x="380" y="214" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Device enrollment profile (DEP) or manual</text>
+  <text x="600" y="214" fill="#107c10" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Recommended</text>
+  <line x1="220" y1="228" x2="780" y2="228" stroke="#edebe9"/>
+  <!-- iOS/iPadOS -->
+  <rect x="220" y="228" width="560" height="40" fill="white"/>
+  <text x="235" y="254" fill="#323130" font-family="Segoe UI, Arial" font-size="12" font-weight="600">iOS / iPadOS</text>
+  <text x="380" y="254" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Apple MDM Push Cert + Automated Device Enrollment (ADE)</text>
+  <text x="600" y="254" fill="#107c10" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Mandatory</text>
+  <line x1="220" y1="268" x2="780" y2="268" stroke="#edebe9"/>
+  <!-- Android -->
+  <rect x="220" y="268" width="560" height="40" fill="white"/>
+  <text x="235" y="294" fill="#323130" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Android Enterprise</text>
+  <text x="380" y="294" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Managed Google Play account + zero-touch enrollment</text>
+  <text x="600" y="294" fill="#107c10" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Recommended</text>
+  <!-- Compliance card at bottom -->
+  <rect x="220" y="324" width="560" height="78" fill="#dff6dd" rx="4"/>
+  <text x="235" y="346" fill="#107c10" font-family="Segoe UI, Arial" font-size="12" font-weight="600">✓ Zero Trust Device Compliance Policy (all platforms)</text>
+  <text x="235" y="366" fill="#323130" font-family="Segoe UI, Arial" font-size="11">• Require screen lock (PIN / password) with min 6 chars</text>
+  <text x="235" y="382" fill="#323130" font-family="Segoe UI, Arial" font-size="11">• Require antivirus (Windows Defender / similar)</text>
+  <text x="235" y="398" fill="#323130" font-family="Segoe UI, Arial" font-size="11">• Require encryption of OS + storage</text>
+</svg>

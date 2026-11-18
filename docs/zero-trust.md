@@ -72,13 +72,10 @@ Before changing anything, capture your current posture. The provided PowerShell 
    .\Get-M365SecurityPosture.ps1 -OutputPath "C:\Reports\ZT-Baseline-$(Get-Date -Format 'yyyy-MM').html"
    ```
 
-   <!-- Screenshot placeholder — /assets/images/zt_01_baseline_script.png
-        Caption: "Zero Trust baseline script running in PowerShell" -->
-
 4. Open the HTML report. Record the score for each pillar — this is your **Day 0 baseline**.
 
-   <!-- Screenshot placeholder — /assets/images/zt_02_baseline_report.png
-        Caption: "Baseline HTML report with per-pillar score" -->
+![Zero Trust baseline assessment HTML report with per-pillar scores (Identity 62%, Device 35%, App 58%, Data 48%, Infrastructure 71%, Network 67%)]({{ site.baseurl }}/assets/images/zt_baseline_assessment.svg)
+*Figure 1 — Day 0 Baseline Report. Per-pillar breakdown showing current posture and prioritized next steps. Device (35%) requires most work; Identity foundation is already 62% due to baseline CA policies.*
 
 {: .warning }
 Re-run this script **after each pillar milestone** below. Zero Trust is iterative — the goal is steady score improvement, not a one-time 100%.
@@ -95,27 +92,26 @@ Security Defaults is a free entry-level MFA policy. It's good for day one, but C
 
 1. Microsoft Entra admin center > **Properties** > **Manage Security Defaults** → **Disabled**
 
-   <!-- Screenshot placeholder — /assets/images/zt_03_security_defaults_off.png
-        Caption: "Disable Security Defaults before enabling Conditional Access" -->
-
-2. Deploy the three baseline CA policies — follow [Microsoft Entra ID — Conditional Access Baseline]({{ site.baseurl }}/docs/azure-ad-configuration#conditional-access-baseline):
+2. Deploy the four baseline CA policies — follow [Microsoft Entra ID — Conditional Access Baseline]({{ site.baseurl }}/docs/azure-ad-configuration#conditional-access-baseline):
    - **BLOCK**: Legacy authentication
    - **GRANT**: Require MFA (all users, all cloud apps)
    - **BLOCK**: Unsupported device platforms
+   - **BLOCK / GRANT**: Risk-based access (High sign-in / user risk — E5 / P2 only)
 
 3. **Automate** with the included script:
    ```powershell
    .\scripts\azure-ad\Install-BaselineCAPolicies.ps1
    ```
 
+![Microsoft Entra Conditional Access policies dashboard with 4 baseline policies: Block Legacy Auth, Require MFA, Block Unsupported, Risk-based]({{ site.baseurl }}/assets/images/zt_identity_pillar.svg)
+*Figure 2 — Identity Pillar: Conditional Access Baseline. All four policies shown in Report-only mode initially. Deploy #3 (Risk-based) only on E5 / Entra ID P2 licenses.*
+
 ### 4.2 Combined MFA + SSPR Registration
 
-Both MFA and self-service password reset use the same registration flow.
+Both MFA and self-service password reset use the same registration flow. Microsoft Entra admin center > **Users** > **User settings** > **Manage user feature preview settings** → set **Combined security information registration** to **All**.
 
-1. Microsoft Entra admin center > **Users** > **User settings** > **Manage user feature preview settings** → set **Combined security information registration** to **All**.
-
-   <!-- Screenshot placeholder — /assets/images/zt_04_combined_registration.png
-        Caption: "Enable combined MFA + SSPR registration for all users" -->
+{: .note }
+Enabling combined MFA + SSPR registration is automatic in most E3+ deployments. Verify it's on before moving to PIM enrollment in Step 4.4.
 
 ### 4.3 Identity Protection (E5 / Entra ID P2 only)
 
@@ -123,9 +119,6 @@ Both MFA and self-service password reset use the same registration flow.
 2. Enable the two risk policies — initially in **Report-only** mode:
    - **Sign-in risk policy** → block **High** risk sign-ins
    - **User risk policy** → require password change on **High** user risk
-
-   <!-- Screenshot placeholder — /assets/images/zt_05_identity_protection.png
-        Caption: "Risk-based policies in Microsoft Entra ID Protection" -->
 
 ### 4.4 PIM — Zero Permanent Admins (E5)
 
@@ -141,12 +134,10 @@ Follow the full [PIM step-by-step guide]({{ site.baseurl }}/docs/privileged-iden
 
 Follow [Microsoft Intune — Device Enrollment Settings]({{ site.baseurl }}/docs/microsoft-endpoint-manager#device-enrollment-settings).
 
-- Windows: Windows Autopilot (cloud-native) or Microsoft Entra hybrid join
-- iOS / iPadOS: Apple MDM Push Certificate, ADE for corporate devices
-- Android: Managed Google Play, Android Enterprise
+Follow the matrix below and see [Compliance Policies]({{ site.baseurl }}/docs/microsoft-endpoint-manager#compliance-policies) for per-platform configuration:
 
-<!-- Screenshot placeholder — /assets/images/zt_06_intune_enrollment.png
-     Caption: "Intune enrollment restrictions and platform matrix" -->
+![Device enrollment matrix showing Windows (Autopilot, hybrid join), macOS (DEP), iOS (MDM Push + ADE), Android (Managed Google Play) with compliance enforcement indicators]({{ site.baseurl }}/assets/images/zt_device_pillar.svg)
+*Figure 3 — Device Pillar: Enrollment Restrictions Matrix. All platforms require managed enrollment and compliance. Baseline policy enforces screen lock, antivirus, and encryption on all devices.*
 
 ### 5.2 Compliance Policies
 
@@ -160,9 +151,6 @@ Once ≥ 90% of devices are enrolled and compliant, add a new CA policy:
 - **Cloud apps**: All cloud apps
 - **Grant**: Require device to be marked as compliant
 - **Mode**: Report-only for 2 weeks → Enforce
-
-<!-- Screenshot placeholder — /assets/images/zt_07_require_compliant_device.png
-     Caption: "CA policy — Require compliant device grant control" -->
 
 {: .warning }
 Enabling this before enrollment is complete will **lock out** unenrolled devices. Verify Intune compliance coverage first via the script in Step 1.
@@ -187,14 +175,18 @@ See [App Protection (MAM)]({{ site.baseurl }}/docs/microsoft-endpoint-manager#ap
 
 Confirmed via CA policy #1.
 
-### 6.3 Admin Consent Workflow
+### 6.3 Deploy App Protection Policies (MAM) for BYOD
+
+See [App Protection (MAM)]({{ site.baseurl }}/docs/microsoft-endpoint-manager#app-protection-mam) — enforce copy/paste isolation, PIN, encryption, and conditional launch on personal devices.
+
+![Intune App Protection Policy for iOS showing PIN access, data encryption, screen capture blocking, copy/paste restrictions, and 15-minute timeout]({{ site.baseurl }}/assets/images/zt_app_pillar.svg)
+*Figure 4 — App Pillar: Mobile App Protection Policy. BYOD-safe baseline: requires PIN, blocks rooted/jailbroken, encrypts app data, isolates copy/paste, auto-wipes on inactivity.*
+
+### 6.4 Admin Consent Workflow
 
 Prevent users from independently granting permissions to third-party OAuth apps. See [Microsoft Entra ID — Admin Consent]({{ site.baseurl }}/docs/azure-ad-configuration#admin-consent-requests).
 
-<!-- Screenshot placeholder — /assets/images/zt_08_admin_consent.png
-     Caption: "Admin consent workflow — users request, admins approve" -->
-
-### 6.4 Defender for Cloud Apps / MCAS (E5)
+### 6.5 Defender for Cloud Apps / MCAS (E5)
 
 1. Enable **Cloud App Discovery** in Defender for Cloud Apps.
 2. Import your firewall logs or enable **Defender for Endpoint → Cloud Discovery** integration.
@@ -213,12 +205,12 @@ Follow [Sensitivity Labels]({{ site.baseurl }}/docs/collaboration-governance#sen
 | Label | Encryption | Marking | Scope |
 |-------|------------|---------|-------|
 | Public | No | None | Files, emails |
-| General | No | Footer | Files, emails |
+| Internal | No | Footer | Files, emails |
 | Confidential | Yes — internal only | Watermark | Files, emails |
-| Highly Confidential | Yes — named recipients | Watermark + Header | Files, emails, sites |
+| Confidential — Restricted | Yes — named recipients | Watermark + Header | Files, emails, sites |
 
-<!-- Screenshot placeholder — /assets/images/zt_09_sensitivity_labels.png
-     Caption: "Publishing the Zero Trust sensitivity label set" -->
+![Purview sensitivity labels for Public, Internal, Confidential with auto-detection of Thai personal data (ID, Passport); plus DLP rule to prevent Thai ID exfiltration]({{ site.baseurl }}/assets/images/zt_data_pillar.svg)
+*Figure 5 — Data Pillar: Sensitivity Labels + DLP for Thai Personal Data. Auto-label content containing Thailand Population ID (13-digit) or Passport as "Confidential". DLP rule blocks external sharing and alerts admins.*
 
 ### 7.2 Data Loss Prevention (DLP)
 
@@ -245,9 +237,6 @@ Unified incident view across identity (Defender for Identity), endpoint (Defende
 
 - **Portal:** [security.microsoft.com](https://security.microsoft.com){:target="_blank"}
 - Enable **automatic attack disruption** for ransomware and BEC.
-
-<!-- Screenshot placeholder — /assets/images/zt_10_defender_xdr.png
-     Caption: "Microsoft Defender XDR — unified incident queue" -->
 
 ### 8.2 Named Locations in CA
 
@@ -287,6 +276,9 @@ Microsoft Purview > **Compliance Manager** > **Assessments** > **+ Add assessmen
 ---
 
 ## 10. Suggested 90-Day Rollout Plan
+
+![Phased Zero Trust rollout timeline showing Month 1 (Identity 54%→62%), Month 2 (Device 35%→72%), Month 3 (Apps & Data 48%→83%), with ongoing monitoring and optimization]({{ site.baseurl }}/assets/images/zt_rollout_timeline.svg)
+*Figure 6 — 90-Day Rollout Timeline. Stagger implementation across 6 pillars: Identity (Month 1), Devices (Month 2), Apps & Data (Month 3). Re-run assessment script monthly to track score improvement. Target: ≥ 85% overall by Day 90.*
 
 | Week | Focus | Milestone |
 |------|-------|-----------|

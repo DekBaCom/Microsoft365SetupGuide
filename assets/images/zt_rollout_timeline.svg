@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Zero Trust 90-day rollout timeline">
+  <rect width="800" height="450" fill="#faf9f8"/>
+  <text x="400" y="32" fill="#323130" font-family="Segoe UI, Arial" font-size="18" text-anchor="middle" font-weight="600">Zero Trust Security Rollout — 90-Day Plan</text>
+  <text x="400" y="52" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle">Phased milestones: Identity → Devices → Apps → Data → Infrastructure</text>
+  <!-- Timeline line -->
+  <line x1="60" y1="80" x2="760" y2="80" stroke="#edebe9" stroke-width="4"/>
+  <!-- Month 1: Identity Foundation -->
+  <circle cx="120" cy="80" r="10" fill="#0078d4" stroke="white" stroke-width="2"/>
+  <rect x="80" y="100" width="80" height="80" fill="white" stroke="#0078d4" stroke-width="2" rx="4"/>
+  <text x="120" y="120" fill="#0078d4" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">Month 1</text>
+  <text x="120" y="136" fill="#323130" font-family="Segoe UI, Arial" font-size="10" text-anchor="middle" font-weight="600">Identity</text>
+  <text x="90" y="152" fill="#605e5c" font-family="Segoe UI, Arial" font-size="9" text-anchor="start">• Disable Sec Defaults</text>
+  <text x="90" y="162" fill="#605e5c" font-family="Segoe UI, Arial" font-size="9" text-anchor="start">• Deploy CA policies</text>
+  <text x="90" y="172" fill="#605e5c" font-family="Segoe UI, Arial" font-size="9" text-anchor="start">• Enable combined MFA</text>
+  <!-- Month 2: Device Management -->
+  <circle cx="280" cy="80" r="10" fill="#7fba00" stroke="white" stroke-width="2"/>
+  <rect x="240" y="100" width="80" height="80" fill="white" stroke="#7fba00" stroke-width="2" rx="4"/>
+  <text x="280" y="120" fill="#7fba00" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">Month 2</text>
+  <text x="280" y="136" fill="#323130" font-family="Segoe UI, Arial" font-size="10" text-anchor="middle" font-weight="600">Devices</text>
+  <text x="250" y="152" fill="#605e5c" font-family="Segoe UI, Arial" font-size="9" text-anchor="start">• Autopilot setup</text>
+  <text x="250" y="162" fill="#605e5c" font-family="Segoe UI, Arial" font-size="9" text-anchor="start">• Compliance policies</text>
+  <text x="250" y="172" fill="#605e5c" font-family="Segoe UI, Arial" font-size="9" text-anchor="start">• Start enrollment</text>
+  <!-- Month 3: Apps & Data -->
+  <circle cx="440" cy="80" r="10" fill="#5c2d91" stroke="white" stroke-width="2"/>
+  <rect x="400" y="100" width="80" height="80" fill="white" stroke="#5c2d91" stroke-width="2" rx="4"/>
+  <text x="440" y="120" fill="#5c2d91" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">Month 3</text>
+  <text x="440" y="136" fill="#323130" font-family="Segoe UI, Arial" font-size="10" text-anchor="middle" font-weight="600">Apps & Data</text>
+  <text x="410" y="152" fill="#605e5c" font-family="Segoe UI, Arial" font-size="9" text-anchor="start">• App Protect Policy</text>
+  <text x="410" y="162" fill="#605e5c" font-family="Segoe UI, Arial" font-size="9" text-anchor="start">• Sensitivity Labels</text>
+  <text x="410" y="172" fill="#605e5c" font-family="Segoe UI, Arial" font-size="9" text-anchor="start">• DLP rules active</text>
+  <!-- Month 3+: Ongoing -->
+  <circle cx="600" cy="80" r="10" fill="#a4262c" stroke="white" stroke-width="2"/>
+  <rect x="560" y="100" width="80" height="80" fill="white" stroke="#a4262c" stroke-width="2" rx="4"/>
+  <text x="600" y="120" fill="#a4262c" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">Ongoing</text>
+  <text x="600" y="136" fill="#323130" font-family="Segoe UI, Arial" font-size="10" text-anchor="middle" font-weight="600">Monitor &amp;</text>
+  <text x="600" y="150" fill="#323130" font-family="Segoe UI, Arial" font-size="10" text-anchor="middle" font-weight="600">Optimize</text>
+  <text x="570" y="162" fill="#605e5c" font-family="Segoe UI, Arial" font-size="9" text-anchor="start">• Re-run scripts</text>
+  <text x="570" y="172" fill="#605e5c" font-family="Segoe UI, Arial" font-size="9" text-anchor="start">• Tune policies</text>
+  <!-- Scoring bar -->
+  <text x="20" y="220" fill="#323130" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Projected Score Improvement</text>
+  <!-- Day 0 -->
+  <rect x="60" y="236" width="300" height="30" fill="#f3f2f1" rx="4"/>
+  <text x="75" y="257" fill="#323130" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Day 0: 54%</text>
+  <!-- Month 1 -->
+  <rect x="60" y="276" width="400" height="30" fill="#eff6fc" rx="4"/>
+  <text x="75" y="297" fill="#0078d4" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Month 1: 62%</text>
+  <!-- Month 2 -->
+  <rect x="60" y="316" width="500" height="30" fill="#f0f9f0" rx="4"/>
+  <text x="75" y="337" fill="#107c10" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Month 2: 72%</text>
+  <!-- Month 3 -->
+  <rect x="60" y="356" width="580" height="30" fill="#f0f9f0" rx="4"/>
+  <text x="75" y="377" fill="#107c10" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Month 3: 83% (Target ≥ 85%)</text>
+  <!-- Legend -->
+  <text x="680" y="236" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">ℹ Each bar width represents</text>
+  <text x="680" y="250" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">per-pillar score improvement</text>
+  <text x="680" y="264" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">driven by control deployment.</text>
+  <text x="680" y="278" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">Not all pillars improve</text>
+  <text x="680" y="292" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">equally in each month.</text>
+</svg>

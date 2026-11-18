@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Zero Trust - Identity pillar: Conditional Access and risk policies">
+  <rect width="800" height="450" fill="#faf9f8"/>
+  <rect width="800" height="48" fill="#0062ad"/>
+  <text x="20" y="31" fill="white" font-family="Segoe UI, Arial" font-size="14" font-weight="600">Microsoft Entra admin center</text>
+  <text x="780" y="31" fill="white" font-family="Segoe UI, Arial" font-size="12" text-anchor="end" opacity="0.85">Protection &gt; Conditional Access</text>
+  <!-- Left nav -->
+  <rect x="0" y="48" width="200" height="402" fill="#edebe9"/>
+  <text x="18" y="80" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Identity</text>
+  <text x="18" y="104" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Protection</text>
+  <rect x="0" y="116" width="200" height="26" fill="#deecf9"/>
+  <rect x="0" y="116" width="3" height="26" fill="#0062ad"/>
+  <text x="32" y="133" fill="#0062ad" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Conditional Access</text>
+  <text x="32" y="156" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Identity Protection</text>
+  <text x="32" y="180" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Risk detections</text>
+  <!-- Main content -->
+  <text x="220" y="82" fill="#323130" font-family="Segoe UI, Arial" font-size="20" font-weight="300">Conditional Access policies</text>
+  <text x="220" y="104" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Zero Trust Identity baseline — deny legacy, require MFA, block risky</text>
+  <!-- Policy cards in grid -->
+  <!-- Policy 1: Block Legacy Auth -->
+  <rect x="220" y="120" width="260" height="150" fill="white" stroke="#edebe9" rx="4"/>
+  <rect x="220" y="120" width="260" height="34" fill="#fde7e9" rx="4 4 0 0"/>
+  <text x="350" y="142" fill="#a4262c" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">1 — Block Legacy Auth</text>
+  <text x="235" y="168" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">Applies to:</text>
+  <text x="235" y="182" fill="#323130" font-family="Segoe UI, Arial" font-size="11">• All users • All cloud apps</text>
+  <text x="235" y="198" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">Condition:</text>
+  <text x="235" y="212" fill="#323130" font-family="Segoe UI, Arial" font-size="11">• Client app = Legacy auth protocols</text>
+  <text x="235" y="228" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">Action:</text>
+  <text x="470" y="228" fill="#a4262c" font-family="Segoe UI, Arial" font-size="11" font-weight="600">BLOCK</text>
+  <text x="235" y="246" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">Status:</text>
+  <text x="470" y="246" fill="#107c10" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Report-only</text>
+  <!-- Policy 2: Require MFA -->
+  <rect x="510" y="120" width="260" height="150" fill="white" stroke="#edebe9" rx="4"/>
+  <rect x="510" y="120" width="260" height="34" fill="#dff6dd" rx="4 4 0 0"/>
+  <text x="640" y="142" fill="#107c10" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">2 — Require MFA</text>
+  <text x="525" y="168" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">Applies to:</text>
+  <text x="525" y="182" fill="#323130" font-family="Segoe UI, Arial" font-size="11">• All users • All cloud apps</text>
+  <text x="525" y="198" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">Condition:</text>
+  <text x="525" y="212" fill="#323130" font-family="Segoe UI, Arial" font-size="11">• (All sign-ins)</text>
+  <text x="525" y="228" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">Grant access if:</text>
+  <text x="760" y="228" fill="#107c10" font-family="Segoe UI, Arial" font-size="11" font-weight="600">MFA required</text>
+  <text x="525" y="246" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">Status:</text>
+  <text x="760" y="246" fill="#107c10" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Enabled</text>
+  <!-- Policy 3: Risk-based -->
+  <rect x="220" y="288" width="260" height="118" fill="white" stroke="#edebe9" rx="4"/>
+  <rect x="220" y="288" width="260" height="34" fill="#eff6fc" rx="4 4 0 0"/>
+  <text x="350" y="310" fill="#0078d4" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">3 — Risk-based Access</text>
+  <text x="235" y="336" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">Requires Entra ID P2 / E5</text>
+  <text x="235" y="352" fill="#323130" font-family="Segoe UI, Arial" font-size="11">• Block HIGH risk sign-ins</text>
+  <text x="235" y="368" fill="#323130" font-family="Segoe UI, Arial" font-size="11">• Require password change on HIGH user risk</text>
+  <text x="235" y="386" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">Status: Report-only → Enabled</text>
+  <!-- Policy 4: Unsupported platforms -->
+  <rect x="510" y="288" width="260" height="118" fill="white" stroke="#edebe9" rx="4"/>
+  <rect x="510" y="288" width="260" height="34" fill="#fde7e9" rx="4 4 0 0"/>
+  <text x="640" y="310" fill="#a4262c" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">4 — Block Unsupported</text>
+  <text x="525" y="336" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">Applies to: All users</text>
+  <text x="525" y="352" fill="#323130" font-family="Segoe UI, Arial" font-size="11">• Block device platforms without</text>
+  <text x="525" y="368" fill="#323130" font-family="Segoe UI, Arial" font-size="11">modern device drivers (e.g., Windows Phone)</text>
+  <text x="525" y="386" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">Status: Report-only</text>
+  <!-- Bottom note -->
+  <rect x="220" y="414" width="550" height="28" fill="#eff6fc" rx="2"/>
+  <text x="235" y="432" fill="#0078d4" font-family="Segoe UI, Arial" font-size="11">ℹ Deploy in Report-only first. Review logs for 7 days, then enable. Break-glass accounts excluded from all policies.</text>
+</svg>

@@ -53,21 +53,27 @@ Target: **zero permanent Global Administrators** other than two break-glass (eme
 
 1. Sign in to the **[Microsoft Entra admin center](https://entra.microsoft.com)** as a **Privileged Role Administrator** or Global Administrator.
 
+   <!-- Screenshot placeholder — /assets/images/pim_01_signin.png
+        Caption: "Sign in to entra.microsoft.com as Privileged Role Administrator" -->
+
 2. Navigate to **Identity governance** > **Privileged Identity Management**.
 
    > 💡 On first visit, Entra ID auto-provisions PIM for your tenant. This can take a few minutes.
 
-   <!-- Screenshot placeholder — add /assets/images/pim_01_open.png
+   <!-- Screenshot placeholder — /assets/images/pim_02_open.png
         Caption: "PIM landing page — Microsoft Entra admin center" -->
 
 3. Click **Microsoft Entra roles** > **Assignments**.
+
+   <!-- Screenshot placeholder — /assets/images/pim_03_entra_roles.png
+        Caption: "Microsoft Entra roles > Assignments tab inside PIM" -->
 
 4. Review the full list of **Eligible** and **Active** role holders. Make a note of:
    - How many accounts hold **Global Administrator** permanently (target: `<= 2` break-glass only)
    - Any role held by **more than 5 people** (target: reduce or require activation)
 
-   <!-- Screenshot placeholder — add /assets/images/pim_02_discover.png
-        Caption: "Current role assignments before PIM onboarding" -->
+   <!-- Screenshot placeholder — /assets/images/pim_04_discover.png
+        Caption: "Current role assignments before PIM onboarding — Eligible + Active columns" -->
 
 {: .warning }
 Do not remove permanent assignments yet — you will **convert** them to Eligible in Step 3. Removing first would lock your admins out.
@@ -80,10 +86,13 @@ For each privileged role, define how activation behaves. **Global Administrator*
 
 1. In PIM, go to **Microsoft Entra roles** > **Settings**.
 
+   <!-- Screenshot placeholder — /assets/images/pim_05_settings_tab.png
+        Caption: "PIM > Microsoft Entra roles > Settings tab" -->
+
 2. Select **Global Administrator** from the role list.
 
-   <!-- Screenshot placeholder — add /assets/images/pim_03_role_settings.png
-        Caption: "Role list in PIM Settings" -->
+   <!-- Screenshot placeholder — /assets/images/pim_06_role_list.png
+        Caption: "Role list in PIM Settings — Global Administrator highlighted" -->
 
 3. Click **Edit** on the current policy and apply the baseline below:
 
@@ -100,10 +109,19 @@ For each privileged role, define how activation behaves. **Global Administrator*
    | **Notification — Activation alert → Approvers** | ✅ **Yes** | Approvers know when their decision was used |
    | **Notification — Activation alert → Assignee** | ✅ **Yes** | Detects unauthorized use of their account |
 
-   <!-- Screenshot placeholder — add /assets/images/pim_04_policy_edit.png
-        Caption: "Role activation policy — Global Administrator" -->
+   <!-- Screenshot placeholder — /assets/images/pim_07_policy_activation.png
+        Caption: "Role activation tab — duration, justification, ticket info, MFA" -->
 
-4. Click **Update**.
+   <!-- Screenshot placeholder — /assets/images/pim_08_policy_assignment.png
+        Caption: "Assignment tab — require approval, pick approvers group" -->
+
+   <!-- Screenshot placeholder — /assets/images/pim_09_policy_notification.png
+        Caption: "Notification tab — admins, approvers, and assignee notifications" -->
+
+4. Click **Update** to save the policy.
+
+   <!-- Screenshot placeholder — /assets/images/pim_10_policy_update.png
+        Caption: "Policy summary with the Update button at the bottom" -->
 
 5. **Repeat** for these high-impact roles:
    - Privileged Role Administrator
@@ -127,21 +145,33 @@ This is the core operation: move each admin from **permanent (Active) assignment
 
 1. Go to **Microsoft Entra roles** > **Assignments** > **Active assignments**.
 
+   <!-- Screenshot placeholder — /assets/images/pim_11_active_assignments.png
+        Caption: "Active assignments list — admins to be converted to Eligible" -->
+
 2. For each admin (other than the two break-glass accounts):
    - Select the user
    - Click **Remove**
 
+   <!-- Screenshot placeholder — /assets/images/pim_12_remove_active.png
+        Caption: "Remove an Active assignment (do this ONLY after confirming step 4 works)" -->
+
 3. Then go to **Eligible assignments** > **Add assignments**.
+
+   <!-- Screenshot placeholder — /assets/images/pim_13_add_eligible.png
+        Caption: "Eligible assignments tab — Add assignments button" -->
 
 4. Re-add the same user as **Eligible**:
    - **Role**: same role
    - **Assignment type**: **Eligible**
    - **Assignment duration**: *Permanently eligible* (or set an expiry if contractor)
 
-   <!-- Screenshot placeholder — add /assets/images/pim_05_make_eligible.png
-        Caption: "Adding an Eligible role assignment" -->
+   <!-- Screenshot placeholder — /assets/images/pim_14_make_eligible.png
+        Caption: "New Eligible assignment form — role, user, Permanently eligible" -->
 
 5. The admin receives an email notification that they are now Eligible.
+
+   <!-- Screenshot placeholder — /assets/images/pim_15_assignee_email.png
+        Caption: "Example email received by the admin announcing their Eligible assignment" -->
 
 {: .warning }
 **Keep 2 break-glass accounts as permanent Active Global Administrators**, excluded from Conditional Access. PIM itself must never lock you out of your own tenant.
@@ -154,21 +184,36 @@ Verify the end-user experience with a non-critical account first.
 
 1. Sign in as the test admin and open **[Microsoft Entra admin center](https://entra.microsoft.com)** > **PIM** > **My roles**.
 
+   <!-- Screenshot placeholder — /assets/images/pim_16_my_roles.png
+        Caption: "PIM > My roles — Eligible assignments visible to the signed-in admin" -->
+
 2. Under **Eligible assignments**, find the role and click **Activate**.
 
-   <!-- Screenshot placeholder — add /assets/images/pim_06_activate.png
-        Caption: "Activating an eligible role from My roles" -->
+   <!-- Screenshot placeholder — /assets/images/pim_17_activate_button.png
+        Caption: "Activate button next to an eligible role assignment" -->
 
 3. Fill in:
    - **Duration** (hours)
    - **Justification** (e.g. "Change ticket CHG0012345 — enable new CA policy")
    - **Ticket information** (if required by policy)
 
+   <!-- Screenshot placeholder — /assets/images/pim_18_activate_form.png
+        Caption: "Activation form — duration, justification, ticket number" -->
+
 4. Click **Activate**. One of these happens:
    - **Auto-approved** → role is live within ~1 minute
    - **Pending approval** → approver receives an email with Approve/Deny link
 
+   <!-- Screenshot placeholder — /assets/images/pim_19_pending_approval.png
+        Caption: "Pending approval screen while the request awaits approver action" -->
+
+   <!-- Screenshot placeholder — /assets/images/pim_20_approver_email.png
+        Caption: "Approver email with Approve / Deny deep-links" -->
+
 5. The admin is now Active in the role for the requested duration. When it expires, access is removed automatically.
+
+   <!-- Screenshot placeholder — /assets/images/pim_21_active_session.png
+        Caption: "Active session view showing remaining time before auto-expiry" -->
 
 ---
 
@@ -177,6 +222,9 @@ Verify the end-user experience with a non-critical account first.
 Even Eligible assignments drift over time. Configure recurring reviews.
 
 1. In PIM, go to **Microsoft Entra roles** > **Access reviews** > **New access review**.
+
+   <!-- Screenshot placeholder — /assets/images/pim_22_access_reviews_landing.png
+        Caption: "Access reviews tab inside PIM for Microsoft Entra roles" -->
 
 2. Configure:
 
@@ -192,10 +240,13 @@ Even Eligible assignments drift over time. Configure recurring reviews.
    | **If reviewers don't respond** | **Remove access** |
    | **Require reason on approval** | ✅ **Yes** |
 
-   <!-- Screenshot placeholder — add /assets/images/pim_07_access_review.png
+   <!-- Screenshot placeholder — /assets/images/pim_23_access_review_create.png
         Caption: "Creating a quarterly access review for a privileged role" -->
 
 3. Click **Start**.
+
+   <!-- Screenshot placeholder — /assets/images/pim_24_access_review_started.png
+        Caption: "Access review in progress — first run instance created" -->
 
 4. Repeat for each of the high-impact roles configured in Step 2.
 
@@ -204,6 +255,9 @@ Even Eligible assignments drift over time. Configure recurring reviews.
 ## Step 6 — Alert on Critical PIM Events
 
 1. In PIM, go to **Microsoft Entra roles** > **Alerts**.
+
+   <!-- Screenshot placeholder — /assets/images/pim_25_alerts_landing.png
+        Caption: "Alerts tab inside PIM for Microsoft Entra roles" -->
 
 2. Review the default alerts and tune them:
 
@@ -215,12 +269,15 @@ Even Eligible assignments drift over time. Configure recurring reviews.
    | **Roles don't require MFA for activation** | Enabled — zero-tolerance |
    | **Roles don't require justification for activation** | Enabled |
 
-   <!-- Screenshot placeholder — add /assets/images/pim_08_alerts.png
-        Caption: "PIM alert configuration page" -->
+   <!-- Screenshot placeholder — /assets/images/pim_26_alerts_tuning.png
+        Caption: "Editing alert thresholds (Too many permanent owners = 2)" -->
 
-3. Also configure **Microsoft 365 Security & Compliance** alert for:
+3. Also configure **Microsoft Purview** alert policies for:
    - `Added member to Role` (for roles that should be PIM-only)
    - `Activated eligible role` → notify SIEM / SOC
+
+   <!-- Screenshot placeholder — /assets/images/pim_27_purview_alert.png
+        Caption: "Microsoft Purview alert policy — Activated eligible role" -->
 
 ---
 
@@ -311,4 +368,5 @@ After rollout, confirm:
 ---
 
 {: .note }
-**Screenshots coming soon.** This page ships with the full step-by-step procedure; portal screenshots will be added in the next content pass. If you'd like to contribute them, see [SECURITY.md](https://github.com/DekBaCom/Microsoft365SetupGuide/blob/main/SECURITY.md) and open a pull request.
+**Screenshots coming soon.** The 27 image placeholders use the `pim_NN_name.png` convention under `/assets/images/`. To add a real screenshot: save the PNG with the matching filename and replace the surrounding `<!-- Screenshot placeholder — ... -->` comment with a standard Markdown image, e.g.
+`![Caption]({{ site.baseurl }}/assets/images/pim_01_signin.png)`. Contributions welcome — see [SECURITY.md](https://github.com/DekBaCom/Microsoft365SetupGuide/blob/main/SECURITY.md).

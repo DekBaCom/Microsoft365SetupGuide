@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="PIM - Admin role activation experience">
+  <rect width="800" height="450" fill="#faf9f8"/>
+  <rect width="800" height="48" fill="#0062ad"/>
+  <text x="20" y="31" fill="white" font-family="Segoe UI, Arial" font-size="14" font-weight="600">Microsoft Entra admin center</text>
+  <text x="780" y="31" fill="white" font-family="Segoe UI, Arial" font-size="12" text-anchor="end" opacity="0.85">PIM &gt; My roles</text>
+  <!-- Left nav -->
+  <rect x="0" y="48" width="210" height="402" fill="#edebe9"/>
+  <text x="18" y="80" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Identity governance</text>
+  <rect x="0" y="88" width="210" height="22" fill="#deecf9"/>
+  <rect x="0" y="88" width="3" height="22" fill="#0062ad"/>
+  <text x="32" y="103" fill="#0062ad" font-family="Segoe UI, Arial" font-size="11" font-weight="600">PIM &gt; My roles</text>
+  <text x="48" y="124" fill="#0062ad" font-family="Segoe UI, Arial" font-size="10" font-weight="600">Microsoft Entra roles</text>
+  <text x="48" y="142" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">Azure resources</text>
+  <!-- Main: My roles -->
+  <text x="230" y="78" fill="#323130" font-family="Segoe UI, Arial" font-size="20" font-weight="300">My roles — Microsoft Entra roles</text>
+  <!-- Tab -->
+  <rect x="230" y="90" width="540" height="30" fill="#f3f2f1"/>
+  <rect x="230" y="90" width="130" height="30" fill="white"/>
+  <rect x="230" y="118" width="130" height="2" fill="#0062ad"/>
+  <text x="295" y="110" fill="#0062ad" font-family="Segoe UI, Arial" font-size="12" font-weight="600" text-anchor="middle">Eligible (3)</text>
+  <text x="410" y="110" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle">Active (0)</text>
+  <!-- Table header -->
+  <rect x="230" y="122" width="540" height="28" fill="#f3f2f1"/>
+  <text x="245" y="141" fill="#323130" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Role</text>
+  <text x="470" y="141" fill="#323130" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Status</text>
+  <text x="600" y="141" fill="#323130" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Action</text>
+  <!-- Row 1 — target row -->
+  <rect x="230" y="150" width="540" height="38" fill="#fff4ce"/>
+  <text x="245" y="174" fill="#323130" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Global Administrator</text>
+  <text x="470" y="174" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Eligible</text>
+  <rect x="596" y="156" width="80" height="24" fill="#0062ad" rx="2"/>
+  <text x="636" y="172" fill="white" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">Activate</text>
+  <line x1="230" y1="188" x2="770" y2="188" stroke="#edebe9"/>
+  <!-- Row 2 -->
+  <rect x="230" y="188" width="540" height="38" fill="white"/>
+  <text x="245" y="212" fill="#323130" font-family="Segoe UI, Arial" font-size="12">Exchange Administrator</text>
+  <text x="470" y="212" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Eligible</text>
+  <rect x="596" y="194" width="80" height="24" fill="#0062ad" rx="2"/>
+  <text x="636" y="210" fill="white" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">Activate</text>
+  <line x1="230" y1="226" x2="770" y2="226" stroke="#edebe9"/>
+  <!-- Activation flyout panel -->
+  <rect x="460" y="236" width="310" height="192" fill="white" stroke="#c8c6c4" rx="4"/>
+  <rect x="460" y="236" width="310" height="34" fill="#0062ad" rx="4 4 0 0"/>
+  <text x="615" y="258" fill="white" font-family="Segoe UI, Arial" font-size="13" text-anchor="middle" font-weight="600">Activate — Global Administrator</text>
+  <text x="478" y="292" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Duration (hours)</text>
+  <rect x="478" y="298" width="274" height="24" fill="#f3f2f1" rx="2"/>
+  <text x="488" y="315" fill="#323130" font-family="Segoe UI, Arial" font-size="12">4</text>
+  <text x="478" y="338" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Justification</text>
+  <rect x="478" y="344" width="274" height="24" fill="#f3f2f1" rx="2"/>
+  <text x="488" y="361" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Change ticket CHG0012345 — apply CA policy</text>
+  <text x="478" y="386" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Ticket number</text>
+  <rect x="478" y="392" width="274" height="24" fill="#f3f2f1" rx="2"/>
+  <text x="488" y="409" fill="#323130" font-family="Segoe UI, Arial" font-size="11">CHG0012345</text>
+  <!-- Activate button in flyout -->
+  <rect x="478" y="416" width="80" height="26" fill="#0062ad" rx="2"/>
+  <text x="518" y="433" fill="white" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">Activate</text>
+  <rect x="568" y="416" width="70" height="26" fill="white" stroke="#605e5c" rx="2"/>
+  <text x="603" y="433" fill="#323130" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle">Cancel</text>
+  <!-- Arrow pointing to flyout -->
+  <line x1="676" y1="168" x2="610" y2="250" stroke="#d13438" stroke-width="2" marker-end="url(#arr)"/>
+  <circle cx="676" cy="168" r="4" fill="#d13438"/>
+</svg>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="PIM - Converting Active assignments to Eligible">
+  <rect width="800" height="450" fill="#faf9f8"/>
+  <rect width="800" height="48" fill="#0062ad"/>
+  <text x="20" y="31" fill="white" font-family="Segoe UI, Arial" font-size="14" font-weight="600">Microsoft Entra admin center</text>
+  <text x="780" y="31" fill="white" font-family="Segoe UI, Arial" font-size="12" text-anchor="end" opacity="0.85">PIM &gt; Assignments &gt; Add eligible assignment</text>
+  <!-- Left nav -->
+  <rect x="0" y="48" width="210" height="402" fill="#edebe9"/>
+  <text x="18" y="80" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Identity governance</text>
+  <rect x="0" y="88" width="210" height="22" fill="#deecf9"/>
+  <rect x="0" y="88" width="3" height="22" fill="#0062ad"/>
+  <text x="32" y="103" fill="#0062ad" font-family="Segoe UI, Arial" font-size="11" font-weight="600">PIM &gt; Microsoft Entra roles</text>
+  <text x="64" y="124" fill="#0062ad" font-family="Segoe UI, Arial" font-size="10" font-weight="600">Assignments</text>
+  <!-- Left panel: Active assignment being removed -->
+  <rect x="220" y="58" width="260" height="380" fill="white" stroke="#edebe9"/>
+  <rect x="220" y="58" width="260" height="34" fill="#fde7e9"/>
+  <text x="350" y="80" fill="#a4262c" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">Active assignment (remove)</text>
+  <text x="235" y="114" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Role</text>
+  <text x="235" y="132" fill="#323130" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Global Administrator</text>
+  <line x1="235" y1="145" x2="470" y2="145" stroke="#edebe9"/>
+  <text x="235" y="165" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Principal</text>
+  <text x="235" y="183" fill="#323130" font-family="Segoe UI, Arial" font-size="12">admin1@contoso.com</text>
+  <line x1="235" y1="196" x2="470" y2="196" stroke="#edebe9"/>
+  <text x="235" y="216" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Assignment type</text>
+  <text x="235" y="234" fill="#a4262c" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Permanent Active</text>
+  <line x1="235" y1="247" x2="470" y2="247" stroke="#edebe9"/>
+  <text x="235" y="267" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Scope</text>
+  <text x="235" y="285" fill="#323130" font-family="Segoe UI, Arial" font-size="12">/ (tenant-wide)</text>
+  <!-- Remove button -->
+  <rect x="318" y="400" width="80" height="26" fill="#a4262c" rx="2"/>
+  <text x="358" y="417" fill="white" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">Remove</text>
+  <!-- Arrow -->
+  <text x="490" y="232" fill="#0062ad" font-family="Segoe UI, Arial" font-size="28" text-anchor="middle">&#8594;</text>
+  <text x="490" y="258" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10" text-anchor="middle">then add as</text>
+  <!-- Right panel: New Eligible assignment -->
+  <rect x="510" y="58" width="260" height="380" fill="white" stroke="#edebe9"/>
+  <rect x="510" y="58" width="260" height="34" fill="#dff6dd"/>
+  <text x="640" y="80" fill="#107c10" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">Eligible assignment (add)</text>
+  <text x="525" y="114" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Role</text>
+  <rect x="525" y="120" width="230" height="26" fill="#f3f2f1" rx="2"/>
+  <text x="535" y="137" fill="#323130" font-family="Segoe UI, Arial" font-size="12">Global Administrator</text>
+  <text x="525" y="165" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Select member</text>
+  <rect x="525" y="171" width="230" height="26" fill="#f3f2f1" rx="2"/>
+  <text x="535" y="188" fill="#323130" font-family="Segoe UI, Arial" font-size="12">admin1@contoso.com</text>
+  <text x="525" y="216" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Assignment type</text>
+  <rect x="525" y="222" width="110" height="22" fill="#0062ad" rx="11"/>
+  <text x="580" y="237" fill="white" font-family="Segoe UI, Arial" font-size="11" text-anchor="middle" font-weight="600">Eligible ✓</text>
+  <rect x="643" y="222" width="110" height="22" fill="white" stroke="#605e5c" rx="11"/>
+  <text x="698" y="237" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11" text-anchor="middle">Active</text>
+  <text x="525" y="265" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Assignment duration</text>
+  <rect x="525" y="271" width="230" height="22" fill="#f3f2f1" rx="2"/>
+  <text x="535" y="286" fill="#323130" font-family="Segoe UI, Arial" font-size="11">Permanently eligible</text>
+  <text x="525" y="320" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10" font-style="italic">Admin receives email confirming</text>
+  <text x="525" y="336" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10" font-style="italic">their new Eligible assignment.</text>
+  <!-- Assign button -->
+  <rect x="525" y="400" width="80" height="26" fill="#107c10" rx="2"/>
+  <text x="565" y="417" fill="white" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">Assign</text>
+</svg>

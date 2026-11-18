@@ -52,28 +52,17 @@ Target: **zero permanent Global Administrators** other than two break-glass (eme
 ## Step 1 — Enable PIM and Discover Current Role Assignments
 
 1. Sign in to the **[Microsoft Entra admin center](https://entra.microsoft.com)** as a **Privileged Role Administrator** or Global Administrator.
-
-   <!-- Screenshot placeholder — /assets/images/pim_01_signin.png
-        Caption: "Sign in to entra.microsoft.com as Privileged Role Administrator" -->
-
 2. Navigate to **Identity governance** > **Privileged Identity Management**.
 
    > 💡 On first visit, Entra ID auto-provisions PIM for your tenant. This can take a few minutes.
 
-   <!-- Screenshot placeholder — /assets/images/pim_02_open.png
-        Caption: "PIM landing page — Microsoft Entra admin center" -->
-
 3. Click **Microsoft Entra roles** > **Assignments**.
-
-   <!-- Screenshot placeholder — /assets/images/pim_03_entra_roles.png
-        Caption: "Microsoft Entra roles > Assignments tab inside PIM" -->
-
 4. Review the full list of **Eligible** and **Active** role holders. Make a note of:
    - How many accounts hold **Global Administrator** permanently (target: `<= 2` break-glass only)
    - Any role held by **more than 5 people** (target: reduce or require activation)
 
-   <!-- Screenshot placeholder — /assets/images/pim_04_discover.png
-        Caption: "Current role assignments before PIM onboarding — Eligible + Active columns" -->
+![Microsoft Entra PIM — Assignments tab showing multiple permanent Global Administrator assignments flagged for conversion]({{ site.baseurl }}/assets/images/pim_step1_discover.svg)
+*Figure 1 — PIM > Microsoft Entra roles > Assignments. Rows highlighted in yellow are permanent (Active) assignments that exceed the ≤ 2 break-glass target. The red-dashed box marks accounts to convert in Step 3.*
 
 {: .warning }
 Do not remove permanent assignments yet — you will **convert** them to Eligible in Step 3. Removing first would lock your admins out.
@@ -85,15 +74,7 @@ Do not remove permanent assignments yet — you will **convert** them to Eligibl
 For each privileged role, define how activation behaves. **Global Administrator** is the most important to lock down first.
 
 1. In PIM, go to **Microsoft Entra roles** > **Settings**.
-
-   <!-- Screenshot placeholder — /assets/images/pim_05_settings_tab.png
-        Caption: "PIM > Microsoft Entra roles > Settings tab" -->
-
 2. Select **Global Administrator** from the role list.
-
-   <!-- Screenshot placeholder — /assets/images/pim_06_role_list.png
-        Caption: "Role list in PIM Settings — Global Administrator highlighted" -->
-
 3. Click **Edit** on the current policy and apply the baseline below:
 
    | Setting | Recommended Value | Why |
@@ -109,20 +90,7 @@ For each privileged role, define how activation behaves. **Global Administrator*
    | **Notification — Activation alert → Approvers** | ✅ **Yes** | Approvers know when their decision was used |
    | **Notification — Activation alert → Assignee** | ✅ **Yes** | Detects unauthorized use of their account |
 
-   <!-- Screenshot placeholder — /assets/images/pim_07_policy_activation.png
-        Caption: "Role activation tab — duration, justification, ticket info, MFA" -->
-
-   <!-- Screenshot placeholder — /assets/images/pim_08_policy_assignment.png
-        Caption: "Assignment tab — require approval, pick approvers group" -->
-
-   <!-- Screenshot placeholder — /assets/images/pim_09_policy_notification.png
-        Caption: "Notification tab — admins, approvers, and assignee notifications" -->
-
 4. Click **Update** to save the policy.
-
-   <!-- Screenshot placeholder — /assets/images/pim_10_policy_update.png
-        Caption: "Policy summary with the Update button at the bottom" -->
-
 5. **Repeat** for these high-impact roles:
    - Privileged Role Administrator
    - Privileged Authentication Administrator
@@ -134,6 +102,9 @@ For each privileged role, define how activation behaves. **Global Administrator*
    - Application Administrator
    - Cloud Application Administrator
 
+![PIM Role Settings — Edit policy for Global Administrator showing activation duration 4 hours, justification On, ticket On, approval On, MFA On, notifications On]({{ site.baseurl }}/assets/images/pim_step2_policy.svg)
+*Figure 2 — PIM > Microsoft Entra roles > Settings > Edit (Global Administrator). All baseline controls enabled: 4-hour max duration, justification, ticket info, approval, MFA, and full notification coverage.*
+
 {: .note }
 For **lower-risk roles** (e.g. Reports Reader, Message Center Reader) you can keep activation friction lower — no approval, shorter justification.
 
@@ -144,34 +115,18 @@ For **lower-risk roles** (e.g. Reports Reader, Message Center Reader) you can ke
 This is the core operation: move each admin from **permanent (Active) assignment** to **Eligible assignment** so they must activate.
 
 1. Go to **Microsoft Entra roles** > **Assignments** > **Active assignments**.
-
-   <!-- Screenshot placeholder — /assets/images/pim_11_active_assignments.png
-        Caption: "Active assignments list — admins to be converted to Eligible" -->
-
 2. For each admin (other than the two break-glass accounts):
    - Select the user
    - Click **Remove**
-
-   <!-- Screenshot placeholder — /assets/images/pim_12_remove_active.png
-        Caption: "Remove an Active assignment (do this ONLY after confirming step 4 works)" -->
-
 3. Then go to **Eligible assignments** > **Add assignments**.
-
-   <!-- Screenshot placeholder — /assets/images/pim_13_add_eligible.png
-        Caption: "Eligible assignments tab — Add assignments button" -->
-
 4. Re-add the same user as **Eligible**:
    - **Role**: same role
    - **Assignment type**: **Eligible**
    - **Assignment duration**: *Permanently eligible* (or set an expiry if contractor)
-
-   <!-- Screenshot placeholder — /assets/images/pim_14_make_eligible.png
-        Caption: "New Eligible assignment form — role, user, Permanently eligible" -->
-
 5. The admin receives an email notification that they are now Eligible.
 
-   <!-- Screenshot placeholder — /assets/images/pim_15_assignee_email.png
-        Caption: "Example email received by the admin announcing their Eligible assignment" -->
+![PIM — Side-by-side view: removing a permanent Active assignment (left) and adding the same user as Eligible (right)]({{ site.baseurl }}/assets/images/pim_step3_convert.svg)
+*Figure 3 — Convert flow: Remove the permanent Active assignment (left panel), then immediately Add an Eligible assignment (right panel) for the same user and role.*
 
 {: .warning }
 **Keep 2 break-glass accounts as permanent Active Global Administrators**, excluded from Conditional Access. PIM itself must never lock you out of your own tenant.
@@ -183,37 +138,18 @@ This is the core operation: move each admin from **permanent (Active) assignment
 Verify the end-user experience with a non-critical account first.
 
 1. Sign in as the test admin and open **[Microsoft Entra admin center](https://entra.microsoft.com)** > **PIM** > **My roles**.
-
-   <!-- Screenshot placeholder — /assets/images/pim_16_my_roles.png
-        Caption: "PIM > My roles — Eligible assignments visible to the signed-in admin" -->
-
 2. Under **Eligible assignments**, find the role and click **Activate**.
-
-   <!-- Screenshot placeholder — /assets/images/pim_17_activate_button.png
-        Caption: "Activate button next to an eligible role assignment" -->
-
 3. Fill in:
    - **Duration** (hours)
    - **Justification** (e.g. "Change ticket CHG0012345 — enable new CA policy")
    - **Ticket information** (if required by policy)
-
-   <!-- Screenshot placeholder — /assets/images/pim_18_activate_form.png
-        Caption: "Activation form — duration, justification, ticket number" -->
-
 4. Click **Activate**. One of these happens:
    - **Auto-approved** → role is live within ~1 minute
    - **Pending approval** → approver receives an email with Approve/Deny link
-
-   <!-- Screenshot placeholder — /assets/images/pim_19_pending_approval.png
-        Caption: "Pending approval screen while the request awaits approver action" -->
-
-   <!-- Screenshot placeholder — /assets/images/pim_20_approver_email.png
-        Caption: "Approver email with Approve / Deny deep-links" -->
-
 5. The admin is now Active in the role for the requested duration. When it expires, access is removed automatically.
 
-   <!-- Screenshot placeholder — /assets/images/pim_21_active_session.png
-        Caption: "Active session view showing remaining time before auto-expiry" -->
+![PIM My roles — Eligible assignments list with Activate button, and the activation flyout showing Duration, Justification, and Ticket fields]({{ site.baseurl }}/assets/images/pim_step4_activate.svg)
+*Figure 4 — PIM > My roles: an Eligible Global Administrator assignment with the Activate flyout open. The admin fills in duration (4 h), a justification, and their ITSM ticket number before submitting.*
 
 ---
 
@@ -222,10 +158,6 @@ Verify the end-user experience with a non-critical account first.
 Even Eligible assignments drift over time. Configure recurring reviews.
 
 1. In PIM, go to **Microsoft Entra roles** > **Access reviews** > **New access review**.
-
-   <!-- Screenshot placeholder — /assets/images/pim_22_access_reviews_landing.png
-        Caption: "Access reviews tab inside PIM for Microsoft Entra roles" -->
-
 2. Configure:
 
    | Setting | Recommended Value |
@@ -240,25 +172,17 @@ Even Eligible assignments drift over time. Configure recurring reviews.
    | **If reviewers don't respond** | **Remove access** |
    | **Require reason on approval** | ✅ **Yes** |
 
-   <!-- Screenshot placeholder — /assets/images/pim_23_access_review_create.png
-        Caption: "Creating a quarterly access review for a privileged role" -->
-
 3. Click **Start**.
-
-   <!-- Screenshot placeholder — /assets/images/pim_24_access_review_started.png
-        Caption: "Access review in progress — first run instance created" -->
-
 4. Repeat for each of the high-impact roles configured in Step 2.
+
+![PIM New access review form — Quarterly frequency, 14-day duration, auto-apply results, Remove access if reviewer doesn't respond]({{ site.baseurl }}/assets/images/pim_step5_accessreview.svg)
+*Figure 5 — PIM > Access reviews > New access review. Set frequency to Quarterly, duration 14 days, and "Remove access" as the default when reviewers don't respond — this enforces use-it-or-lose-it.*
 
 ---
 
 ## Step 6 — Alert on Critical PIM Events
 
 1. In PIM, go to **Microsoft Entra roles** > **Alerts**.
-
-   <!-- Screenshot placeholder — /assets/images/pim_25_alerts_landing.png
-        Caption: "Alerts tab inside PIM for Microsoft Entra roles" -->
-
 2. Review the default alerts and tune them:
 
    | Alert | Recommended Action |
@@ -269,15 +193,12 @@ Even Eligible assignments drift over time. Configure recurring reviews.
    | **Roles don't require MFA for activation** | Enabled — zero-tolerance |
    | **Roles don't require justification for activation** | Enabled |
 
-   <!-- Screenshot placeholder — /assets/images/pim_26_alerts_tuning.png
-        Caption: "Editing alert thresholds (Too many permanent owners = 2)" -->
-
 3. Also configure **Microsoft Purview** alert policies for:
    - `Added member to Role` (for roles that should be PIM-only)
    - `Activated eligible role` → notify SIEM / SOC
 
-   <!-- Screenshot placeholder — /assets/images/pim_27_purview_alert.png
-        Caption: "Microsoft Purview alert policy — Activated eligible role" -->
+![PIM Alerts page — thresholds tuned with zero-tolerance MFA/justification alerts highlighted, plus a Purview callout for SIEM integration]({{ site.baseurl }}/assets/images/pim_step6_alerts.svg)
+*Figure 6 — PIM > Alerts. Set permanent-owner threshold to 2 (break-glass only). The red-boxed zero-tolerance alerts (MFA and justification) must remain On. Complement with Purview alert policies that forward role-activation events to your SIEM or SOC mailbox.*
 
 ---
 
@@ -364,9 +285,3 @@ After rollout, confirm:
 - [PIM licensing — Microsoft Entra ID Governance licensing fundamentals](https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals){:target="_blank"}
 - [Deploy PIM — Microsoft Learn](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-deployment-plan){:target="_blank"}
 - [Microsoft Graph PIM API](https://learn.microsoft.com/en-us/graph/api/resources/privilegedidentitymanagementv3-overview){:target="_blank"}
-
----
-
-{: .note }
-**Screenshots coming soon.** The 27 image placeholders use the `pim_NN_name.png` convention under `/assets/images/`. To add a real screenshot: save the PNG with the matching filename and replace the surrounding `<!-- Screenshot placeholder — ... -->` comment with a standard Markdown image, e.g.
-`![Caption]({{ site.baseurl }}/assets/images/pim_01_signin.png)`. Pull requests welcome.

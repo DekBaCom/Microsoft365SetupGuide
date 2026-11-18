@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="PIM Role Settings - Global Administrator policy">
+  <rect width="800" height="450" fill="#faf9f8"/>
+  <rect width="800" height="48" fill="#0062ad"/>
+  <text x="20" y="31" fill="white" font-family="Segoe UI, Arial" font-size="14" font-weight="600">Microsoft Entra admin center</text>
+  <text x="780" y="31" fill="white" font-family="Segoe UI, Arial" font-size="12" text-anchor="end" opacity="0.85">PIM &gt; Microsoft Entra roles &gt; Settings</text>
+  <!-- Left nav -->
+  <rect x="0" y="48" width="210" height="402" fill="#edebe9"/>
+  <text x="18" y="80" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Identity governance</text>
+  <rect x="0" y="88" width="210" height="22" fill="#deecf9"/>
+  <rect x="0" y="88" width="3" height="22" fill="#0062ad"/>
+  <text x="32" y="103" fill="#0062ad" font-family="Segoe UI, Arial" font-size="11" font-weight="600">Privileged Identity Mgmt</text>
+  <text x="48" y="124" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">Microsoft Entra roles</text>
+  <text x="64" y="142" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">Assignments</text>
+  <text x="64" y="160" fill="#0062ad" font-family="Segoe UI, Arial" font-size="10" font-weight="600">Settings</text>
+  <!-- Page title -->
+  <text x="230" y="78" fill="#323130" font-family="Segoe UI, Arial" font-size="18" font-weight="300">Edit role setting — Global Administrator</text>
+  <!-- Tab row -->
+  <rect x="230" y="90" width="540" height="30" fill="#f3f2f1"/>
+  <rect x="230" y="90" width="130" height="30" fill="white"/>
+  <rect x="230" y="118" width="130" height="2" fill="#0062ad"/>
+  <text x="295" y="110" fill="#0062ad" font-family="Segoe UI, Arial" font-size="12" font-weight="600" text-anchor="middle">Activation</text>
+  <text x="410" y="110" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle">Assignment</text>
+  <text x="530" y="110" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle">Notification</text>
+  <!-- Settings list -->
+  <rect x="230" y="122" width="540" height="280" fill="white" stroke="#edebe9"/>
+  <!-- Row 1 -->
+  <rect x="230" y="122" width="540" height="36" fill="white"/>
+  <text x="245" y="145" fill="#323130" font-family="Segoe UI, Arial" font-size="12">Activation maximum duration</text>
+  <rect x="600" y="128" width="80" height="22" fill="#f3f2f1" rx="2"/>
+  <text x="640" y="143" fill="#323130" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">4 hours</text>
+  <line x1="240" y1="158" x2="760" y2="158" stroke="#edebe9"/>
+  <!-- Row 2 -->
+  <text x="245" y="178" fill="#323130" font-family="Segoe UI, Arial" font-size="12">Require justification on activation</text>
+  <rect x="618" y="165" width="46" height="20" fill="#107c10" rx="10"/>
+  <circle cx="654" cy="175" r="8" fill="white"/>
+  <text x="635" y="180" fill="white" font-family="Segoe UI, Arial" font-size="9">On</text>
+  <line x1="240" y1="192" x2="760" y2="192" stroke="#edebe9"/>
+  <!-- Row 3 -->
+  <text x="245" y="212" fill="#323130" font-family="Segoe UI, Arial" font-size="12">Require ticket information on activation</text>
+  <rect x="618" y="199" width="46" height="20" fill="#107c10" rx="10"/>
+  <circle cx="654" cy="209" r="8" fill="white"/>
+  <text x="635" y="214" fill="white" font-family="Segoe UI, Arial" font-size="9">On</text>
+  <line x1="240" y1="226" x2="760" y2="226" stroke="#edebe9"/>
+  <!-- Row 4 -->
+  <text x="245" y="246" fill="#323130" font-family="Segoe UI, Arial" font-size="12">Require approval to activate</text>
+  <rect x="618" y="233" width="46" height="20" fill="#107c10" rx="10"/>
+  <circle cx="654" cy="243" r="8" fill="white"/>
+  <text x="635" y="248" fill="white" font-family="Segoe UI, Arial" font-size="9">On</text>
+  <line x1="240" y1="260" x2="760" y2="260" stroke="#edebe9"/>
+  <!-- Row 5 -->
+  <text x="245" y="280" fill="#323130" font-family="Segoe UI, Arial" font-size="12">Approvers</text>
+  <text x="490" y="280" fill="#0062ad" font-family="Segoe UI, Arial" font-size="12">Security-Approvers (group)</text>
+  <line x1="240" y1="292" x2="760" y2="292" stroke="#edebe9"/>
+  <!-- Row 6 -->
+  <text x="245" y="312" fill="#323130" font-family="Segoe UI, Arial" font-size="12">Require MFA on activation</text>
+  <rect x="618" y="299" width="46" height="20" fill="#107c10" rx="10"/>
+  <circle cx="654" cy="309" r="8" fill="white"/>
+  <text x="635" y="314" fill="white" font-family="Segoe UI, Arial" font-size="9">On</text>
+  <line x1="240" y1="326" x2="760" y2="326" stroke="#edebe9"/>
+  <!-- Row 7 -->
+  <text x="245" y="346" fill="#323130" font-family="Segoe UI, Arial" font-size="12">Notification on activation (Admins + Approvers + Assignee)</text>
+  <rect x="618" y="333" width="46" height="20" fill="#107c10" rx="10"/>
+  <circle cx="654" cy="343" r="8" fill="white"/>
+  <text x="635" y="348" fill="white" font-family="Segoe UI, Arial" font-size="9">On</text>
+  <line x1="240" y1="358" x2="760" y2="358" stroke="#edebe9"/>
+  <!-- Update button -->
+  <rect x="230" y="414" width="90" height="28" fill="#0062ad" rx="2"/>
+  <text x="275" y="432" fill="white" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">Update</text>
+  <rect x="330" y="414" width="80" height="28" fill="white" stroke="#605e5c" rx="2"/>
+  <text x="370" y="432" fill="#323130" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle">Cancel</text>
+</svg>

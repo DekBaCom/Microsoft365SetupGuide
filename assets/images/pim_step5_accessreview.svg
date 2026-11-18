@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="PIM - Create quarterly access review">
+  <rect width="800" height="450" fill="#faf9f8"/>
+  <rect width="800" height="48" fill="#0062ad"/>
+  <text x="20" y="31" fill="white" font-family="Segoe UI, Arial" font-size="14" font-weight="600">Microsoft Entra admin center</text>
+  <text x="780" y="31" fill="white" font-family="Segoe UI, Arial" font-size="12" text-anchor="end" opacity="0.85">PIM &gt; Access reviews &gt; New access review</text>
+  <!-- Left nav -->
+  <rect x="0" y="48" width="210" height="402" fill="#edebe9"/>
+  <text x="18" y="80" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12">Identity governance</text>
+  <rect x="0" y="88" width="210" height="22" fill="#deecf9"/>
+  <rect x="0" y="88" width="3" height="22" fill="#0062ad"/>
+  <text x="32" y="103" fill="#0062ad" font-family="Segoe UI, Arial" font-size="11" font-weight="600">PIM &gt; Microsoft Entra roles</text>
+  <text x="64" y="124" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">Assignments</text>
+  <text x="64" y="142" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">Settings</text>
+  <text x="64" y="160" fill="#0062ad" font-family="Segoe UI, Arial" font-size="10" font-weight="600">Access reviews</text>
+  <text x="64" y="178" fill="#605e5c" font-family="Segoe UI, Arial" font-size="10">Alerts</text>
+  <!-- Form title -->
+  <text x="230" y="76" fill="#323130" font-family="Segoe UI, Arial" font-size="18" font-weight="300">New access review — Privileged roles</text>
+  <!-- Form -->
+  <rect x="230" y="88" width="540" height="346" fill="white" stroke="#edebe9"/>
+  <!-- Review name -->
+  <text x="248" y="114" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Review name</text>
+  <rect x="248" y="120" width="490" height="26" fill="#f3f2f1" rx="2"/>
+  <text x="258" y="137" fill="#323130" font-family="Segoe UI, Arial" font-size="12">Quarterly PIM — Global Administrator</text>
+  <!-- Frequency -->
+  <text x="248" y="166" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Frequency</text>
+  <rect x="248" y="172" width="220" height="26" fill="#0062ad" rx="13"/>
+  <text x="358" y="189" fill="white" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">Quarterly ✓</text>
+  <rect x="478" y="172" width="90" height="26" fill="white" stroke="#605e5c" rx="13"/>
+  <text x="523" y="189" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle">Monthly</text>
+  <rect x="576" y="172" width="90" height="26" fill="white" stroke="#605e5c" rx="13"/>
+  <text x="621" y="189" fill="#605e5c" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle">Annual</text>
+  <!-- Duration -->
+  <text x="248" y="220" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Duration (days)</text>
+  <rect x="248" y="226" width="120" height="26" fill="#f3f2f1" rx="2"/>
+  <text x="258" y="243" fill="#323130" font-family="Segoe UI, Arial" font-size="12">14</text>
+  <!-- Reviewers -->
+  <text x="248" y="274" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Reviewers</text>
+  <rect x="248" y="280" width="300" height="26" fill="#f3f2f1" rx="2"/>
+  <text x="258" y="297" fill="#323130" font-family="Segoe UI, Arial" font-size="12">Role holder's manager</text>
+  <!-- Upon completion -->
+  <text x="248" y="328" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">Upon completion — apply results automatically</text>
+  <rect x="618" y="315" width="46" height="20" fill="#107c10" rx="10"/>
+  <circle cx="654" cy="325" r="8" fill="white"/>
+  <text x="635" y="330" fill="white" font-family="Segoe UI, Arial" font-size="9">On</text>
+  <!-- If no response -->
+  <text x="248" y="362" fill="#605e5c" font-family="Segoe UI, Arial" font-size="11">If reviewers don't respond</text>
+  <rect x="248" y="368" width="200" height="26" fill="#f3f2f1" rx="2"/>
+  <text x="258" y="385" fill="#a4262c" font-family="Segoe UI, Arial" font-size="12" font-weight="600">Remove access</text>
+  <!-- Buttons -->
+  <rect x="230" y="448" width="90" height="28" fill="#0062ad" rx="2"/>
+  <text x="275" y="466" fill="white" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle" font-weight="600">Start</text>
+  <rect x="330" y="448" width="80" height="28" fill="white" stroke="#605e5c" rx="2"/>
+  <text x="370" y="466" fill="#323130" font-family="Segoe UI, Arial" font-size="12" text-anchor="middle">Cancel</text>
+  <!-- Info box -->
+  <rect x="248" y="400" width="490" height="28" fill="#eff6fc" rx="2"/>
+  <text x="258" y="418" fill="#0062ad" font-family="Segoe UI, Arial" font-size="11">ℹ Reviewers receive email notification on start date. Access not renewed = auto-removed at end.</text>
+</svg>

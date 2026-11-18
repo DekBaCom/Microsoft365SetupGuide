@@ -210,5 +210,5 @@ Microsoft offers **E5 Compliance**, **E5 Security**, and **E5 Information Protec
 - [Microsoft 365 licensing guidance for security & compliance](https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-365-security-compliance-licensing-guidance){:target="_blank"}
 - [Microsoft 365 Education plans](https://www.microsoft.com/en-us/education/products/microsoft-365){:target="_blank"}
 - [Microsoft Nonprofit offers](https://www.microsoft.com/en-us/nonprofits){:target="_blank"}
-- [Microsoft 365 Government (GCC/GCC-High)](https://learn.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-government){:target="_blank"}
+- [Microsoft 365 Government (GCC / GCC-High / DoD) — product page](https://www.microsoft.com/en-us/microsoft-365/government){:target="_blank"}
 - See also: [Prerequisites — Licensing Matrix]({{ site.baseurl }}/docs/prerequisites#2-licensing-matrix)

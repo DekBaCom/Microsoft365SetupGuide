@@ -304,7 +304,7 @@ After rollout, confirm:
 ## References
 
 - [What is Microsoft Entra Privileged Identity Management?](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure){:target="_blank"}
-- [PIM licensing](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/subscription-requirements){:target="_blank"}
+- [PIM licensing — Microsoft Entra ID Governance licensing fundamentals](https://learn.microsoft.com/en-us/entra/id-governance/licensing-fundamentals){:target="_blank"}
 - [Deploy PIM — Microsoft Learn](https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-deployment-plan){:target="_blank"}
 - [Microsoft Graph PIM API](https://learn.microsoft.com/en-us/graph/api/resources/privilegedidentitymanagementv3-overview){:target="_blank"}
 

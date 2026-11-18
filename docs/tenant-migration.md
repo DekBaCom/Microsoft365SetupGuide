@@ -208,7 +208,7 @@ Follow Microsoft's prerequisites carefully — mailbox move fails without correc
 **Target tenant (destination):**
 
 1. In the **target** tenant, create a mail-enabled security group `MigrationTarget` to hold users during migration.
-2. Register a **cross-tenant migration application** — follow the official consent URL from [Microsoft's CTMM doc](https://learn.microsoft.com/en-us/exchange/mailbox-migration/cross-tenant-mailbox-migration){:target="_blank"}.
+2. Register a **cross-tenant migration application** — follow the official consent URL from [Microsoft's CTMM doc](https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-mailbox-migration){:target="_blank"}.
 3. Consent the app on **both** tenants.
 
 **Source tenant:**
@@ -485,9 +485,9 @@ Wait at least **30 days** (ideally 90) before decommissioning:
 
 ## 14. References
 
-- [Cross-tenant mailbox migration (Microsoft)](https://learn.microsoft.com/en-us/exchange/mailbox-migration/cross-tenant-mailbox-migration){:target="_blank"}
-- [SharePoint cross-tenant migration (preview)](https://learn.microsoft.com/en-us/sharepoint/cross-tenant/sharepoint-and-onedrive-migration-overview){:target="_blank"}
-- [Microsoft 365 Multi-Tenant Organizations (MTO)](https://learn.microsoft.com/en-us/microsoft-365/enterprise/multi-tenant-organizations-overview){:target="_blank"}
+- [Cross-tenant mailbox migration (Microsoft)](https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-mailbox-migration){:target="_blank"}
+- [Cross-tenant OneDrive migration](https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-onedrive-migration){:target="_blank"} · [Cross-tenant SharePoint migration](https://learn.microsoft.com/en-us/microsoft-365/migration/cross-tenant-sharepoint-migration){:target="_blank"}
+- [Plan for multitenant organizations in Microsoft 365 (MTO)](https://learn.microsoft.com/en-us/microsoft-365/enterprise/plan-multi-tenant-org-overview){:target="_blank"} · [What is a multitenant organization in Microsoft Entra ID?](https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/multi-tenant-organization-overview){:target="_blank"}
 - [Microsoft Entra cross-tenant sync](https://learn.microsoft.com/en-us/entra/identity/multi-tenant-organizations/cross-tenant-synchronization-overview){:target="_blank"}
 - [PnP.PowerShell — SharePoint migration](https://pnp.github.io/powershell/cmdlets/Add-PnPMigrationCopyJob.html){:target="_blank"}
 - [BitTitan MigrationWiz](https://www.bittitan.com){:target="_blank"} · [ShareGate](https://sharegate.com){:target="_blank"} · [Quest On Demand Migration](https://www.quest.com/products/on-demand-migration/){:target="_blank"} · [AvePoint](https://www.avepoint.com){:target="_blank"}

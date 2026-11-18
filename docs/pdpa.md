@@ -423,9 +423,9 @@ After rollout, confirm:
 
 - [พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 — PDPC Thailand](https://www.pdpc.or.th){:target="_blank"}
 - [English translation of Thailand PDPA](https://www.krisdika.go.th/librarian/get?sysid=843076&ext=pdf){:target="_blank"}
-- [Microsoft — Thailand PDPA compliance overview](https://learn.microsoft.com/en-us/compliance/regulatory/offering-pdpa-thailand){:target="_blank"}
+- [Microsoft Purview Compliance Manager — regulations list (includes Thailand PDPA)](https://learn.microsoft.com/en-us/purview/compliance-manager-regulations-list){:target="_blank"}
 - [Microsoft Purview Compliance Manager](https://learn.microsoft.com/en-us/purview/compliance-manager){:target="_blank"}
-- [Microsoft Purview — Subject Rights Requests](https://learn.microsoft.com/en-us/privacy/priva/subject-rights-requests){:target="_blank"}
+- [Get started with Microsoft Priva — Subject Rights Requests](https://learn.microsoft.com/en-us/privacy/priva/priva-setup){:target="_blank"}
 - [Microsoft Online Services Data Protection Addendum (DPA)](https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA){:target="_blank"}
 
 ---

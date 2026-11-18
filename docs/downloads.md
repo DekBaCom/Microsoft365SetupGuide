@@ -35,6 +35,18 @@ Install-Module PnP.PowerShell              -Scope CurrentUser -MinimumVersion 2.
 
 ---
 
+## Zero Trust — Security Assessment
+
+Assess your Microsoft 365 tenant against a Zero Trust rubric. The script produces a single-file HTML report with per-pillar scores and remediation hints — ready to share with security leadership.
+
+| Script | Description |
+|--------|-------------|
+| [Get-M365SecurityPosture.ps1]({{ site.baseurl }}/scripts/security-assessment/Get-M365SecurityPosture.ps1){:download} | **Main script** — Zero Trust posture scorer (Identity, Device, App, Data, Audit). Outputs HTML report. |
+
+[View full Zero Trust playbook with step-by-step rollout &rarr;]({{ site.baseurl }}/docs/zero-trust)
+
+---
+
 ## Admin Monthly Report
 
 Generate a comprehensive HTML report covering all key M365 health metrics in a single run.
